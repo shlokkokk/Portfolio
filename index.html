@@ -1,0 +1,542 @@
+<!--
+    File: index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shlok Shah | Cybersecurity Portfolio</title>
+    <meta name="description" content="Shlok Shah: cybersecurity student, ethical hacking, Linux & cyber-inspired projects">
+    <meta name="author" content="Shlok Shah">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+</head>
+<body>
+    <!-- Terminal Boot Screen - signed: serozr -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-header">
+             
+            </div>
+            <div class="boot-terminal">
+                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing system...</span></p>
+                <p><span class="boot-prompt">[BOOT]</span> <span class="boot-text">Loading core modules</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Mounting file systems</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[LOAD]</span> <span class="boot-text">Starting network services</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[EXEC]</span> <span class="boot-text">Executing security.sh</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Initializing user interface</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[DONE]</span> <span class="boot-text">System ready</span> <span class="boot-status boot-ready">[READY]</span></p>
+                
+            </div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar"></div>
+            </div>
+            <p class="boot-footer">Press any key to continue... </p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">&gt;_security.sh <span class="logo-sign">· shlok</span></div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" onclick="closeMenu()">About</a>
+                <a href="#skills" onclick="closeMenu()">Skills</a>
+                <a href="#experience" onclick="closeMenu()">Experience</a>
+                <a href="#education" onclick="closeMenu()">Education</a>
+                <a href="#certifications" onclick="closeMenu()">Certifications</a>
+                <a href="#projects" onclick="closeMenu()">Projects</a>
+                <a href="#blog" onclick="closeMenu()">Blog</a>
+                <a href="#contact" onclick="closeMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+           <div class="tag">// IT Student | Exploring Cybersecurity & Ethical Hacking</div>
+<h1>SHLOK SHAH <small class="inline-sign">(shlok)</small></h1>
+<p class="subtitle">Curious about how systems work, break, and can be secured — built by Shlok</p>
+
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-text">
+    <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
+    <p class="output">Loading profile info...</p>
+    <p class="output">Found: Shlok Shah 🧑‍💻</p>
+    <p class="output">Role: IT Student | Aspiring Ethical Hacker</p>
+    <p class="output"><span class="prompt">&gt;</span>Mapping attack surfaces, automating hunts, and learning to secure systems.</p>
+    <p class="output"><span class="prompt">&gt;</span> Focused on Ethical Hacking & System Security</p>
+    <br>
+    <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
+    <p class="output">Phone: <a href="tel:+919512345504" class="link">+91 9512345504</a></p>
+    <br>
+    <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
+</div>
+
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+               
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Hi! I'm <span class="highlight">Shlok</span>, a cybersecurity and IT student passionate about 
+ethical hacking, Linux, and exploring how systems can be secured and improved. 
+                    </p>
+                   <p>
+        I focus on learning practical security skills: Kali tools, network scanning, packet analysis, and Python scripting for security tasks. I enjoy breaking things in controlled lab environments so I can learn how to secure them properly.
+    </p>
+    <p>
+        I'm currently self-learning cybersecurity fundamentals and will be enrolling in a short intensive ethical hacking course soon. I document experiments, small tools, and lab reports.
+    </p>
+                    <div class="about-stats">
+        <div class="stat-item">
+            <div class="stat-number">1+</div>
+            <div class="stat-label">Years learning</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Hands-on labs</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Curiosity</div>
+        </div>
+    </div>
+</div>
+                <div class="about-image">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dot dot-red"></div>
+                            <div class="code-dot dot-yellow"></div>
+                            <div class="code-dot dot-green"></div>
+                            <span class="code-title">about.js</span>
+                        </div>
+                        <div class="code-content">
+<pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+                        <span class="code-property">name</span>: <span class="code-string">"Shlok"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"IT Diploma Student - Exploring Cybersecurity"</span>,
+  <span class="code-property">location</span>: <span class="code-string">"Gujarat, India"</span>,
+  <span class="code-property">interests</span>: [
+    <span class="code-string">"Cybersecurity & Ethical Hacking"</span>,
+    <span class="code-string">"Linux (especially Kali)"</span>,
+    <span class="code-string">"Python Automation"</span>,
+    <span class="code-string">"Networking"</span>
+  ],
+  <span class="code-property">currentlyLearning</span>: [
+    <span class="code-string">"Penetration Testing Fundamentals"</span>,
+    <span class="code-string">"Web App Security & Vulnerability Scanning"</span>
+  ],
+    <span class="code-property">funFact</span>: <span class="code-string">"I break stuff to learn how to protect it. <br> Currently experimenting, exploring, and debugging my way through tech."</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Core Programming & Systems</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>C / C++ / WEB</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Kali Linux</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="65%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in" style="animation-delay: 0.1s;">
+                <h3>Cybersecurity & Networking</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Networking Basics / Protocols</span>
+                        <span>69%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="69%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                         <span>Wireshark / Packet Analysis</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="65%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>OWASP ZAP / Web Scanning</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in" style="animation-delay: 0.2s;">
+                <h3>Tools & Environment</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python Scripting / Automation</span>
+                        <span>83%</span>
+
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="83%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Git/GitHub (Version Control)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                         <span>Virtualization (VMware / VirtualBox)</span>
+                         <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+    <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>IT Diploma Student</h3>
+            <div class="timeline-date">2024 - Present</div>
+            <p class="timeline-description">
+                Second Year Diploma in Information Technology at MSU — focusing on programming, digital systems, and introductory cybersecurity labs.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline-item fade-in" style="animation-delay: 0.1s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>Self-guided Security Labs</h3>
+            <div class="timeline-date">2024 - Present</div>
+            <p class="timeline-description">
+                Personal labs and projects in Kali Linux, network scanning, packet capture, and vulnerability scanning using open-source tools.
+            </p>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+    <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>Diploma in Information Technology</h3>
+            <div class="timeline-date">2024 - 2027 (Expected)</div>
+            <p class="timeline-description">
+                The Maharaja Sayajirao University (MSU), Baroda — Second Year (Semester 3).<br>Coursework: Structured Programming, Digital Electronics, Web Programming, Linux & Cyber Basics.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline-item fade-in" style="animation-delay: 0.1s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>Self-Learning & Online Courses</h3>
+            <div class="timeline-date">2024 - Present</div>
+            <p class="timeline-description">
+                Ongoing self-study in Python, Linux, networking, and cybersecurity through labs, tutorials, and short online courses.
+            </p>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications & Awards</h2>
+        <div class="certifications-grid">
+    <div class="cert-card fade-in">
+        <div class="cert-icon">🐧</div>
+        <div class="cert-badge">
+            <div class="cert-badge-inner">
+                <div class="cert-title">Kali Linux</div>
+                <div class="cert-issuer">Cyber Mind Space</div>
+            </div>
+        </div>
+        <h3>Kali Linux Masterclass</h3>
+        <p class="cert-description">
+            Hands-on masterclass focusing on Kali basics, pentesting tools, and lab workflows.
+        </p>
+        <div class="cert-footer">
+    <span class="cert-date">Oct 2025</span>
+    <a href="https://cybermindspace.com/certificate-verification/" class="cert-link" target="_blank" rel="noopener">Verify &rarr;</a>
+        </div>
+
+    </div>
+
+    <div class="cert-card fade-in" style="animation-delay: 0.1s;">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-badge">
+            <div class="cert-badge-inner">
+                <div class="cert-title">Android Hacking</div>
+                <div class="cert-issuer">Cyber Mind Space</div>
+            </div>
+        </div>
+        <h3>Android Hacking Masterclass</h3>
+        <p class="cert-description">
+            Intro to Android app security, APK analysis, and mobile vulnerability concepts.
+        </p>
+        <div class="cert-footer">
+            <span class="cert-date">Oct 2025</span>
+            <a href="https://cybermindspace.com/certificate-verification/" class="cert-link" target="_blank" rel="noopener">Verify &rarr;</a>
+        </div>
+    </div>
+
+    <div class="cert-card fade-in" style="animation-delay: 0.2s;">
+  <div class="cert-icon">🎓</div>
+  <div class="cert-badge">
+      <div class="cert-badge-inner">
+          <div class="cert-title">Ethical Hacker</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+      </div>
+  </div>
+  <h3>Cisco Ethical Hacker (Free Self-paced)</h3>
+  <p class="cert-description">
+      Exploring ethical hacking fundamentals — reconnaissance, scanning, exploitation, and lab-based security analysis using Cisco tools and simulations.
+  </p>
+  <div class="cert-footer">
+      <span class="cert-date">Ongoing</span>
+      <a href="https://www.netacad.com/courses/ethical-hacker" class="cert-link" target="_blank">Verify &rarr;</a>
+  </div>
+</div>
+
+
+    <div class="cert-card fade-in" style="animation-delay: 0.3s;">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-badge">
+            <div class="cert-badge-inner">
+                <div class="cert-title">Ethical Hacking (Planned)</div>
+                <div class="cert-issuer">Paid short course</div>
+            </div>
+        </div>
+        <h3>Ethical Hacking — Intensive (45–60 days)</h3>
+        <p class="cert-description">
+            Enrolling soon in a practical bootcamp to strengthen penetration testing and real-world lab skills.
+        </p>
+        <div class="cert-footer">
+            <span class="cert-date">Planned</span>
+            <a href="#" class="cert-link">Enroll &rarr;</a>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+       <div class="projects-grid">
+    <div class="project-card fade-in">
+        <h3>Network Scanner (Prototype)</h3>
+        <p>Python-based LAN scanner using ARP requests to discover active hosts and MAC addresses. Built and tested in Kali/VMware.</p>
+        <a href="#" class="project-link">View Code &rarr;</a>
+    </div>
+    
+    <div class="project-card fade-in" style="animation-delay: 0.1s;">
+        <h3>Local Port Scanner</h3>
+        <p>Lightweight Python script for scanning common ports on a target IP to identify open services (ethical lab use).</p>
+        <a href="#" class="project-link">View Code &rarr;</a>
+    </div>
+    
+    <div class="project-card fade-in" style="animation-delay: 0.2s;">
+        <h3>OWASP ZAP — Lab Scan</h3>
+        <p>Performed controlled vulnerability scans using OWASP ZAP; analyzed alerts and exported HTML reports for learning and remediation notes.</p>
+        <a href="#contact" class="project-link">Report &rarr;</a>
+    </div>
+</div>
+
+    </section>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-grid">
+            <div class="blog-card fade-in">
+                <div class="blog-header">
+                    <div class="blog-date">October 15, 2025</div>
+                </div>
+                <div class="blog-body">
+                    <h3>Building Immersive Web Experiences <span class="post-sign">— serozr</span></h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">JavaScript</span>
+                        <span class="blog-tag">CSS Animations</span>
+                        <span class="blog-tag">WebGL</span>
+                    </div>
+                    <p>Exploring advanced techniques for creating psychedelic and interactive web experiences using vanilla JavaScript and CSS...</p>
+                    <a href="#" class="project-link">Read More &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card fade-in" style="animation-delay: 0.1s;">
+                <div class="blog-header">
+                    <div class="blog-date">October 10, 2025</div>
+                </div>
+                <div class="blog-body">
+                    <h3>Modern Web Design Trends</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">UI/UX</span>
+                        <span class="blog-tag">Design</span>
+                        <span class="blog-tag">Trends</span>
+                    </div>
+                    <p>A deep dive into cyberpunk aesthetics, glassmorphism, and terminal-inspired designs that are shaping the future of web...</p>
+                    <a href="#" class="project-link">Read More &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card fade-in" style="animation-delay: 0.2s;">
+                <div class="blog-header">
+                    <div class="blog-date">October 5, 2025</div>
+                </div>
+                <div class="blog-body">
+                    <h3>Performance Optimization Tips</h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Performance</span>
+                        <span class="blog-tag">Optimization</span>
+                        <span class="blog-tag">Best Practices</span>
+                    </div>
+                    <p>Learn how to optimize heavy animations and interactive elements without sacrificing visual appeal and user experience...</p>
+                    <a href="#" class="project-link">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:shlokshah412@gmail.com">shlokshah412@gmail.com</a>
+                    <div class="contact-note">preferred contact: <strong>Email</strong></div>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.1s;">
+                    <div class="contact-icon">💼</div>
+                    <h3>GitHub</h3>
+                     <a href="https://github.com/shlokkokk" target="_blank">github.com/shlokkokk</a>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                   <a href="https://www.linkedin.com/in/shlok-shah-21851a331/" target="_blank">
+        linkedin.com/in/shlok-shah-21851a331
+      </a>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.3s;">
+                    <div class="contact-icon">💼</div>
+                    <h3>Foundit</h3>
+      <a href="https://www.foundit.in/u/shlokshah" target="_blank">foundit.in/u/shlokshah</a>
+                    </div>
+
+                     <div class="contact-item fade-in" style="animation-delay: 0.3s;">
+                    <div class="contact-icon">📷</div>
+                    <h3>Instagram</h3>
+      <a href="https://www.instagram.com/shlokkshahh/" target="_blank">@shlokkshahh</a>
+                    </div>
+
+            </div>
+
+            <div class="contact-form fade-in">
+                <form>
+                    <div class="form-group">
+                        <label>$ name --input</label>
+                        <input type="text" placeholder="Your name" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>$ email --input</label>
+                        <input type="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>$ message --input</label>
+                        <textarea placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    <p>&copy; 2025 <span class="signature">Shlok</span>. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with curiosity - HTML, CSS & JS</p>
+    <p style="margin-top: 0.25rem; font-size: 0.8rem; color: #bbb;">Template adapted from <strong>serozr</strong> (MIT License)</p>
+    </footer>
+
+
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
+
