@@ -1,9 +1,4 @@
 
-/*
-    File: main.js
-    Purpose: handles boot screen, observers and UI interactions
-    
-*/
 // Boot Screen Animation
 document.addEventListener('DOMContentLoaded', () => {
     const bootScreen = document.getElementById('bootScreen');
