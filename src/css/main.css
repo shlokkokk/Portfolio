@@ -1167,3 +1167,21 @@ footer .signature {
         flex-direction: column;
     }
 }
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-description {
+    flex-grow: 1; /* pushes bottom section down */
+}
+
+.cert-footer {
+    margin-top: auto; /* locks footer to bottom */
+}
+
+.cert-divider {
+    margin-bottom: 1rem;
+}
+
