@@ -1198,3 +1198,80 @@ footer .signature {
     margin-top: auto; /* lock button at the bottom */
 }
 
+/* ABOUT SECTION — Mobile Fix */
+@media (max-width: 768px) {
+
+    /* Reduce padding in About section */
+    #about {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Reduce width of the code window */
+    .about-image .code-window {
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Scale code text for better readability */
+    .code-content {
+        font-size: 0.75rem !important;
+    }
+
+    /* Make the About grid stack cleanly */
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Move code block ABOVE text (looks way better on phones) */
+    .about-image {
+        order: -1 !important;
+    }
+
+    /* Better paragraph spacing on mobile */
+    .about-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.98);
+        flex-direction: column;
+        padding: 1.5rem 0;
+        transition: left 0.3s ease;
+        text-align: center;
+        gap: 0; /* new */
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.3rem;          /* readable size */
+        font-weight: 500;
+        color: #ffffff;
+        border-bottom: 1px solid rgba(0, 255, 140, 0.15);
+        letter-spacing: 1px;        /* stops "paragraph look" */
+        text-transform: none;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
