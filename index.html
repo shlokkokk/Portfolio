@@ -400,6 +400,24 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
   </div>
 </div>
 
+    <div class="cert-card fade-in" style="animation-delay: 0.1s;">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-badge">
+            <div class="cert-badge-inner">
+                <div class="cert-title">Web Development</div>
+                <div class="cert-issuer">Web X</div>
+            </div>
+        </div>
+        <h3>Full Web Development Certification</h3>
+        <p class="cert-description">
+            Successfully completed the full Web X Web Development Certification Program, covering HTML, CSS, JavaScript, responsive design concepts, and practical project-based learning to build modern web interfaces.
+        </p>
+        <div class="cert-footer">
+            <span class="cert-date">2025</span>
+            <a href="https://drive.google.com/file/d/18J5CqMBzFhzTfD0lGID3o7AFCKZxQCQS/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify &rarr;</a>
+        </div>
+    </div>
+
 
     <div class="cert-card fade-in" style="animation-delay: 0.3s;">
         <div class="cert-icon">⚡</div>
@@ -436,9 +454,11 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
             <a href="https://drive.google.com/file/d/17hOZHkx_rFgBnLcH5l2o7TJ3nlCY-pNk/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify &rarr;</a>
         </div>
     </div>
+
+
 <!--
     <div class="cert-card fade-in" style="animation-delay: 0.1s;">
-        <div class="cert-icon">&lt;/&gt;</div>
+        <div class="cert-icon">emoji</div>
         <div class="cert-badge">
             <div class="cert-badge-inner">
                 <div class="cert-title">cert-name</div>
@@ -648,22 +668,23 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
             </div>
 
             <div class="contact-form fade-in">
-                <form>
+                <form action="https://formspree.io/f/xpwvjrqo" method="POST">
                     <div class="form-group">
                         <label>$ name --input</label>
-                        <input type="text" placeholder="Your name" required>
+                        <input type="text" name="name" placeholder="Your name" required>
                         
                     </div>
                     <div class="form-group">
                         <label>$ email --input</label>
-                        <input type="email" placeholder="your.email@example.com" required>
+                        <input type="email" name="email" placeholder="your.email@example.com" required>
                     </div>
                     <div class="form-group">
                         <label>$ message --input</label>
-                        <textarea placeholder="Your message here..." required></textarea>
+                        <textarea name="message" placeholder="Your message here..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+                <p id="form-status" style="margin-top: 1rem; color: #00ff9d;"></p>
             </div>
         </div>
     </section>
@@ -673,6 +694,29 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with curiosity - HTML, CSS & JS</p>
     <!-- Portions of UI inspired by serozr (MIT License). -->
     </footer>
+
+
+    <script>
+    document.querySelector("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.querySelector("#form-status");
+      
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = "✔ Message sent successfully!";
+        form.reset();
+      } else {
+        status.textContent = "⚠ Something went wrong — try again.";
+      }
+    });
+    </script>
 
 
 

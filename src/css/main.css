@@ -1184,4 +1184,17 @@ footer .signature {
 .cert-divider {
     margin-bottom: 1rem;
 }
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card p {
+    flex-grow: 1; /* make description fill vertical space */
+}
+
+.project-link {
+    margin-top: auto; /* lock button at the bottom */
+}
 

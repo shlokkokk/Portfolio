@@ -118,5 +118,5 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
-// ---- Terminal Button Scroll Script ----
+// Terminal Button Scroll Script
 
