@@ -712,8 +712,15 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
       if (response.ok) {
         status.textContent = "✔ Message sent successfully!";
         form.reset();
+
+        setTimeout(() => {
+            status.textContent = "";
+        }, 4000);
       } else {
         status.textContent = "⚠ Something went wrong — try again.";
+        setTimeout(() => {
+        status.textContent = "";
+        }, 4000);
       }
     });
     </script>
