@@ -718,6 +718,11 @@ h2::after {
     margin-bottom: 1.5rem;
 }
 
+.project-key {
+    color: #b8d4da;
+    font-weight: 600;
+}
+
 .project-link {
     color: #00D9FF;
     text-decoration: none;
