@@ -729,6 +729,56 @@ h2::after {
     color: #00FF8C;
 }
 
+.project-card-featured {
+    border-color: rgba(0, 217, 255, 0.45);
+    background: linear-gradient(160deg, rgba(0, 217, 255, 0.08), rgba(0, 255, 140, 0.06) 42%, rgba(26, 26, 26, 0.85) 100%);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.12);
+}
+
+.project-card-featured h3 {
+    color: #7df5ff;
+}
+
+.project-card-featured p {
+    flex-grow: 0;
+    margin-bottom: 1rem;
+}
+
+.project-points {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+.project-points li {
+    color: #b9c3cb;
+    line-height: 1.55;
+    margin-bottom: 0.45rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.project-points li::before {
+    content: '>';
+    color: #00ff8c;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+.project-links .project-link {
+    margin-top: 0;
+}
+
 footer {
     text-align: center;
     padding: 2rem;
@@ -1196,6 +1246,14 @@ footer .signature {
 
 .project-link {
     margin-top: auto; /* lock button at the bottom */
+}
+
+@media (max-width: 768px) {
+    .project-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
 }
 
 /* ABOUT SECTION — Mobile Fix */
