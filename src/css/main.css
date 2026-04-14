@@ -948,6 +948,17 @@ footer .signature {
     cursor: pointer;
 }
 
+.footer-main {
+    color: #c4ccd4;
+}
+
+.footer-subline {
+    margin-top: 0.55rem;
+    font-size: 0.9rem;
+    color: #00d9ff;
+    opacity: 0.9;
+}
+
 .lazy-section {
     opacity: 0;
     transform: translateY(30px);

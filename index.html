@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animations.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     
 </head>
 <body>
@@ -89,7 +90,7 @@
     <p class="output"><span class="prompt">&gt;</span> Focused on Ethical Hacking & System Security</p>
     <br>
     <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
-    <p class="output">Phone: <a href="tel:+919512345504" class="link">+91 9512345504</a></p>
+    <p class="output">Phone: <a href="tel:+919512345504" class="link" title="Haha, DM me on Insta (@shlokkshahh) or Discord (@shlokkokk) first ;)" aria-label="Phone number. For fun: DM me on Insta @shlokkshahh or Discord @shlokkokk first">+91 9512-XX-5504</a></p>
     <br>
     <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
 </div>
@@ -801,36 +802,35 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         <div class="contact-container">
             <div class="contact-grid">
                 <div class="contact-item fade-in">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
                     <h3>Email</h3>
                     <a href="mailto:shlokshah412@gmail.com">shlokshah412@gmail.com</a>
-                    <div class="contact-note">preferred contact: <strong>Email</strong></div>
                 </div>
 
                 <div class="contact-item fade-in" style="animation-delay: 0.1s;">
-                    <div class="contact-icon">💼</div>
+                    <div class="contact-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
                     <h3>GitHub</h3>
                      <a href="https://github.com/shlokkokk" target="_blank">github.com/shlokkokk</a>
                 </div>
 
                 <div class="contact-item fade-in" style="animation-delay: 0.2s;">
-                    <div class="contact-icon">🔗</div>
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
                     <h3>LinkedIn</h3>
                    <a href="https://www.linkedin.com/in/shlok-shah-21851a331/" target="_blank">
         linkedin.com/in/shlok-shah-21851a331
       </a>
                 </div>
 
-                <div class="contact-item fade-in" style="animation-delay: 0.3s;">
-                    <div class="contact-icon">💼</div>
-                    <h3>Foundit</h3>
-      <a href="https://www.foundit.in/" target="_blank">(Private Profile) — Shlok Shah →</a>
+                     <div class="contact-item fade-in" style="animation-delay: 0.3s;">
+                    <div class="contact-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></div>
+                    <h3>Instagram</h3>
+            <a href="https://www.instagram.com/shlokkshahh/" target="_blank">@shlokkshahh</a>
                     </div>
 
-                     <div class="contact-item fade-in" style="animation-delay: 0.3s;">
-                    <div class="contact-icon">📷</div>
-                    <h3>Instagram</h3>
-      <a href="#" class="placeholder-link">@username — (recovering account)</a>
+                    <div class="contact-item fade-in" style="animation-delay: 0.4s;">
+                    <div class="contact-icon"><i class="fa-brands fa-discord" aria-hidden="true"></i></div>
+                    <h3>Discord</h3>
+      <a href="https://discord.com/app" target="_blank">@shlokkokk</a>
                     </div>
 
             </div>
@@ -858,8 +858,8 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
     <footer>
-    <p>&copy; 2025 <span class="signature">Shlok</span>. All rights reserved.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with curiosity - HTML, CSS & JS</p>
+    <p class="footer-main">&copy; <span id="currentYear">2025</span> <span class="signature">Shlok</span>. Crafted in code, secured with curiosity.</p>
+    <p class="footer-subline">&gt;_ Built with HTML, CSS, JS and late-night debugging</p>
     <!-- Portions of UI inspired by serozr (MIT License). -->
     </footer>
 
@@ -891,6 +891,11 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         }, 4000);
       }
     });
+
+        const currentYearEl = document.getElementById("currentYear");
+        if (currentYearEl) {
+            currentYearEl.textContent = new Date().getFullYear();
+        }
     </script>
 
 
