@@ -1199,11 +1199,34 @@ footer .signature {
 .contact-item a {
     color: #00D9FF;
     text-decoration: none;
-    word-break: break-all;
 }
 
 .contact-item a:hover {
     color: #00FF8C;
+}
+
+.contact-link-btn {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid rgba(0, 217, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(0, 217, 255, 0.08);
+    color: #00d9ff;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.contact-link-btn:hover {
+    color: #00ff8c;
+    border-color: rgba(0, 255, 140, 0.65);
+    background: rgba(0, 255, 140, 0.12);
+    box-shadow: 0 0 16px rgba(0, 255, 140, 0.22);
 }
 
 .placeholder-link {
