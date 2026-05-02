@@ -1,0 +1,98 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1200" height="630" fill="#050505" />
+    
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00FF8C" />
+            <stop offset="100%" stop-color="#00D9FF" />
+        </linearGradient>
+        
+        <radialGradient id="sunGlow" cx="90%" cy="10%" r="70%" fx="90%" fy="10%">
+            <stop offset="0%" stop-color="#FF8C00" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#FF4500" stop-opacity="0" />
+        </radialGradient>
+
+        <pattern id="circuit" width="200" height="200" patternUnits="userSpaceOnUse">
+            <path d="M 0 100 H 200 M 100 0 V 200 M 50 50 L 150 150 M 150 50 L 50 150" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.05" fill="none" />
+            <circle cx="100" cy="100" r="2" fill="#00FF8C" fill-opacity="0.1">
+                <animate attributeName="fill-opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" />
+            </circle>
+        </pattern>
+
+        <filter id="neonGlow">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Layers -->
+    <rect width="1200" height="630" fill="url(#circuit)" />
+    <rect width="1200" height="630" fill="url(#sunGlow)" />
+    
+    <!-- Animated Scanline -->
+    <rect width="1200" height="2" fill="white" fill-opacity="0.03">
+        <animate attributeName="y" from="-10" to="640" dur="8s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Abstract Cyber Frame -->
+    <g stroke-width="1.5" fill="none">
+        <path d="M 100 50 L 1100 50 L 1150 100 L 1150 530 L 1100 580 L 100 580 L 50 530 L 50 100 Z" stroke="url(#neonGrad)" stroke-opacity="0.2" />
+        <path d="M 50 150 V 100 L 100 50 H 150" stroke="#00FF8C" stroke-width="3" filter="url(#neonGlow)">
+            <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+        </path>
+        <path d="M 1050 580 H 1100 L 1150 530 V 480" stroke="#00D9FF" stroke-width="3" filter="url(#neonGlow)">
+            <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+        </path>
+    </g>
+
+    <!-- Main Content -->
+    <g transform="translate(600, 300)">
+        <!-- Rotating HUD Decor -->
+        <circle r="250" fill="none" stroke="#00FF8C" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="10 20">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite" />
+        </circle>
+        
+        <!-- The Slogan -->
+        <text y="-80" font-family="'Courier New', monospace" font-size="24" fill="#FFD700" text-anchor="middle" letter-spacing="4" font-weight="bold">
+            &gt; LEARNING TO HACK. HACKING TO LEARN.
+            <animate attributeName="opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite" />
+        </text>
+        
+        <!-- Large Identity -->
+        <text y="40" font-family="'Inter', -apple-system, sans-serif" font-size="110" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-4" filter="url(#neonGlow)">
+            SHLOK SHAH
+            <animate attributeName="fill" values="#ffffff;#00FF8C;#ffffff" dur="10s" repeatCount="indefinite" />
+        </text>
+        
+        <!-- Sub-tagline -->
+        <g transform="translate(0, 110)">
+            <rect x="-250" y="-15" width="500" height="30" fill="#00FF8C" fill-opacity="0.05" rx="5" />
+            <text font-family="'Courier New', monospace" font-size="18" fill="#00FF8C" text-anchor="middle" letter-spacing="2" font-weight="bold">
+                // SYSTEM_ARCHITECT &amp; SECURITY_EXPLORER //
+            </text>
+        </g>
+    </g>
+
+    <!-- Side Terminal Readouts -->
+    <g font-family="monospace" font-size="11" fill="white" opacity="0.3">
+        <text x="80" y="90" fill="#00FF8C">STATUS: ENCRYPTED</text>
+        <text x="80" y="110">NODE: VADODARA_BASE</text>
+        
+        <text x="1120" y="90" text-anchor="end" fill="#FFD700">LVL: ADVANCED</text>
+        <text x="1120" y="110" text-anchor="end">ID: SHLOK.ROOT</text>
+    </g>
+
+    <!-- Bottom Action Bar -->
+    <g transform="translate(600, 605)">
+        <text font-family="monospace" font-size="14" fill="#00FF8C" text-anchor="middle" letter-spacing="5" font-weight="bold">
+            // ACCESS GRANTED // READY TO SECURE //
+            <animate attributeName="letter-spacing" values="5;7;5" dur="3s" repeatCount="indefinite" />
+        </text>
+    </g>
+
+</svg>
