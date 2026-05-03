@@ -164,6 +164,9 @@ function openDossier(card) {
     body.innerHTML = html;
     pathEl.textContent = path;
 
+    // Reset scroll position to top for the new modal
+    body.scrollTop = 0;
+
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
