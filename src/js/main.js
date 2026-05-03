@@ -120,3 +120,79 @@ window.addEventListener('scroll', () => {
 
 // Terminal Button Scroll Script
 
+// ============================================
+// PROJECT DOSSIER MODAL
+// ============================================
+
+function openDossier(card) {
+    const overlay = document.getElementById('dossierOverlay');
+    const body = document.getElementById('dossierBody');
+    const pathEl = document.getElementById('dossierPath');
+
+    const detail = card.querySelector('.pcard-detail');
+    if (!detail) return;
+
+    const fullname = detail.querySelector('.pcard-detail-fullname')?.textContent || '';
+    const path = detail.querySelector('.pcard-detail-path')?.textContent || '~/projects/';
+    const desc = detail.querySelector('.pcard-detail-desc')?.innerHTML || '';
+    const pointsEl = detail.querySelector('.pcard-detail-points');
+    const linksEl = detail.querySelector('.pcard-detail-links');
+    const icon = card.querySelector('.pcard-icon')?.textContent || '';
+    const tagsEl = card.querySelector('.pcard-tags');
+
+    // Build modal content
+    let html = '<div class="pdossier-title-row">';
+    html += '<span class="pdossier-icon">' + icon + '</span>';
+    html += '<h3 class="pdossier-name">' + fullname + '</h3>';
+    html += '</div>';
+
+    if (tagsEl) {
+        html += '<div class="pdossier-tags">' + tagsEl.innerHTML + '</div>';
+    }
+
+    html += '<div class="pdossier-divider"></div>';
+    html += '<div class="pdossier-desc">' + desc + '</div>';
+
+    if (pointsEl && pointsEl.children.length > 0) {
+        html += '<ul class="pdossier-points">' + pointsEl.innerHTML + '</ul>';
+    }
+
+    if (linksEl) {
+        html += '<div class="pdossier-links">' + linksEl.innerHTML + '</div>';
+    }
+
+    body.innerHTML = html;
+    pathEl.textContent = path;
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Focus the close button
+    setTimeout(() => {
+        document.getElementById('dossierClose')?.focus();
+    }, 100);
+}
+
+function closeDossier() {
+    const overlay = document.getElementById('dossierOverlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close button
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('dossierClose');
+    if (closeBtn) closeBtn.addEventListener('click', closeDossier);
+
+    const overlay = document.getElementById('dossierOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeDossier();
+        });
+    }
+});
+
+// Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDossier();
+});

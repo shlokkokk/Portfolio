@@ -667,11 +667,18 @@ h2::after {
 }
 
 .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     color: #00FF8C;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
     transition: all 0.3s;
+}
+
+.cert-link svg {
+    transform: translateY(1px);
 }
 
 .cert-link:hover {
