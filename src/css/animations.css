@@ -1,20 +1,77 @@
+/* Keyframes */
+
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gradient shimmer for h1 */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Subtle pulse glow */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 140, 0.3), 0 0 30px rgba(0, 255, 140, 0.1); }
+    50% { box-shadow: 0 0 25px rgba(0, 255, 140, 0.5), 0 0 50px rgba(0, 255, 140, 0.2); }
+}
+
+/* Timeline dot breathing */
+@keyframes dotBreathe {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 140, 0.4); transform: translateX(-50%) scale(1); }
+    50% { box-shadow: 0 0 25px rgba(0, 255, 140, 0.7); transform: translateX(-50%) scale(1.15); }
+}
+
+/* Skill bar shimmer sweep */
+@keyframes shimmerSweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
 }
 
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
 }
 
 .typing {
@@ -29,4 +86,89 @@
     50% { opacity: 0.7; }
 }
 
+/* Boot screen progress */
+@keyframes progress {
+    to { width: 100%; }
+}
 
+@keyframes bootLine {
+    to { opacity: 1; }
+}
+
+/* Glitch effect */
+@keyframes glitch {
+    0%, 90%, 100% { transform: translate(0); text-shadow: 0 0 10px rgba(0, 255, 140, 0.5); }
+    92% { transform: translate(-2px, 2px); text-shadow: 2px 0 5px rgba(255, 0, 0, 0.5); }
+    94% { transform: translate(2px, -2px); text-shadow: -2px 0 5px rgba(0, 0, 255, 0.5); }
+    96% { transform: translate(0); }
+}
+
+/* Loading dots */
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Badge glow */
+@keyframes badge-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(0, 217, 255, 0.4), 0 0 20px rgba(0, 217, 255, 0.1); }
+    50% { box-shadow: 0 0 15px rgba(0, 217, 255, 0.6), 0 0 30px rgba(0, 217, 255, 0.2); }
+}
+
+/* WIP progress shimmer */
+@keyframes progress-shimmer {
+    0%, 100% { background-position: 0% center; box-shadow: 0 0 15px rgba(0, 217, 255, 0.8); }
+    50% { background-position: 100% center; box-shadow: 0 0 25px rgba(0, 255, 140, 0.6); }
+}
+
+/* Scroll-to-top fade */
+@keyframes scrollTopIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button shine sweep */
+@keyframes btnShine {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* Section title underline */
+@keyframes underline-expand {
+    from { width: 0; opacity: 0; }
+    to { width: 200px; opacity: 1; }
+}
+
+@keyframes title-fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Border glow animation for cards */
+@keyframes borderGlow {
+    0%, 100% { border-color: rgba(0, 255, 140, 0.15); }
+    50% { border-color: rgba(0, 255, 140, 0.35); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .particle-canvas {
+        display: none !important;
+    }
+
+    .cursor-dot, .cursor-ring {
+        display: none !important;
+    }
+}

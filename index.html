@@ -28,7 +28,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animations.css">
     <link rel="stylesheet" href="src/css/projects.css">
@@ -36,26 +36,35 @@
     
 </head>
 <body>
-    <!-- Terminal Boot Screen - signed: serozr -->
+    <!-- Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Boot Screen -->
     <div id="bootScreen" class="boot-screen">
-        <div class="boot-content">
-            <div class="boot-header">
-             
-            </div>
+        <div class="boot-terminal-wrapper">
             <div class="boot-terminal">
-                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing system...</span></p>
-                <p><span class="boot-prompt">[BOOT]</span> <span class="boot-text">Loading core modules</span> <span class="boot-dots"></span></p>
-                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Mounting file systems</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[LOAD]</span> <span class="boot-text">Starting network services</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[EXEC]</span> <span class="boot-text">Executing security.sh</span> <span class="boot-dots"></span></p>
-                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Initializing user interface</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[DONE]</span> <span class="boot-text">System ready</span> <span class="boot-status boot-ready">[READY]</span></p>
-                
+                <div class="boot-log">
+                    <p><span class="boot-prompt">[SYSTEM]</span> Kernel 6.5.0 initialized</p>
+                    <p><span class="boot-prompt">[BOOT]</span> Loading core modules <span class="boot-dots"></span></p>
+                    <p><span class="boot-prompt">[INIT]</span> Mounting file systems <span class="boot-status boot-ok">[OK]</span></p>
+                    <p><span class="boot-prompt">[LOAD]</span> Starting network services <span class="boot-status boot-ok">[OK]</span></p>
+                    <p><span class="boot-prompt">[EXEC]</span> Running security.sh <span class="boot-dots"></span></p>
+                    <p><span class="boot-prompt">[INIT]</span> Initializing interface <span class="boot-status boot-ok">[OK]</span></p>
+                    <p><span class="boot-prompt">[DONE]</span> System ready <span class="boot-status boot-ready">[ACCESS GRANTED]</span><span class="boot-cursor">_</span></p>
+                </div>
+                <div class="boot-progress-container">
+                    <div class="boot-progress">
+                        <div class="boot-progress-bar"></div>
+                    </div>
+                    <p class="boot-footer">Press any key or click to bypass</p>
+                </div>
             </div>
-            <div class="boot-progress">
-                <div class="boot-progress-bar"></div>
-            </div>
-            <p class="boot-footer">Press any key to continue... </p>
         </div>
     </div>
 
@@ -83,8 +92,8 @@
     <section class="hero">
         <div class="hero-content fade-in">
            <div class="tag">// IT Student | Exploring Cybersecurity & Ethical Hacking</div>
-<h1>&gt; Shlok Shah <small class="inline-sign">(shlok)</small></h1>
-<p class="subtitle">Curious about how systems work, break, and can be secured — built by Shlok</p>
+<h1 class="glitch">&gt; Shlok Shah <small class="inline-sign">(shlok)</small></h1>
+<p class="subtitle terminal-typing" data-text="Curious about how systems work, break, and can be secured.">Curious about how systems work, break, and can be secured.</p>
 
             
             <div class="terminal-window">
@@ -118,7 +127,7 @@
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
+        <h2 class="fade-in glitch">About Me</h2>
         <div class="about-container">
             <div class="about-content fade-in">
                 <div class="about-text">
@@ -180,7 +189,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h2 class="fade-in glitch">Skills</h2>
         <div class="skills-grid">
             <div class="skill-category fade-in">
                 <h3>Core Programming & Systems</h3>
@@ -278,8 +287,8 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
+    <section id="experience" class="experience">
+        <h2 class="fade-in glitch">Experience</h2>
         <div class="timeline">
     <div class="timeline-item fade-in">
         <div class="timeline-dot"></div>
@@ -307,7 +316,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
     <section id="education">
-        <h2>Education</h2>
+        <h2 class="fade-in glitch">Education</h2>
         <div class="timeline">
     <div class="timeline-item fade-in">
         <div class="timeline-dot"></div>
@@ -344,7 +353,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
 <section id="certifications">
-        <h2>Certifications & Awards</h2>
+        <h2 class="fade-in glitch">Certifications</h2>
         <div class="certifications-grid">
 
     <div class="cert-card fade-in" style="animation-delay: 0s;">
@@ -581,7 +590,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </p>
         <div class="cert-footer">
             <span class="cert-date">2025</span>
-            <a href="cert anchor" class="cert-link" target="_blank" rel="noopener">Verify <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
+            <a href="cert anchor" class="cert-link" target="_blank" rel="noopener">Verify <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></a>
         </div>
     </div>
 -->
@@ -592,7 +601,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
 </section>
 
     <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2 class="fade-in glitch">Projects</h2>
         <div class="project-showcase">
 
 <div class="pcard fade-in" tabindex="0" style="--accent: #00D9FF;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
@@ -1075,7 +1084,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
 
 
     <section id="in-progress">
-        <h2>Currently Working On 🔧</h2>
+        <h2 class="fade-in glitch">Currently Working On 🔧</h2>
         <div class="projects-grid">
             <div class="project-card in-progress-card fade-in" style="animation-delay: 0.1s;">
                 <div class="wip-badge">WIP</div>
@@ -1110,7 +1119,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
  <section id="blog">
-  <h2>Latest Blog Posts</h2>
+        <h2 class="fade-in glitch">Latest Blog Posts</h2>
   <div class="blog-grid">
 
     <div class="blog-card fade-in">
@@ -1167,7 +1176,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
 
 
      <section id="contact">
-        <h2>Get In Touch</h2>
+        <h2 class="fade-in glitch">Get In Touch</h2>
         <div class="contact-container">
             <div class="contact-grid">
                 <div class="contact-item fade-in">
@@ -1223,6 +1232,13 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
             </div>
         </div>
     </section>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <footer>
     <p class="footer-main">&copy; <span id="currentYear">2025</span> <span class="signature">Shlok</span>. Crafted in code, secured with curiosity.</p>
