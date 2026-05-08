@@ -262,7 +262,55 @@ const FALLBACK_GITHUB_CARDS = [
 
 document.addEventListener('DOMContentLoaded', () => {
     initGithubPulse();
+    initActiveSectionTracking();
 });
+
+function initActiveSectionTracking() {
+    const sections = ['about', 'skills', 'experience', 'education', 'certifications', 'projects', 'blog', 'contact'];
+    const sectionActiveStates = {};
+    
+    // Initialize all sections as inactive
+    sections.forEach(id => {
+        sectionActiveStates[id] = false;
+    });
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            sectionActiveStates[entry.target.id] = entry.isIntersecting && entry.intersectionRatio > 0.1;
+        });
+        
+        // Find the most visible section (first one that's intersecting)
+        let activeSection = null;
+        for (const id of sections) {
+            if (sectionActiveStates[id]) {
+                activeSection = id;
+                break;
+            }
+        }
+        
+        if (activeSection) {
+            // Remove active from all links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            // Add active to current section link
+            const navLink = document.querySelector(`.nav-links a[href="#${activeSection}"]`);
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+        }
+    }, {
+        threshold: [0, 0.1, 0.5],
+        rootMargin: '-90px 0px -60% 0px'
+    });
+    
+    sections.forEach(sectionId => {
+        const sectionEl = document.getElementById(sectionId);
+        if (sectionEl) {
+            sectionObserver.observe(sectionEl);
+        }
+    });
+}
 
 async function initGithubPulse() {
     const statusEl = document.getElementById('githubStatus');
