@@ -74,7 +74,7 @@
                 <a href="#education" onclick="closeMenu()">Education</a>
                 <a href="#certifications" onclick="closeMenu()">Certifications</a>
                 <a href="#projects" onclick="closeMenu()">Projects</a>
-                <a href="#blog" onclick="closeMenu()">Blog</a>
+                <a href="#blog" onclick="closeMenu()">Activity</a>
                 <a href="#contact" onclick="closeMenu()">Contact</a>
             </div>
         </div>
@@ -1109,59 +1109,160 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </div>
     </section>
 
- <section id="blog">
-  <h2>Latest Blog Posts</h2>
-  <div class="blog-grid">
+ <section id="blog" class="commit-feed-section">
+    <h2>Recent Activity</h2>
+    <p class="commit-feed-copy fade-in">Recent commits, fixes, and experiments as they land.</p>
 
-    <div class="blog-card fade-in">
-      <div class="blog-header">
-        <div class="blog-date">[ACCESS PENDING]</div>
-      </div>
-      <div class="blog-body">
-        <h3>Entry Locked — Access Restricted</h3>
-        <div class="blog-tags">
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
+    <div class="commit-feed-shell fade-in" style="animation-delay: 0.08s;">
+        <div class="commit-feed-shell-header">
+            <span class="commit-feed-label">Signal stream</span>
+            <span class="activity-status-pill is-loading" id="activityStatus">Syncing recent pushes...</span>
         </div>
-        <p>Decryption in progress... Please stand by for authorized release.</p>
-        <a href="#" class="project-link">Access Denied <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
-      </div>
+
+        <div class="commit-viewport" id="commitViewport" aria-live="polite">
+            <div class="commit-track" id="activityFeed">
+                <article class="commit-item">
+                    <div class="commit-icon">&gt;</div>
+                    <div class="commit-copy">
+                        <h3>Stream warming up</h3>
+                        <div class="commit-message">Pulling in the latest public commit activity for this slot.</div>
+                        <div class="commit-meta">
+                            <span class="commit-pill">live</span>
+                            <span class="commit-source">activity feed</span>
+                        </div>
+                    </div>
+                    <div class="commit-time">now</div>
+                </article>
+            </div>
+        </div>
     </div>
 
-    <div class="blog-card fade-in" style="animation-delay: 0.1s;">
-      <div class="blog-header">
-        <div class="blog-date">[SYSTEM LOG 02]</div>
-      </div>
-      <div class="blog-body">
-        <h3>Transmission Incomplete</h3>
-        <div class="blog-tags">
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
+    <div class="activity-legacy-board" hidden aria-hidden="true">
+
+    <div class="github-panel fade-in" style="animation-delay: 0.06s;">
+        <div class="github-profile-card">
+            <div class="github-avatar-shell">
+                <div class="github-avatar-fallback" id="githubAvatar" aria-hidden="true">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <span class="github-live-dot is-offline" id="githubLiveDot"></span>
+            </div>
+
+            <div class="github-profile-copy">
+                <div class="github-handle">@shlokkokk</div>
+                <h3 id="githubHeadline">Public builds, security labs, and shipping in progress.</h3>
+                <p id="githubSummary">Featured repositories live here by default, then upgrade themselves with real GitHub activity whenever the API is available.</p>
+            </div>
+
+            <a href="https://github.com/shlokkokk" target="_blank" rel="noopener" class="github-profile-link">
+                Open GitHub
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg>
+            </a>
         </div>
-        <p>Data corruption detected — attempting to recover fragments...</p>
-        <a href="#" class="project-link">Retry <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
-      </div>
+
+        <div class="github-stats-grid" id="githubStats">
+            <div class="github-stat-card github-stat-card-soft">
+                <span class="github-stat-value">12+</span>
+                <span class="github-stat-label">Public repos</span>
+            </div>
+            <div class="github-stat-card">
+                <span class="github-stat-value">Security</span>
+                <span class="github-stat-label">Main focus</span>
+            </div>
+            <div class="github-stat-card">
+                <span class="github-stat-value">Labs</span>
+                <span class="github-stat-label">Build style</span>
+            </div>
+            <div class="github-stat-card">
+                <span class="github-stat-value">Live</span>
+                <span class="github-stat-label">When online</span>
+            </div>
+        </div>
     </div>
 
-    <div class="blog-card fade-in" style="animation-delay: 0.2s;">
-      <div class="blog-header">
-        <div class="blog-date">[LOG 03: ENCRYPTED]</div>
-      </div>
-      <div class="blog-body">
-        <h3>File Secured — Unauthorized Access</h3>
-        <div class="blog-tags">
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
-          <span class="blog-tag">-</span>
+    <div class="github-feed-header fade-in" style="animation-delay: 0.1s;">
+        <div>
+            <div class="section-kicker">Live + curated</div>
+            <h3>Repository Radar</h3>
         </div>
-        <p>Encrypted content. Authorization key required to continue.</p>
-        <a href="#" class="project-link">Request Access <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
-      </div>
+        <div class="github-feed-note is-fallback" id="githubStatusHidden">Curated view loaded. Live GitHub data appears when available.</div>
     </div>
 
-  </div>
+    <div class="github-feed-grid fade-in" id="githubFeedGrid" style="animation-delay: 0.14s;">
+        <article class="github-card github-card-featured">
+            <div class="github-card-top">
+                <span class="github-card-type">Featured Build</span>
+                <span class="github-card-eyebrow">Fraud Defense</span>
+            </div>
+            <h4>KAVACH</h4>
+            <p>Multi-modal cyber fraud defense with voice, job, and SIM-based protection layers designed around real-world abuse patterns.</p>
+            <div class="github-card-meta">Python / FastAPI / Security</div>
+            <a href="https://github.com/shlokkokk/kavach" target="_blank" rel="noopener" class="github-card-link">Open repo</a>
+        </article>
+
+        <article class="github-card">
+            <div class="github-card-top">
+                <span class="github-card-type">Simulator</span>
+                <span class="github-card-eyebrow">AI Systems</span>
+            </div>
+            <h4>PRAXIS</h4>
+            <p>AI-native financial simulator built around multi-agent council debates, risk modeling, and decision pressure testing.</p>
+            <div class="github-card-meta">Agents / Strategy / Finance</div>
+            <a href="https://github.com/shlokkokk/PRAXIS" target="_blank" rel="noopener" class="github-card-link">Open repo</a>
+        </article>
+
+        <article class="github-card">
+            <div class="github-card-top">
+                <span class="github-card-type">Detection</span>
+                <span class="github-card-eyebrow">Blue Team</span>
+            </div>
+            <h4>ZeroRisk Sentinel</h4>
+            <p>Hybrid threat detection with YARA scanning, reputation checks, DNS and TLS analysis, and AI-assisted explanations.</p>
+            <div class="github-card-meta">YARA / Python / Threat Intel</div>
+            <a href="https://github.com/shlokkokk/zerorisk-sentinel" target="_blank" rel="noopener" class="github-card-link">Open repo</a>
+        </article>
+
+        <article class="github-card">
+            <div class="github-card-top">
+                <span class="github-card-type">Toolkit</span>
+                <span class="github-card-eyebrow">OffSec</span>
+            </div>
+            <h4>ShellStack</h4>
+            <p>A consolidated offensive security reference with 280+ tools and over 1,000 commands organized for fast execution.</p>
+            <div class="github-card-meta">Kali / Reference / Workflow</div>
+            <a href="https://github.com/shlokkokk/ShellStack" target="_blank" rel="noopener" class="github-card-link">Open repo</a>
+        </article>
+
+        <article class="github-card">
+            <div class="github-card-top">
+                <span class="github-card-type">Learning</span>
+                <span class="github-card-eyebrow">OSINT</span>
+            </div>
+            <h4>OSINT Academy</h4>
+            <p>Interactive OSINT learning with guided workflows, Google dork generation, and a cleaner investigative interface.</p>
+            <div class="github-card-meta">Web / OSINT / Training</div>
+            <a href="https://github.com/shlokkokk/osint-academy" target="_blank" rel="noopener" class="github-card-link">Open repo</a>
+        </article>
+    </div>
+
+    </div>
+
+    <div class="commit-feed-shell fade-in" style="animation-delay: 0.08s; display: none;" aria-hidden="true">
+        <div class="commit-feed-shell-header">
+            <span class="commit-feed-label">GitHub</span>
+            <span class="github-status-pill" id="githubStatusLegacy">Loading activity...</span>
+        </div>
+
+        <div class="commit-viewport" id="commitViewportLegacy" aria-live="polite">
+            <div class="commit-track" id="githubFeedLegacy">
+                <div class="github-empty-state">
+                    <div class="github-empty-icon">⌛</div>
+                    <h3>Loading activity</h3>
+                    <p>Run this through a live server or the deployed site if GitHub does not load locally.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
