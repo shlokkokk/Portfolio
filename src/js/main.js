@@ -44,6 +44,25 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
+// Auto-staggering for grids and timelines
+document.addEventListener('DOMContentLoaded', () => {
+    const staggerContainers = [
+        '.certifications-grid',
+        '.skills-grid',
+        '.timeline',
+        '.project-showcase'
+    ];
+
+    staggerContainers.forEach(selector => {
+        document.querySelectorAll(selector).forEach(container => {
+            const items = container.querySelectorAll('.fade-in');
+            items.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    });
+});
+
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
