@@ -156,7 +156,7 @@ function openDossier(card) {
     const desc = detail.querySelector('.pcard-detail-desc')?.innerHTML || '';
     const pointsEl = detail.querySelector('.pcard-detail-points');
     const linksEl = detail.querySelector('.pcard-detail-links');
-    const icon = card.querySelector('.pcard-icon')?.textContent || '';
+    const icon = card.querySelector('.pcard-icon')?.innerHTML || '';
     const tagsEl = card.querySelector('.pcard-tags');
 
     // Build modal content
