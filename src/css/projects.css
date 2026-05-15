@@ -114,6 +114,54 @@
     animation: badge-glow 2.5s ease-in-out infinite;
 }
 
+/* Status Badge */
+.pcard-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(0, 255, 140, 0.03);
+    border: 1px solid rgba(0, 255, 140, 0.15);
+    color: #00FF8C;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.pcard:hover .pcard-status {
+    background: rgba(0, 255, 140, 0.08);
+    border-color: rgba(0, 255, 140, 0.4);
+    box-shadow: 0 0 10px rgba(0, 255, 140, 0.1);
+}
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+    background: #00FF8C;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00FF8C;
+    animation: status-pulse 2s infinite;
+}
+
+.status-text::before {
+    content: attr(data-default);
+}
+
+.pcard:hover .status-text::before {
+    content: attr(data-hover);
+}
+
+@keyframes status-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.3); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
 .pcard-title {
     color: #fff;
     font-size: 1.1rem;
