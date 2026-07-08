@@ -691,6 +691,45 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         <h2>Featured Projects</h2>
         <div class="project-showcase">
 
+<div class="pcard fade-in" tabindex="0" style="--accent: #ff0055;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
+    <div class="pcard-accent"></div>
+    <div class="pcard-body">
+        <div class="pcard-top">
+            <span class="pcard-icon"><i class="fas fa-triangle-exclamation"></i></span>
+            <span class="pcard-badge">★ FEATURED</span>
+        </div>
+        <h3 class="pcard-title">Sentinel</h3>
+        <p class="pcard-tagline">AI-native incident response &amp; operational memory platform</p>
+        <div class="pcard-tags">
+            <span>Next.js</span><span>Express</span><span>Supabase</span><span>Groq</span><span>Mem0</span>
+        </div>
+    </div>
+    <div class="pcard-footer">
+        <a href="https://github.com/shlokkokk/Sentinel" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <a href="https://hack-baorda-web.vercel.app" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <span class="pcard-expand">Open Dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+    </div>
+    <div class="pcard-detail" hidden>
+        <div class="pcard-detail-fullname">Sentinel — AI-Native Incident Response Platform</div>
+        <div class="pcard-detail-path">~/projects/Sentinel</div>
+        <div class="pcard-detail-desc">An advanced, AI-driven incident management and operational memory platform. Built as a monorepo containing a web dashboard, API backend, client daemon, and a chaos sandbox simulating outages. Integrates a dual-layer AI memory system and LLM models to query, triage, and resolve recurring production issues.</div>
+        <ul class="pcard-detail-points">
+            <li><span class="project-key">Deduplication &amp; Triage</span> — Groups and merges identical system warning logs into a single ticket using signature-based deduplication algorithms.</li>
+            <li><span class="project-key">Hybrid AI Memory</span> — Connects to local context indexing mapped to user profiles alongside vector similarity databases to locate historical resolutions.</li>
+            <li><span class="project-key">Incident Lifecycle</span> — Enforces strict state transitions for acknowledgements and resolutions, backed by a background daemon checking breach times.</li>
+            <li><span class="project-key">System Ingestion Daemon</span> — Continuously queries system load averages, active listener ports, and local container health states.</li>
+            <li><span class="project-key">Agent Offline Pipeline</span> — Integrates retry and circuit-breaker queues to save alerts locally when network connectivity is lost.</li>
+            <li><span class="project-key">Chaos Simulation Engine</span> — Simulates mock operational faults (database connection pool exhaustion, webhook validation breaks, slow search query APIs, and system-down states).</li>
+            <li><span class="project-key">Slack Notification Channel</span> — Pushes alert summaries containing incident status, severity tier, assignee info, and target details to designated communication channels.</li>
+            <li><span class="project-key">Monorepo Infrastructure</span> — Managed as a unified monorepo separating concern layers across web client, API server, chaos demo, and monitoring agent.</li>
+        </ul>
+        <div class="pcard-detail-links">
+            <a href="https://github.com/shlokkokk/Sentinel" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+            <a href="https://hack-baorda-web.vercel.app" target="_blank" rel="noopener">Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        </div>
+    </div>
+</div>
+
 <div class="pcard fade-in" tabindex="0" style="--accent: #00D9FF;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
     <div class="pcard-accent"></div>
     <div class="pcard-body">
@@ -837,6 +876,43 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </div>
 </div>
 
+<div class="pcard fade-in" tabindex="0" style="--accent: #8b5cf6;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
+    <div class="pcard-accent"></div>
+    <div class="pcard-body">
+        <div class="pcard-top">
+            <span class="pcard-icon"><i class="fas fa-user-doctor"></i></span>
+            <span class="pcard-badge">★ FEATURED</span>
+        </div>
+        <h3 class="pcard-title">Cura AI</h3>
+        <p class="pcard-tagline">Full-stack virtual patient simulator for clinical practice</p>
+        <div class="pcard-tags">
+            <span>Node.js</span><span>Express</span><span>React</span><span>Gemini</span><span>Supabase</span>
+        </div>
+    </div>
+    <div class="pcard-footer">
+        <a href="https://github.com/shlokkokk/cura-ai" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <span class="pcard-expand">Open Dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+    </div>
+    <div class="pcard-detail" hidden>
+        <div class="pcard-detail-fullname">Cura AI — Virtual Patient Simulation Engine</div>
+        <div class="pcard-detail-path">~/projects/cura-ai</div>
+        <div class="pcard-detail-desc">A clinical training simulator that enables medical students to practice patient interaction and diagnostics. Powered by a React UI and a native Node.js HTTP server. Dynamically calls model providers to generate patient dialogue and structured evaluation records.</div>
+        <ul class="pcard-detail-points">
+            <li><span class="project-key">Dialogue Simulation Engine</span> — Generates interactive patient dialogues utilizing customizable prompt templates that restrict technical vocabulary and enforce bedside warm greetings.</li>
+            <li><span class="project-key">Evaluation System</span> — Scores student history-taking logs dynamically against expected case keywords, calculation thresholds, and diagnosis checks.</li>
+            <li><span class="project-key">Multi-Provider Wrapper</span> — Supports API wrappers mapping endpoints for various external models and local neural networks.</li>
+            <li><span class="project-key">Frictionless Native Routing</span> — Structured using a custom, frameworkless HTTP router, validating API payload formats and session variables natively.</li>
+            <li><span class="project-key">Supabase Persistence Adapter</span> — Syncs student case scorecards, logs, and user profile data to database tables, falling back to an in-memory cache timer configuration.</li>
+            <li><span class="project-key">Secure Access Controls</span> — Protects profiles using built-in cryptographically salted password hashing routines.</li>
+            <li><span class="project-key">Interactive Simulator UI</span> — Features an interactive laboratory workspace showing chat metrics, diagnostic inputs, and detailed grading report cards.</li>
+            <li><span class="project-key">Dynamic Case Library</span> — Indexing cases mapped to medical specialty, complexity levels, and urgencies, backed by an AI-powered case generator configuration.</li>
+        </ul>
+        <div class="pcard-detail-links">
+            <a href="https://github.com/shlokkokk/cura-ai" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        </div>
+    </div>
+</div>
+
 <div class="pcard fade-in" tabindex="0" style="--accent: #a855f7;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
     <div class="pcard-accent"></div>
     <div class="pcard-body">
@@ -901,6 +977,78 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         <div class="pcard-detail-links">
             <a href="https://github.com/shlokkokk/ShellStack" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
             <a href="https://shell-stack.vercel.app/" target="_blank" rel="noopener">Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        </div>
+    </div>
+</div>
+
+<div class="pcard fade-in" tabindex="0" style="--accent: #10B981;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
+    <div class="pcard-accent"></div>
+    <div class="pcard-body">
+        <div class="pcard-top">
+            <span class="pcard-icon"><i class="fas fa-heart-pulse"></i></span>
+        </div>
+        <h3 class="pcard-title">VitaLink</h3>
+        <p class="pcard-tagline">Empathic AI health companion web app targeting UN SDG 3</p>
+        <div class="pcard-tags">
+            <span>React 19</span><span>Vite</span><span>OpenAI API</span><span>i18n</span>
+        </div>
+    </div>
+    <div class="pcard-footer">
+        <a href="https://github.com/shlokkokk/VitaLink" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <span class="pcard-expand">Open Dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+    </div>
+    <div class="pcard-detail" hidden>
+        <div class="pcard-detail-fullname">VitaLink — AI Health Companion &amp; Treatment Manager</div>
+        <div class="pcard-detail-path">~/projects/VitaLink</div>
+        <div class="pcard-detail-desc">An empathetic chronic care tracking application built on React and Vite. Designed to manage treatment schedules, symptom diaries, and mental wellness. Interfaces with customized completions endpoints using locally stored keys, and provides a multi-lingual simulated responder when offline.</div>
+        <ul class="pcard-detail-points">
+            <li><span class="project-key">Empathetic LLM Bridge</span> — Links medication logs, daily health parameters, and streaks to custom completions APIs using API keys saved in browser storage dynamically.</li>
+            <li><span class="project-key">Multi-lingual Offline Fallbacks</span> — Evaluates user queries via localized keyword mapping, returning pre-translated medical advice in English, Hindi, and Spanish.</li>
+            <li><span class="project-key">Adherence Tracker Dashboard</span> — Displays daily medication checklists, symptom logging diaries, mood maps, and active consistency streaks.</li>
+            <li><span class="project-key">Mental Wellness Hub</span> — Provides mood validation logs alongside a custom, interactive guided breathing visualizer to regulate heart rate.</li>
+            <li><span class="project-key">Caregiver Notification Log</span> — Triggers safety logging and warning alert flags if dangerous symptoms or missed check-in windows are entered.</li>
+            <li><span class="project-key">Obsidian Glassmorphic Layout</span> — Styled using a premium, high-density dark UI system with interactive status badges and responsive CSS flex grid elements.</li>
+            <li><span class="project-key">Adherence Analytics Reports</span> — Compiles weekly summaries analyzing overall dosage stats, symptom indicators, and wellness progressions.</li>
+            <li><span class="project-key">Vite-Powered Frontend</span> — Built on React and Vite with structured context state managers providing state coordination across the application layers.</li>
+        </ul>
+        <div class="pcard-detail-links">
+            <a href="https://github.com/shlokkokk/VitaLink" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        </div>
+    </div>
+</div>
+
+<div class="pcard fade-in" tabindex="0" style="--accent: #00D9FF;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
+    <div class="pcard-accent"></div>
+    <div class="pcard-body">
+        <div class="pcard-top">
+            <span class="pcard-icon"><i class="fas fa-binoculars"></i></span>
+        </div>
+        <h3 class="pcard-title">Periscope</h3>
+        <p class="pcard-tagline">Local port telemetry and AI-driven threat diagnostics</p>
+        <div class="pcard-tags">
+            <span>Python</span><span>CustomTkinter</span><span>Groq</span><span>Security</span>
+        </div>
+    </div>
+    <div class="pcard-footer">
+        <a href="https://github.com/shlokkokk/Periscope" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <span class="pcard-expand">Open Dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+    </div>
+    <div class="pcard-detail" hidden>
+        <div class="pcard-detail-fullname">Periscope — Local Port Telemetry &amp; AI Security Diagnostics</div>
+        <div class="pcard-detail-path">~/projects/Periscope</div>
+        <div class="pcard-detail-desc">A lightweight Windows socket monitoring and intelligence utility. Built with Python and CustomTkinter, it captures active connections, maps owner processes, runs digital signature verification queries, and streams real-time threat intelligence.</div>
+        <ul class="pcard-detail-points">
+            <li><span class="project-key">Socket Telemetry Engine</span> — Continuous socket stream collection extracting process names, connection paths, command lines, and process identifiers.</li>
+            <li><span class="project-key">Asynchronous Signature Checker</span> — Spawns separate worker processes running system digital signature queries to inspect file certificates without locking the interface thread.</li>
+            <li><span class="project-key">AI Threat Advisor</span> — Streams network connection telemetry into chat completion pipelines to generate streaming markdown risk assessments.</li>
+            <li><span class="project-key">Local Security Heuristics</span> — Flags database interfaces bound to public endpoints, executable signatures running from temporary folders, and unexpected binary sockets.</li>
+            <li><span class="project-key">Visual Status Indicators</span> — Custom UI displaying real-time process list logs, connection status, IP geolocations, and dynamic color-coded socket state indicators.</li>
+            <li><span class="project-key">Intelligence Explanation Cache</span> — Caches generated security audits inside an in-memory map dictionary to speed up repetitive socket checks.</li>
+            <li><span class="project-key">Executable Build Script</span> — Includes automated packaging workflows to build self-contained Windows executables.</li>
+            <li><span class="project-key">Process Metadata Registry</span> — Stores process info and creation times, matching owners to system profiles, falling back to System/Kernel access levels when blocked.</li>
+        </ul>
+        <div class="pcard-detail-links">
+            <a href="https://github.com/shlokkokk/Periscope" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
         </div>
     </div>
 </div>
@@ -1209,6 +1357,42 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </ul>
         <div class="pcard-detail-links">
             <a href="https://github.com/shlokkokk/keylogger" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        </div>
+    </div>
+</div>
+
+<div class="pcard fade-in" tabindex="0" style="--accent: #64748B;" onclick="openDossier(this)" onkeydown="if(event.key==='Enter')openDossier(this)">
+    <div class="pcard-accent"></div>
+    <div class="pcard-body">
+        <div class="pcard-top">
+            <span class="pcard-icon"><i class="fas fa-envelope-open-text"></i></span>
+        </div>
+        <h3 class="pcard-title">MailGuard</h3>
+        <p class="pcard-tagline">Email security header analyzer for phishing forensics</p>
+        <div class="pcard-tags">
+            <span>Python</span><span>Security</span><span>SPF/DKIM/DMARC</span>
+        </div>
+    </div>
+    <div class="pcard-footer">
+        <a href="https://github.com/shlokkokk/mailguard-email-security" target="_blank" rel="noopener" class="pcard-link" onclick="event.stopPropagation()">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
+        <span class="pcard-expand">Open Dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+    </div>
+    <div class="pcard-detail" hidden>
+        <div class="pcard-detail-fullname">MailGuard — Email Forensic &amp; Authentication Scanner</div>
+        <div class="pcard-detail-path">~/projects/mailguard-email-security</div>
+        <div class="pcard-detail-desc">A rule-based email threat detection utility designed to identify spam, phishing attempts, and fraudulent relays. Built with a Flask API backend and vanilla HTML/JS interface, it parses headers deterministically and scores threats against customizable sensitivity profiles.</div>
+        <ul class="pcard-detail-points">
+            <li><span class="project-key">Rule-Based Analyzer</span> — Deterministic threat scanner utilizing local keyword arrays to flag phishing urgency, scam triggers, and spam patterns.</li>
+            <li><span class="project-key">Security Header Audit</span> — Extracts hop timelines, client IPs, and routing paths from raw mail headers, verifying domain and routing states.</li>
+            <li><span class="project-key">File Attachment Scanner</span> — Inspects incoming email attachment list extensions, flagging dangerous binary executables, scripts, and archives.</li>
+            <li><span class="project-key">TLD &amp; URL Shortener Audits</span> — Validates email body links against blacklisted top-level domains and redirects from URL shortening services.</li>
+            <li><span class="project-key">Sensitivity Control Settings</span> — Manages thresholds, whitelist, and blacklist domains, saving parameters directly to local config settings.</li>
+            <li><span class="project-key">Threat Telemetry Dashboard</span> — Returns mock telemetry stats mapping false positive rates, top attack categories, and global geographic relay origins.</li>
+            <li><span class="project-key">Flask Backend API</span> — Python-based backend service exposing CORS-enabled endpoint routes serving both analysis metrics and configuration data.</li>
+            <li><span class="project-key">Responsive Security Console</span> — Simple web dashboard displaying header detail summaries, classification tables, and threat logs.</li>
+        </ul>
+        <div class="pcard-detail-links">
+            <a href="https://github.com/shlokkokk/mailguard-email-security" target="_blank" rel="noopener">View Code <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></a>
         </div>
     </div>
 </div>
