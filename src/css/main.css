@@ -1639,6 +1639,8 @@ h2::after {
     opacity: 0.8;
     font-weight: 500;
     transition: all 0.3s;
+    min-height: 2.4rem;
+    line-height: 1.2rem;
 }
 
 .in-progress-card:hover .progress-text {

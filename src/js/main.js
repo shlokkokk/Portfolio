@@ -932,9 +932,7 @@ function formatActivityError(error) {
     return 'Live feed unavailable - showing preview stream';
 }
 
-// ============================================
-// CREDENTIALS IDE / CODE EDITOR CONTROLLER
-// ============================================
+
 const CREDENTIAL_DB = {
     "award-cyberthon": {
         name: "Cyberthon_First_Prize.jpg",
