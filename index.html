@@ -354,354 +354,226 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
 
 <section id="certifications">
         <h2>Certifications &amp; Awards</h2>
-        <div class="certifications-grid">
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon"><i class="fas fa-university"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">Intro to Cybersecurity</div>
-                <div class="cert-issuer">Commonwealth Bank · Forage</div>
+        
+        <div class="ide-container fade-in">
+            <!-- IDE Header -->
+            <div class="ide-header">
+                <div class="ide-dots">
+                    <span class="ide-dot ide-dot-red"></span>
+                    <span class="ide-dot ide-dot-yellow"></span>
+                    <span class="ide-dot ide-dot-green"></span>
+                </div>
+                <div class="ide-title-bar">shlok@sec-node: ~/portfolio/credentials</div>
+                <div class="ide-window-actions">
+                    <i class="fas fa-minus"></i>
+                    <i class="far fa-copy"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="ide-body">
+                <!-- IDE Sidebar -->
+                <div class="ide-sidebar">
+                    <div class="sidebar-title">EXPLORER</div>
+                    
+                    <div class="file-tree">
+                        <!-- Credentials Root -->
+                        <div class="tree-item tree-root" onclick="toggleIdeFolder('all')">
+                            <i class="fas fa-chevron-down tree-arrow" id="arrow-all"></i>
+                            <i class="fas fa-folder-open tree-folder-icon"></i>
+                            <span>CREDENTIALS</span>
+                        </div>
+                        
+                        <div class="tree-folder-group" id="folder-all">
+                            <!-- Awards Folder -->
+                            <div class="tree-item tree-folder" onclick="toggleIdeFolder('awards')">
+                                <i class="fas fa-chevron-down tree-arrow" id="arrow-awards"></i>
+                                <i class="fas fa-folder-open tree-folder-icon awards-folder-color"></i>
+                                <span>awards</span>
+                            </div>
+                            
+                            <div class="tree-folder-contents" id="folder-contents-awards">
+                                <div class="tree-item tree-file active" data-id="award-cyberthon" onclick="selectIdeFile(this)">
+                                    <i class="far fa-image file-icon-jpg"></i>
+                                    <span>Cyberthon_First_Prize.jpg</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-offsec" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>OffSec_Build_With_AI.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-nextgen" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>NextGenHacks_Finalist.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-elevate" onclick="selectIdeFile(this)">
+                                    <i class="far fa-image file-icon-jpg"></i>
+                                    <span>Elevate_Participant.jpg</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-cyberchallenge" onclick="selectIdeFile(this)">
+                                    <i class="far fa-image file-icon-jpg"></i>
+                                    <span>Cybersecurity_Winner.jpg</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-webgathon" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Webgathon_Runner_Up.pdf</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Certifications Folder -->
+                            <div class="tree-item tree-folder" onclick="toggleIdeFolder('certs')">
+                                <i class="fas fa-chevron-down tree-arrow" id="arrow-certs"></i>
+                                <i class="fas fa-folder-open tree-folder-icon certs-folder-color"></i>
+                                <span>certifications</span>
+                            </div>
+                            
+                            <div class="tree-folder-contents" id="folder-contents-certs">
+                                <div class="tree-item tree-file" data-id="cert-cba" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>CBA_Cybersecurity.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-genai" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Microsoft_Generative_AI.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-csharp" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Educative_CSharp_Guide.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-react" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Educative_React19_Guide.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-android" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Educative_Android_Java.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-crtom" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>RedTeam_CRTOM.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-capie" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>CAPIE_API_Hacking.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-advent" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Advent_Of_Cyber_2025.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-kali" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Kali_Linux_Masterclass.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-androidhack" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Android_Hacking.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-cisco" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Cisco_Ethical_Hacker.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-webdev" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Web_Dev_Full.pdf</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="cert-git" onclick="selectIdeFile(this)">
+                                    <i class="far fa-file-pdf file-icon-pdf"></i>
+                                    <span>Git_GitHub_Essentials.pdf</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IDE Editor Area -->
+                <div class="ide-editor">
+                    <!-- Editor Tabs Row -->
+                    <div class="editor-tabs" id="ideTabRow">
+                        <div class="editor-tab active" id="ideActiveTab">
+                            <i class="far fa-image file-icon-jpg" id="tabIcon"></i>
+                            <span id="tabTitle">Cyberthon_First_Prize.jpg</span>
+                            <span class="tab-close-btn" onclick="closeIdeFile(event)">&times;</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Editor Body / Viewer Area -->
+                    <div class="editor-body-area">
+                        <!-- Left Panel: Graphic Document/Image Viewer Panel -->
+                        <div class="editor-render-pane">
+                            <div class="render-viewport" id="renderViewport">
+                                <!-- Styled certificate cards are rendered here dynamically by JS -->
+                            </div>
+                        </div>
+                        
+                        <!-- Right Panel: Exif File Details Panel -->
+                        <div class="editor-meta-pane">
+                            <!-- 1. Major Description Section (Top Priority) -->
+                            <div class="meta-desc-section">
+                                <div class="meta-badge-row" id="metaBadgeRow">
+                                    <span class="meta-badge-item date-badge" id="metaDateBadge">Feb 2026</span>
+                                    <span class="meta-badge-item status-badge">VERIFIED</span>
+                                </div>
+                                <h3 class="meta-cert-title" id="metaCertTitle">First Prize — Cyberthon 2026</h3>
+                                <div class="meta-cert-issuer" id="metaCertIssuer">MSU Baroda</div>
+                                
+                                <p class="meta-cert-desc" id="metaCertDesc">
+                                    Awarded First Prize at Cyberthon 2026, a timed cybersecurity hackathon hosted by MSU Baroda, for developing ZeroRisk Sentinel — evaluated on architecture, accuracy, innovation, and real-world security relevance.
+                                </p>
+                                
+                                <div class="meta-actions">
+                                    <a href="https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing" id="verifyBtn" class="verify-action-btn" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i> VERIFY CREDENTIAL
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- 2. Divider -->
+                            <div class="meta-pane-divider"></div>
+                            
+                            <!-- 3. Minor Properties Section (Bottom Priority) -->
+                            <div class="meta-properties-section">
+                                <div class="meta-section-title">// SYSTEM FILE PROPERTIES</div>
+                                <div class="meta-properties-list">
+                                    <div class="meta-prop-row">
+                                        <span class="prop-key">FILE_NAME</span>
+                                        <span class="prop-val" id="propFileName">Cyberthon_First_Prize.jpg</span>
+                                    </div>
+                                    <div class="meta-prop-row">
+                                        <span class="prop-key">FILE_SIZE</span>
+                                        <span class="prop-val" id="propFileSize">1.24 MB</span>
+                                    </div>
+                                    <div class="meta-prop-row">
+                                        <span class="prop-key">FILE_TYPE</span>
+                                        <span class="prop-val" id="propFileType">image/jpeg</span>
+                                    </div>
+                                    <div class="meta-prop-row">
+                                        <span class="prop-key">INTEGRITY_CHECK</span>
+                                        <span class="prop-val prop-status-green" id="propIntegrity">PASS [VERIFIED]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Editor Footer: IDE Terminal -->
+                    <div class="ide-terminal">
+                        <div class="ide-terminal-header">
+                            <div class="term-tab">Problems</div>
+                            <div class="term-tab">Output</div>
+                            <div class="term-tab">Debug Console</div>
+                            <div class="term-tab active">Terminal</div>
+                        </div>
+                        <div class="terminal-output" id="ideTerminalConsole">
+                            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ cat ./awards/Cyberthon_First_Prize.jpg</p>
+                            <p class="term-log term-log-cyan">[~] Mounting digital credential volume...</p>
+                            <p class="term-log term-log-green">[+] Integrity check: 256-bit signature verified.</p>
+                            <p class="term-log">[i] Extraction: Title="First Prize — Cyberthon 2026" | Issuer="MSU Baroda" | Date="Feb 2026"</p>
+                            <p class="term-log term-log-green">[+] Document ready. Opening in graphic visualizer pane.</p>
+                            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <h3>Commonwealth Bank — Introduction to Cybersecurity</h3>
-        <p class="cert-description">
-            Completed an industry job simulation as a cybersecurity generalist on Commonwealth Bank's Cybersecurity team, specialising in fraud detection and prevention. Built data visualisation dashboards in <strong>Splunk</strong>, responded to live incident scenarios, designed security-awareness infographics aligned with Australian Cyber Security Centre guidelines, and conducted penetration testing on web applications — identifying vulnerabilities and delivering remediation reports.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">May 2026</span>
-            <a href="https://www.theforage.com/completion-certificates/2sNmYuurxgpFYawco/x52Jy9s26xNbZkTQ7_2sNmYuurxgpFYawco_6a05810953d773130e6a0c37_1779630194457_completion_certificate.pdf" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon"><i class="fas fa-robot"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">OffSec MCP Challenge</div>
-                <div class="cert-issuer">OffSec</div>
-            </div>
-        </div>
-        <h3>Winner — OffSec BUILD WITH AI Challenge</h3>
-        <p class="cert-description">
-            Secured a winning spot in the <strong>"BUILD WITH AI: MCPs FOR THE COMMUNITY"</strong> challenge by OffSec. Recognized for contributing innovative AI-driven tools to the offensive security community. Awarded 3 months of Proving Grounds Practice.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Apr 2026</span>
-            <span class="cert-badge-text">OffSec Community</span>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon"><i class="fas fa-medal"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">Cyberthon 2026</div>
-                <div class="cert-issuer">MSU Baroda</div>
-            </div>
-        </div>
-        <h3>First Prize — Cyberthon 2026</h3>
-        <p class="cert-description">
-            Awarded First Prize at Cyberthon 2026, a timed cybersecurity hackathon hosted by <a href="https://www.msubaroda.ac.in/" target="_blank" rel="noopener" style="color:#FFD700; text-decoration:underline; font-weight:700;">MSU Baroda</a>, for developing ZeroRisk Sentinel — evaluated on architecture, accuracy, innovation, and real-world security relevance.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Feb 2026</span>
-            <a href="https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #FFD700; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.65));"><i class="fas fa-trophy"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">NextGenHacks 2026</div>
-                <div class="cert-issuer">Devpost</div>
-            </div>
-        </div>
-        <h3>Top 9 Finalists — NextGenHacks</h3>
-        <p class="cert-description">
-            Honored as one of the <strong>Top 9 Finalists</strong> out of 1,345 global participants in the NextGenHacks Hackathon. Recognized by an expert industry panel of judges (representing Microsoft, T-Mobile, and others) for outstanding engineering quality, innovation, robust technical execution, and intuitive user experience.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Jun 2026</span>
-            <a href="https://drive.google.com/file/d/1PscMp-yzslYdtipVVZ_7v6vHmvb5tDFp/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #00D9FF; filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.65));"><i class="fas fa-bolt"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">ELEVATE 2026</div>
-                <div class="cert-issuer">Ideakode</div>
-            </div>
-        </div>
-        <h3>Participant — ELEVATE 2026 Hackathon</h3>
-        <p class="cert-description">
-            Participated in <strong>ELEVATE 2026</strong>, an online hackathon organized by Ideakode. Represented Maharaja Sayajirao University of Baroda (MSU), Vadodara, as part of <strong>Team Meridian</strong>, collaborating to conceptualize, design, and prototype a software solution.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Jun 2026</span>
-            <a href="https://drive.google.com/file/d/1ghsj7Os-o2CZ03AgcESeBtYg8Ve0FVVh/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #ff6600; filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.65));"><i class="fas fa-shield-halved"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">Cybersecurity Challenge 2026</div>
-                <div class="cert-issuer">SS Hacker Team</div>
-            </div>
-        </div>
-        <h3>1st Place Winner — Cybersecurity Challenge 2026</h3>
-        <p class="cert-description">
-            Crowned Champion (1st Place Winner) in the Cybersecurity Challenge 2026. Evaluated on offensive security exercises, system exploitation, and penetration testing methodologies.
-            <br><strong style="color: #ff6600; display: inline-block; margin-top: 5px;"><i class="fas fa-gift"></i> Prize: 1-Year Burp Suite Professional License</strong>
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">2026</span>
-            <a href="https://drive.google.com/file/d/10TEIFVVk_gCfe8T1L3jc-fXulQvqqjRS/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card award-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon"><i class="fas fa-award"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">Webgathon 2025</div>
-                <div class="cert-issuer">KISMATI</div>
-            </div>
-        </div>
-        <h3>Second Runner-Up — Webgathon 2025</h3>
-        <p class="cert-description">
-            Secured Second Runner-Up at Webgathon 2025, an international online hackathon by KISMATI. Built and deployed <strong>CyberGuard</strong> — evaluated on innovation, technical implementation, UX, real-world impact, and presentation quality.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Dec 2025</span>
-            <a href="https://drive.google.com/file/d/1jmFwJlLT7r44AXrU3GGIhk__sSBG5cTb/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #00D9FF; filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.65));"><i class="fas fa-brain"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">What Is Generative AI?</div>
-                <div class="cert-issuer">LinkedIn Learning · Microsoft</div>
-            </div>
-        </div>
-        <h3>What Is Generative AI?</h3>
-        <p class="cert-description">
-            Completed the 1-hour course by Pinar Seyhan Demirdag (AI Director at Cuebric). Covered AI taxonomy (differentiating subcategories), prompt-based content generation, and natural language model mechanics. Explored advanced concepts including <strong>Variational Autoencoders (VAEs)</strong> for anomaly detection and strategic AI implementation. Part of Microsoft's professional path, earning 2.00 Continuing Professional Education (CPE) credits in Information Technology.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Jun 2026</span>
-            <a href="https://www.linkedin.com/learning/certificates/098319810ab84feb95f68475c3b771df7f39c66ffe5c2218845f902deb1be609?trk=share_certificate" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #a855f7; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.65)); font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.6rem; letter-spacing: -1px; line-height: 1;">C#</div>
-            <div class="cert-meta">
-                <div class="cert-title">C# for Programmers</div>
-                <div class="cert-issuer">Educative</div>
-            </div>
-        </div>
-        <h3>C# for Programmers: A Practical Guide</h3>
-        <p class="cert-description">
-            Mastered core C# architecture and Object-Oriented Programming (OOP) paradigms. Built deep competencies in data structures, recursion, robust exception handling, custom methods, classes, and delegates to engineer highly structured and type-safe applications.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Jun 2026</span>
-            <a href="https://www.educative.io/verify-certificate/ERJYPH08PU" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon" style="color: #61dafb; filter: drop-shadow(0 0 8px rgba(97, 218, 251, 0.65));"><i class="fab fa-react"></i></div>
-            <div class="cert-meta">
-                <div class="cert-title">Learn React 19</div>
-                <div class="cert-issuer">Educative</div>
-            </div>
-        </div>
-        <h3>Learn React 19: The Complete Guide to Modern Web Apps</h3>
-        <p class="cert-description">
-            Mastered React 19 <strong>concurrency</strong> (transitions), <strong>rendering internals</strong>, and <strong>feature-based architecture</strong>. Built production-ready UIs with <strong>TanStack Query</strong>, <strong>Suspense streaming</strong>, <strong>optimistic updates</strong>, and <strong>offline-first workflows</strong> across two major projects.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Jun 2026</span>
-            <a href="https://www.educative.io/verify-certificate/BJYPEN3ME2" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">☕</div>
-            <div class="cert-meta">
-                <div class="cert-title">Android App Dev</div>
-                <div class="cert-issuer">Educative</div>
-            </div>
-        </div>
-        <h3>Modern Android App Development with Java</h3>
-        <p class="cert-description">
-            Mastered building robust Android applications using Java. Covered Activity lifecycles, UI design with XML, Fragments, Intents, and data persistence, focusing on modern development patterns and performance optimization.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">May 2026</span>
-            <a href="https://www.educative.io/verify-certificate/EHAQB5FME8" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🎯</div>
-            <div class="cert-meta">
-                <div class="cert-title">CRTOM</div>
-                <div class="cert-issuer">Red Team Leaders</div>
-            </div>
-        </div>
-        <h3>Certified Red Team Operations Management</h3>
-        <p class="cert-description">
-            Completed the CRTOM program — planning, coordinating, and managing red team engagements. Gained insight into workflows, operational reporting, assessment management, and aligning offensive security with organizational objectives.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Dec 2025</span>
-            <a href="https://drive.google.com/file/d/1KDL_D8uvrSsttFiuppq59Lplf9xV2Qke/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🛡️</div>
-            <div class="cert-meta">
-                <div class="cert-title">API Hacking Expert</div>
-                <div class="cert-issuer">CAPIE Program</div>
-            </div>
-        </div>
-        <h3>CAPIE – Certified API Hacking Expert</h3>
-        <p class="cert-description">
-            Advanced, hands-on API security training covering reconnaissance, endpoint discovery, BOLA/IDOR exploitation, auth bypasses, mass assignment, business logic flaws, rate-limit evasion using Burp Suite, Postman, and Python.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Dec 2025</span>
-            <a href="https://drive.google.com/file/d/1S9xb7dus2DJpb1BcrBmv4B9OHnAYEBkL/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🎄</div>
-            <div class="cert-meta">
-                <div class="cert-title">Advent of Cyber 2025</div>
-                <div class="cert-issuer">TryHackMe</div>
-            </div>
-        </div>
-        <h3>Advent of Cyber 2025 — Cybersecurity Challenges</h3>
-        <p class="cert-description">
-            Completed 24 hands-on cybersecurity challenges centered around realistic attack and defense scenarios. Gained practical exposure to malware behaviour, system monitoring, and core attack technique identification in a structured daily lab format.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Dec 2025</span>
-            <a href="https://drive.google.com/file/d/1nFtzPBjKRxcB6wfyO261wCU2z5DxfA3S/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🐧</div>
-            <div class="cert-meta">
-                <div class="cert-title">Kali Linux</div>
-                <div class="cert-issuer">CMS</div>
-            </div>
-        </div>
-        <h3>Kali Linux Masterclass</h3>
-        <p class="cert-description">
-            Covered practical Kali Linux operations: file system navigation, privilege escalation basics, Nmap scanning, service enumeration, and working with essential penetration testing tools and lab workflows.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Oct 2025</span>
-            <a href="https://drive.google.com/file/d/1C9ycz6SP5F4N_j2uc811_tDORFpmy--n/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">📱</div>
-            <div class="cert-meta">
-                <div class="cert-title">Android Security</div>
-                <div class="cert-issuer">CMS</div>
-            </div>
-        </div>
-        <h3>Android Hacking Masterclass</h3>
-        <p class="cert-description">
-            Introduction to Android application security, APK structure, basic analysis concepts, and understanding common mobile vulnerabilities and attack surfaces in real-world Android environments.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Oct 2025</span>
-            <a href="https://drive.google.com/file/d/1fxwD35qy7IISTyxyWPSixLws-1GXgYX2/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🎓</div>
-            <div class="cert-meta">
-                <div class="cert-title">Ethical Hacker</div>
-                <div class="cert-issuer">Cisco Networking Academy</div>
-            </div>
-        </div>
-        <h3>Cisco Ethical Hacker</h3>
-        <p class="cert-description">
-            Training in reconnaissance, scanning, enumeration, vulnerability assessment, and simulated attack scenarios using Cisco cybersecurity labs and tools — ongoing structured certification program.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Ongoing</span>
-            <a href="https://www.netacad.com/courses/ethical-hacker" class="cert-link" target="_blank">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">🏅</div>
-            <div class="cert-meta">
-                <div class="cert-title">Web Development</div>
-                <div class="cert-issuer">Web X</div>
-            </div>
-        </div>
-        <h3>Full Web Development Certification</h3>
-        <p class="cert-description">
-            Completed the full Web X Web Development Certification — HTML, CSS, JavaScript, responsive design, and practical project-based learning to build modern web interfaces from scratch.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">2025</span>
-            <a href="https://drive.google.com/file/d/18J5CqMBzFhzTfD0lGID3o7AFCKZxQCQS/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-    <div class="cert-card fade-in">
-        <div class="cert-header">
-            <div class="cert-icon">&lt;/&gt;</div>
-            <div class="cert-meta">
-                <div class="cert-title">Git &amp; GitHub</div>
-                <div class="cert-issuer">WsCube Tech</div>
-            </div>
-        </div>
-        <h3>Git &amp; GitHub Essentials</h3>
-        <p class="cert-description">
-            Covered the fundamentals of Git version control — creating commits, pushing changes, basic branching, and using GitHub for repository hosting and collaborative development workflows.
-        </p>
-        <div class="cert-footer">
-            <span class="cert-date">Dec 2025</span>
-            <a href="https://drive.google.com/file/d/17hOZHkx_rFgBnLcH5l2o7TJ3nlCY-pNk/view?usp=sharing" class="cert-link" target="_blank" rel="noopener">Verify <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 17l10-10M7 7h10v10"/></svg></a>
-        </div>
-    </div>
-
-</div>
-
-</section>
 
 
 

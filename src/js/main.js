@@ -932,4 +932,536 @@ function formatActivityError(error) {
     return 'Live feed unavailable - showing preview stream';
 }
 
+// ============================================
+// CREDENTIALS IDE / CODE EDITOR CONTROLLER
+// ============================================
+const CREDENTIAL_DB = {
+    "award-cyberthon": {
+        name: "Cyberthon_First_Prize.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "1.24 MB",
+        date: "Feb 2026",
+        issuer: "MSU Baroda",
+        title: "First Prize — Cyberthon 2026",
+        description: "Awarded First Prize at Cyberthon 2026, a timed cybersecurity hackathon hosted by <a href=\"https://www.msubaroda.ac.in/\" target=\"_blank\" rel=\"noopener\" style=\"color:#FFD700; text-decoration:underline; font-weight:700;\">MSU Baroda</a>, for developing ZeroRisk Sentinel — evaluated on architecture, accuracy, innovation, and real-world security relevance.",
+        link: "https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs"
+    },
+    "award-offsec": {
+        name: "OffSec_Build_With_AI.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "450 KB",
+        date: "Apr 2026",
+        issuer: "OffSec",
+        title: "Winner — OffSec BUILD WITH AI Challenge",
+        description: "Secured a winning spot in the <strong>\"BUILD WITH AI: MCPs FOR THE COMMUNITY\"</strong> challenge by OffSec. Recognized for contributing innovative AI-driven tools to the offensive security community. Awarded 3 months of Proving Grounds Practice.",
+        link: "", // No link
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Awards_and_CTFs"
+    },
+    "award-nextgen": {
+        name: "NextGenHacks_Finalist.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.12 MB",
+        date: "Jun 2026",
+        issuer: "Devpost",
+        title: "Top 9 Finalists — NextGenHacks",
+        description: "Honored as one of the <strong>Top 9 Finalists</strong> out of 1,345 global participants in the NextGenHacks Hackathon. Recognized by an expert industry panel of judges (representing Microsoft, T-Mobile, and others) for outstanding engineering quality, innovation, robust technical execution, and intuitive user experience.",
+        link: "https://drive.google.com/file/d/1PscMp-yzslYdtipVVZ_7v6vHmvb5tDFp/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Awards_and_CTFs"
+    },
+    "award-elevate": {
+        name: "Elevate_Participant.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "956 KB",
+        date: "Jun 2026",
+        issuer: "Ideakode",
+        title: "Participant — ELEVATE 2026 Hackathon",
+        description: "Participated in <strong>ELEVATE 2026</strong>, an online hackathon organized by Ideakode. Represented Maharaja Sayajirao University of Baroda (MSU), Vadodara, as part of <strong>Team Meridian</strong>, collaborating to conceptualize, design, and prototype a software solution.",
+        link: "https://drive.google.com/file/d/1ghsj7Os-o2CZ03AgcESeBtYg8Ve0FVVh/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs"
+    },
+    "award-cyberchallenge": {
+        name: "Cybersecurity_Winner.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "1.05 MB",
+        date: "2026",
+        issuer: "SS Hacker Team",
+        title: "1st Place Winner — Cybersecurity Challenge 2026",
+        description: "Crowned Champion (1st Place Winner) in the Cybersecurity Challenge 2026. Evaluated on offensive security exercises, system exploitation, and penetration testing methodologies.<br><strong style=\"color: #ff6600; display: inline-block; margin-top: 5px;\"><i class=\"fas fa-gift\"></i> Prize: 1-Year Burp Suite Professional License</strong>",
+        link: "https://drive.google.com/file/d/10TEIFVVk_gCfe8T1L3jc-fXulQvqqjRS/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs"
+    },
+    "award-webgathon": {
+        name: "Webgathon_Runner_Up.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "820 KB",
+        date: "Dec 2025",
+        issuer: "KISMATI",
+        title: "Second Runner-Up — Webgathon 2025",
+        description: "Secured Second Runner-Up at Webgathon 2025, an international online hackathon by KISMATI. Built and deployed <strong>CyberGuard</strong> — evaluated on innovation, technical implementation, UX, real-world impact, and presentation quality.",
+        link: "https://drive.google.com/file/d/1jmFwJlLT7r44AXrU3GGIhk__sSBG5cTb/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Awards_and_CTFs"
+    },
+    "cert-cba": {
+        name: "CBA_Cybersecurity.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.48 MB",
+        date: "May 2026",
+        issuer: "Commonwealth Bank · Forage",
+        title: "Introduction to Cybersecurity",
+        description: "Completed an industry job simulation as a cybersecurity generalist on Commonwealth Bank's Cybersecurity team, specialising in fraud detection and prevention. Built data visualisation dashboards in <strong>Splunk</strong>, responded to live incident scenarios, designed security-awareness infographics aligned with ACSC guidelines, and conducted web application pentesting.",
+        link: "https://www.theforage.com/completion-certificates/2sNmYuurxgpFYawco/x52Jy9s26xNbZkTQ7_2sNmYuurxgpFYawco_6a05810953d773130e6a0c37_1779630194457_completion_certificate.pdf",
+        previewLink: "https://drive.google.com/file/d/1EKILN87ppnR6cVVtnUkHyIgzcUhOjbew/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-genai": {
+        name: "Microsoft_Generative_AI.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "720 KB",
+        date: "Jun 2026",
+        issuer: "LinkedIn Learning · Microsoft",
+        title: "What Is Generative AI?",
+        description: "Completed the course by Pinar Seyhan Demirdag (AI Director at Cuebric). Covered AI taxonomy (differentiating subcategories), prompt-based content generation, and natural language model mechanics. Explored advanced concepts including <strong>VAEs</strong> for anomaly detection and strategic AI implementation. Part of Microsoft's professional path, earning 2.00 CPE credits.",
+        link: "https://www.linkedin.com/learning/certificates/098319810ab84feb95f68475c3b771df7f39c66ffe5c2218845f902deb1be609?trk=share_certificate",
+        previewLink: "https://drive.google.com/file/d/1HGiR5ePTF_8GuVsyVLvaka3HMrhVS_JH/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-csharp": {
+        name: "Educative_CSharp_Guide.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "680 KB",
+        date: "Jun 2026",
+        issuer: "Educative",
+        title: "C# for Programmers: A Practical Guide",
+        description: "Mastered core C# architecture and Object-Oriented Programming (OOP) paradigms. Built deep competencies in data structures, recursion, robust exception handling, custom methods, classes, and delegates to engineer highly structured and type-safe applications.",
+        link: "https://www.educative.io/verify-certificate/ERJYPH08PU",
+        previewLink: "https://drive.google.com/file/d/1OP1NNTbsZwIlbNB2SJ0SPE6AmUMWqJyB/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-react": {
+        name: "Educative_React19_Guide.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "910 KB",
+        date: "Jun 2026",
+        issuer: "Educative",
+        title: "Learn React 19: The Complete Guide",
+        description: "Mastered React 19 <strong>concurrency</strong> (transitions), <strong>rendering internals</strong>, and <strong>feature-based architecture</strong>. Built production-ready UIs with <strong>TanStack Query</strong>, <strong>Suspense streaming</strong>, <strong>optimistic updates</strong>, and <strong>offline-first workflows</strong> across two major projects.",
+        link: "https://www.educative.io/verify-certificate/BJYPEN3ME2",
+        previewLink: "https://drive.google.com/file/d/1tZ-5nQpjdmIpye5Z8vPbVBViyx-XnEUq/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-android": {
+        name: "Educative_Android_Java.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "810 KB",
+        date: "May 2026",
+        issuer: "Educative",
+        title: "Modern Android Development with Java",
+        description: "Mastered building robust Android applications using Java. Covered Activity lifecycles, UI design with XML, Fragments, Intents, and data persistence, focusing on modern development patterns and performance optimization.",
+        link: "https://www.educative.io/verify-certificate/EHAQB5FME8",
+        previewLink: "https://drive.google.com/file/d/1PH3OK9_z_DJu09sRwOo-fS0dDsN2AXq7/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-crtom": {
+        name: "RedTeam_CRTOM.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.15 MB",
+        date: "Dec 2025",
+        issuer: "Red Team Leaders",
+        title: "Certified Red Team Operations Management",
+        description: "Completed the CRTOM program — planning, coordinating, and managing red team engagements. Gained insight into workflows, operational reporting, assessment management, and aligning offensive security with organizational objectives.",
+        link: "https://drive.google.com/file/d/1KDL_D8uvrSsttFiuppq59Lplf9xV2Qke/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-capie": {
+        name: "CAPIE_API_Hacking.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.34 MB",
+        date: "Dec 2025",
+        issuer: "CAPIE Program",
+        title: "CAPIE – Certified API Hacking Expert",
+        description: "Advanced, hands-on API security training covering reconnaissance, endpoint discovery, BOLA/IDOR exploitation, auth bypasses, mass assignment, business logic flaws, rate-limit evasion using Burp Suite, Postman, and Python.",
+        link: "https://drive.google.com/file/d/1S9xb7dus2DJpb1BcrBmv4B9OHnAYEBkL/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-advent": {
+        name: "Advent_Of_Cyber_2025.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "2.10 MB",
+        date: "Dec 2025",
+        issuer: "TryHackMe",
+        title: "Advent of Cyber 2025",
+        description: "Completed 24 hands-on cybersecurity challenges centered around realistic attack and defense scenarios. Gained practical exposure to malware behaviour, system monitoring, and core attack technique identification in a structured daily lab format.",
+        link: "https://drive.google.com/file/d/1nFtzPBjKRxcB6wfyO261wCU2z5DxfA3S/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-kali": {
+        name: "Kali_Linux_Masterclass.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "790 KB",
+        date: "Oct 2025",
+        issuer: "CMS",
+        title: "Kali Linux Masterclass",
+        description: "Covered practical Kali Linux operations: file system navigation, privilege escalation basics, Nmap scanning, service enumeration, and working with essential penetration testing tools and lab workflows.",
+        link: "https://drive.google.com/file/d/1C9ycz6SP5F4N_j2uc811_tDORFpmy--n/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-androidhack": {
+        name: "Android_Hacking.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "860 KB",
+        date: "Oct 2025",
+        issuer: "CMS",
+        title: "Android Hacking Masterclass",
+        description: "Introduction to Android application security, APK structure, basic analysis concepts, and understanding common mobile vulnerabilities and attack surfaces in real-world Android environments.",
+        link: "https://drive.google.com/file/d/1fxwD35qy7IISTyxyWPSixLws-1GXgYX2/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-cisco": {
+        name: "Cisco_Ethical_Hacker.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "0 KB", // Ongoing
+        date: "Ongoing",
+        issuer: "Cisco Networking Academy",
+        title: "Cisco Ethical Hacker",
+        description: "Training in reconnaissance, scanning, enumeration, vulnerability assessment, and simulated attack scenarios using Cisco cybersecurity labs and tools — ongoing structured certification program.",
+        link: "https://www.netacad.com/courses/ethical-hacker",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-webdev": {
+        name: "Web_Dev_Full.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.75 MB",
+        date: "2025",
+        issuer: "Web X",
+        title: "Full Web Development Certification",
+        description: "Completed the full Web X Web Development Certification — HTML, CSS, JavaScript, responsive design, and practical project-based learning to build modern web interfaces from scratch.",
+        link: "https://drive.google.com/file/d/18J5CqMBzFhzTfD0lGID3o7AFCKZxQCQS/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
+    "cert-git": {
+        name: "Git_GitHub_Essentials.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "540 KB",
+        date: "Dec 2025",
+        issuer: "WsCube Tech",
+        title: "Git & GitHub Essentials",
+        description: "Covered the fundamentals of Git version control — creating commits, pushing changes, basic branching, and using GitHub for repository hosting and collaborative development workflows.",
+        link: "https://drive.google.com/file/d/17hOZHkx_rFgBnLcH5l2o7TJ3nlCY-pNk/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    }
+};
+
+function toggleIdeFolder(folderId) {
+    const arrow = document.getElementById(`arrow-${folderId}`);
+    let target = null;
+    
+    if (folderId === 'all') {
+        target = document.getElementById('folder-all');
+    } else if (folderId === 'awards') {
+        target = document.getElementById('folder-contents-awards');
+    } else if (folderId === 'certs') {
+        target = document.getElementById('folder-contents-certs');
+    }
+    
+    if (target) {
+        if (target.style.display === 'none') {
+            target.style.display = 'block';
+            if (arrow) arrow.classList.remove('collapsed');
+        } else {
+            target.style.display = 'none';
+            if (arrow) arrow.classList.add('collapsed');
+        }
+    }
+}
+
+function generateCertMockup(fileId, fileData) {
+    const isAward = fileData.category === 'Awards_and_CTFs';
+    
+    // Check if we have a previewLink (Drive link) or if the main link itself is a Drive link
+    const driveUrl = fileData.previewLink || fileData.link;
+    const driveId = getDriveId(driveUrl);
+    
+    if (driveId) {
+        const redirectUrl = fileData.link || driveUrl;
+        const isOfficialRedirect = fileData.previewLink ? true : false;
+        const overlayText = isOfficialRedirect ? 'Verify Credential Official Link' : 'Open Original in Google Drive';
+        
+        return `
+            <div class="viewer-img-container" onclick="window.open('${redirectUrl}', '_blank')" title="Click to verify credential">
+                <img src="https://lh3.googleusercontent.com/d/${driveId}=w1000" referrerpolicy="no-referrer" class="cert-real-img" alt="${fileData.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="cert-fallback-card" style="display:none;">
+                    ${generateCSSMockupHTML(isAward, fileData)}
+                </div>
+                <div class="viewer-hover-overlay">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>${overlayText}</span>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Fallback: Custom branded mockup UI for external/no-link platforms
+    return generateCSSMockupHTML(isAward, fileData);
+}
+
+function getDriveId(url) {
+    if (!url) return null;
+    const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+    return match ? match[1] : null;
+}
+
+function generateCSSMockupHTML(isAward, fileData) {
+    const awardClass = isAward ? 'award-variant' : '';
+    const crestIcon = isAward ? '🏆' : '📜';
+    
+    // Custom branding based on issuer
+    let brandHeader = isAward ? 'OFFICIAL COMPETITION AWARD' : 'CREDENTIAL CERTIFICATE OF COMPLETION';
+    let brandClass = '';
+    
+    if (fileData.issuer.includes('Microsoft') || fileData.issuer.includes('LinkedIn')) {
+        brandClass = 'brand-microsoft';
+        brandHeader = 'MICROSOFT PROFESSIONAL CREDENTIAL';
+    } else if (fileData.issuer.includes('Educative')) {
+        brandClass = 'brand-educative';
+        brandHeader = 'EDUCATIVE COURSE ACCOMPLISHMENT';
+    } else if (fileData.issuer.includes('Cisco')) {
+        brandClass = 'brand-cisco';
+        brandHeader = 'CISCO NETWORKING ACADEMY ATTESTATION';
+    } else if (fileData.issuer.includes('Commonwealth')) {
+        brandClass = 'brand-cba';
+        brandHeader = 'COMMONWEALTH BANK JOB SIMULATION RECORD';
+    }
+    
+    return `
+        <div class="cert-mockup-card ${awardClass} ${brandClass}">
+            <div class="mock-hdr">
+                <span class="mock-crest">${crestIcon}</span>
+                <span class="mock-badge">${fileData.issuer.toUpperCase()}</span>
+            </div>
+            <div class="mock-body">
+                <div class="mock-body-label">${brandHeader}</div>
+                <div class="mock-body-title">${fileData.title}</div>
+                <div class="mock-body-subtitle">// ACQUIRED ON ${fileData.date.toUpperCase()}</div>
+                <div class="mock-body-recipient">THIS ATTESTS THAT SHLOK SHAH IS ACCREDITED</div>
+            </div>
+            <div class="mock-ftr">
+                <div class="mock-date-box">
+                    DATE ACQUIRED
+                    <span>${fileData.date}</span>
+                </div>
+                <div class="mock-validation-seal">
+                    <i class="fas fa-circle-notch seal-icon"></i>
+                    <div class="seal-hash">SECURE<br>VALID</div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function selectIdeFile(element) {
+    const fileId = element.getAttribute('data-id');
+    const fileData = CREDENTIAL_DB[fileId];
+    if (!fileData) return;
+    
+    // Ensure active tab is visible
+    const activeTab = document.getElementById('ideActiveTab');
+    if (activeTab) activeTab.style.display = 'inline-flex';
+    
+    // 1. Remove active state from other files in sidebar explorer
+    document.querySelectorAll('.tree-file').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+    
+    // 2. Update editor tab
+    const tabTitle = document.getElementById('tabTitle');
+    const tabIcon = document.getElementById('tabIcon');
+    if (tabTitle) tabTitle.textContent = fileData.name;
+    if (tabIcon) {
+        tabIcon.className = fileData.name.endsWith('.jpg') ? 'far fa-image file-icon-jpg' : 'far fa-file-pdf file-icon-pdf';
+    }
+    
+    // 3. Render graphical mockup inside viewport
+    const viewport = document.getElementById('renderViewport');
+    if (viewport) {
+        viewport.innerHTML = generateCertMockup(fileId, fileData);
+    }
+    
+    // 4. Update file metadata panel properties
+    const propName = document.getElementById('propFileName');
+    const propType = document.getElementById('propFileType');
+    const propSize = document.getElementById('propFileSize');
+    const metaDate = document.getElementById('metaDateBadge');
+    const metaIssuer = document.getElementById('metaCertIssuer');
+    const propIntegrity = document.getElementById('propIntegrity');
+    const metaTitle = document.getElementById('metaCertTitle');
+    const metaDesc = document.getElementById('metaCertDesc');
+    const verifyBtn = document.getElementById('verifyBtn');
+    
+    if (propName) propName.textContent = fileData.name;
+    if (propType) propType.textContent = fileData.type;
+    if (propSize) propSize.textContent = fileData.size;
+    if (metaDate) metaDate.textContent = fileData.date;
+    if (metaIssuer) metaIssuer.textContent = fileData.issuer;
+    
+    if (metaTitle) metaTitle.textContent = fileData.title;
+    if (metaDesc) metaDesc.innerHTML = fileData.description;
+    
+    if (verifyBtn) {
+        if (fileData.link) {
+            verifyBtn.href = fileData.link;
+            verifyBtn.classList.remove('disabled');
+            verifyBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> VERIFY CREDENTIAL';
+        } else {
+            verifyBtn.removeAttribute('href');
+            verifyBtn.classList.add('disabled');
+            verifyBtn.innerHTML = '<i class="fas fa-lock"></i> VERIFICATION SECURE';
+        }
+    }
+    
+    // 4.5. Reset panel scroll positions back to the top
+    const renderPane = document.querySelector('.editor-render-pane');
+    const metaPane = document.querySelector('.editor-meta-pane');
+    if (renderPane) renderPane.scrollTop = 0;
+    if (metaPane) metaPane.scrollTop = 0;
+    
+    // 5. Update terminal console command output
+    const terminal = document.getElementById('ideTerminalConsole');
+    if (terminal) {
+        const filePath = fileData.category === 'Awards_and_CTFs' ? 'awards' : 'certifications';
+        const fileTool = fileData.name.endsWith('.jpg') ? 'exiftool' : 'pdfinfo';
+        
+        // Generate pseudo unique md5 or check sum
+        let hash = 0;
+        for (let i = 0; i < fileData.title.length; i++) {
+            hash = fileData.title.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        const hex = Math.abs(hash).toString(16).toUpperCase().padStart(8, '0');
+        
+        let detailsLog = '';
+        if (fileData.name.endsWith('.jpg')) {
+            detailsLog = `File size: ${fileData.size} | Format: JFIF JPEG | Quality: 98%
+EXIF Signature Hash: SHA256::${hex}2aef9
+EXIF Organization Stamp: ${fileData.issuer}`;
+        } else {
+            detailsLog = `File size: ${fileData.size} | Format: PDF-1.5 | Pages: 1
+PDF Signature Hash: SHA256::${hex}7f82b
+PDF Producer: Adobe Acrobat Reader 64-bit`;
+        }
+        
+        terminal.innerHTML = `
+            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ ${fileTool} ./${filePath}/${fileData.name}</p>
+            <p class="term-log term-log-cyan">[~] Inspecting header metadata...</p>
+            <p class="term-log">${detailsLog}</p>
+            <p class="term-log">Acquisition Date: ${fileData.date}</p>
+            <p class="term-log term-log-green">[+] Validation: Security clearance status [VERIFIED].</p>
+            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span></p>
+        `;
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+    
+    // 6. Responsive support: smooth-scroll to editor panel on mobile screens
+    if (window.innerWidth < 992) {
+        const editor = document.querySelector('.ide-editor');
+        if (editor) {
+            editor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the default first item
+    const firstFile = document.querySelector('.tree-file');
+    if (firstFile) {
+        selectIdeFile(firstFile);
+    }
+});
+
+function closeIdeFile(event) {
+    if (event) event.stopPropagation(); // prevent triggering parent clicks
+    
+    // 1. Hide active tab
+    const activeTab = document.getElementById('ideActiveTab');
+    if (activeTab) activeTab.style.display = 'none';
+    
+    // 2. Remove active state from sidebar file list
+    document.querySelectorAll('.tree-file').forEach(el => el.classList.remove('active'));
+    
+    // 3. Render empty viewport state with checkerboard backdrop
+    const viewport = document.getElementById('renderViewport');
+    if (viewport) {
+        viewport.innerHTML = `
+            <div class="empty-viewport-state" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1.5rem; box-sizing: border-box;">
+                <i class="far fa-folder-open empty-icon" style="font-size: 2.5rem; color: #858585; margin-bottom: 0.75rem;"></i>
+                <h3 style="color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem;">No File Open</h3>
+                <p style="color: #858585; font-size: 0.8rem; line-height: 1.5; text-align: center; max-width: 280px; margin: 0 auto;">Select a certificate or award file from the explorer sidebar to view its contents.</p>
+            </div>
+        `;
+    }
+    
+    // 4. Reset metadata sidepane to placeholder state
+    const propName = document.getElementById('propFileName');
+    const propType = document.getElementById('propFileType');
+    const propSize = document.getElementById('propFileSize');
+    const metaDate = document.getElementById('metaDateBadge');
+    const metaIssuer = document.getElementById('metaCertIssuer');
+    const metaTitle = document.getElementById('metaCertTitle');
+    const metaDesc = document.getElementById('metaCertDesc');
+    const verifyBtn = document.getElementById('verifyBtn');
+    
+    if (propName) propName.textContent = '--';
+    if (propType) propType.textContent = '--';
+    if (propSize) propSize.textContent = '--';
+    if (metaDate) metaDate.textContent = 'NONE';
+    if (metaIssuer) metaIssuer.textContent = 'No active document';
+    
+    if (metaTitle) metaTitle.textContent = 'No Active File';
+    if (metaDesc) metaDesc.textContent = 'Select a certificate or award file from the explorer tree in the sidebar to inspect its file integrity, metadata details, and accreditation information.';
+    
+    if (verifyBtn) {
+        verifyBtn.removeAttribute('href');
+        verifyBtn.classList.add('disabled');
+        verifyBtn.innerHTML = '<i class="fas fa-lock"></i> SELECT FILE';
+    }
+    
+    // 5. Output session close message to terminal
+    const terminal = document.getElementById('ideTerminalConsole');
+    if (terminal) {
+        const newPrompt = document.createElement('p');
+        newPrompt.className = 'term-prompt-line';
+        newPrompt.innerHTML = `<span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ close_session`;
+        terminal.appendChild(newPrompt);
+        
+        const newLog = document.createElement('p');
+        newLog.className = 'term-log term-log-cyan';
+        newLog.textContent = `[~] Unmounting session volume. Connection closed.`;
+        terminal.appendChild(newLog);
+        
+        const nextPrompt = document.createElement('p');
+        nextPrompt.className = 'term-prompt-line';
+        nextPrompt.innerHTML = `<span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span>`;
+        terminal.appendChild(nextPrompt);
+        
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+}
+
 
