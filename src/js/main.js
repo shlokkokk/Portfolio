@@ -1006,6 +1006,18 @@ const CREDENTIAL_DB = {
         icon: "far fa-file-pdf file-icon-pdf",
         category: "Awards_and_CTFs"
     },
+    "award-quackathon": {
+        name: "HackWithIndia_Quackathon_Certificate_Shlok.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.05 MB",
+        date: "Jun 2026",
+        issuer: "Devnovate · HackWithIndia",
+        title: "Certificate of Participation — The Quackathon",
+        description: "Participated in <strong>The Quackathon</strong>, a virtual hackathon hosted on the Devnovate platform and organized by HackWithIndia. Placed in the <strong>top 1,000 teams out of 3,000 participating teams</strong> globally, demonstrating skills in software development, collaborative engineering, and rapid prototyping.",
+        link: "https://drive.google.com/file/d/19NtwiPLuM8dR33DqDqPb0QmpEMbtT3xC/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Awards_and_CTFs"
+    },
     "cert-cba": {
         name: "CBA_Cybersecurity.pdf",
         type: "PDF Document (application/pdf)",
