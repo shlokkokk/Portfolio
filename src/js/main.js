@@ -1022,7 +1022,7 @@ const CREDENTIAL_DB = {
         name: "Webnova_2026.png",
         type: "PNG Image (image/png)",
         size: "228 KB",
-        date: "Dec 2025",
+        date: "May 2026",
         issuer: "IMS Engineering College",
         title: "WEBNOVA 2026 — Round I Selection",
         description: "Successfully selected for Round I (PPT & Idea Submission) of <strong>WEBNOVA 2026</strong>, a National Level Web Development Hackathon organized by IMS Engineering College, Ghaziabad in collaboration with the HackerRank Campus Crew.",
