@@ -1030,6 +1030,19 @@ const CREDENTIAL_DB = {
         icon: "far fa-image file-icon-jpg",
         category: "Awards_and_CTFs"
     },
+    "cert-cllmse": {
+        name: "RedTeam_CLLMSE.pdf",
+        type: "PDF Document (application/pdf)",
+        size: "1.25 MB",
+        date: "Jul 2026",
+        issuer: "Red Team Leaders",
+        title: "Certified LLM Security Expert (CLLMSE)",
+        description: "Passed the rigorous, hands-on <strong>Certified LLM Security Expert (CLLMSE)</strong> certification. Validated practical expertise in attacking and securing AI applications by exploiting and securing vulnerabilities in live labs (including <strong>indirect prompt injection</strong>, <strong>RAG poisoning</strong>, <strong>SSRF</strong> via LLM URLs, <strong>excessive agency</strong>, and <strong>MCP supply-chain attacks</strong>). Covered <strong>OWASP LLM Top 10</strong>, <strong>MITRE ATLAS</strong>, and <strong>NIST AI RMF</strong> frameworks.",
+        link: "https://courses.redteamleaders.com/exam-completion/a88dd8cd3c2d98f4",
+        previewLink: "https://drive.google.com/file/d/1nAefqAogOMTqD1r6vLOuxj7XfNisyK9t/view?usp=sharing",
+        icon: "far fa-file-pdf file-icon-pdf",
+        category: "Professional_Certs"
+    },
     "cert-cba": {
         name: "CBA_Cybersecurity.pdf",
         type: "PDF Document (application/pdf)",
@@ -1410,10 +1423,10 @@ PDF Producer: Adobe Acrobat Reader 64-bit`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the default first item
-    const firstFile = document.querySelector('.tree-file');
-    if (firstFile) {
-        selectIdeFile(firstFile);
+    // Initialize the default first item (preferring active class)
+    const defaultFile = document.querySelector('.tree-file.active') || document.querySelector('.tree-file');
+    if (defaultFile) {
+        selectIdeFile(defaultFile);
     }
 });
 
