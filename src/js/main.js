@@ -1018,6 +1018,18 @@ const CREDENTIAL_DB = {
         icon: "far fa-file-pdf file-icon-pdf",
         category: "Awards_and_CTFs"
     },
+    "award-webnova": {
+        name: "Webnova_2026.png",
+        type: "PNG Image (image/png)",
+        size: "228 KB",
+        date: "Dec 2025",
+        issuer: "IMS Engineering College",
+        title: "WEBNOVA 2026 — Round I Selection",
+        description: "Successfully selected for Round I (PPT & Idea Submission) of <strong>WEBNOVA 2026</strong>, a National Level Web Development Hackathon organized by IMS Engineering College, Ghaziabad in collaboration with the HackerRank Campus Crew.",
+        link: "https://drive.google.com/file/d/12AJ0BX-DfYLYcjLIm7GbRpYjyyq6xvKn/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs"
+    },
     "cert-cba": {
         name: "CBA_Cybersecurity.pdf",
         type: "PDF Document (application/pdf)",
@@ -1306,7 +1318,7 @@ function selectIdeFile(element) {
     const tabIcon = document.getElementById('tabIcon');
     if (tabTitle) tabTitle.textContent = fileData.name;
     if (tabIcon) {
-        tabIcon.className = fileData.name.endsWith('.jpg') ? 'far fa-image file-icon-jpg' : 'far fa-file-pdf file-icon-pdf';
+        tabIcon.className = (fileData.name.endsWith('.jpg') || fileData.name.endsWith('.png')) ? 'far fa-image file-icon-jpg' : 'far fa-file-pdf file-icon-pdf';
     }
     
     // 3. Render graphical mockup inside viewport
