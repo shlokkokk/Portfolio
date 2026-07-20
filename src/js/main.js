@@ -205,7 +205,7 @@ function openDossier(card) {
 
     // Focus the close button
     setTimeout(() => {
-        document.getElementById('dossierClose')?.focus();
+        document.getElementById('dossierClose')?.focus({ preventScroll: true });
     }, 100);
 }
 

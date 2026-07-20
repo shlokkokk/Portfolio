@@ -586,8 +586,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                 </div>
             </div>
         </div>
-
-
+    </section>
 
     <section id="projects">
         <h2>Featured Projects</h2>
@@ -1374,19 +1373,6 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </div>
     </section>
 
-    <!-- Dossier Modal Overlay -->
-    <div class="pdossier-overlay" id="dossierOverlay" onclick="if(event.target===this)closeDossier()">
-        <div class="pdossier">
-            <div class="pdossier-header">
-                <div class="pdossier-dots"><span></span><span></span><span></span></div>
-                <span class="pdossier-path" id="dossierPath">~/projects/</span>
-                <button class="pdossier-close" id="dossierClose" onclick="closeDossier()" aria-label="Close">&times;</button>
-            </div>
-            <div class="pdossier-body" id="dossierBody"></div>
-        </div>
-    </div>
-
-
     <section id="in-progress">
         <h2>Currently Working On <i class="fas fa-tools"></i></h2>
         <div class="projects-grid">
@@ -1643,6 +1629,18 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     <p class="footer-subline">&gt;_ Built with HTML, CSS, JS and late-night debugging</p>
     <!-- Portions of UI inspired by serozr (MIT License). -->
     </footer>
+
+    <!-- Dossier Modal Overlay -->
+    <div class="pdossier-overlay" id="dossierOverlay" onclick="if(event.target===this)closeDossier()">
+        <div class="pdossier">
+            <div class="pdossier-header">
+                <div class="pdossier-dots"><span></span><span></span><span></span></div>
+                <span class="pdossier-path" id="dossierPath">~/projects/</span>
+                <button class="pdossier-close" id="dossierClose" onclick="closeDossier()" aria-label="Close">&times;</button>
+            </div>
+            <div class="pdossier-body" id="dossierBody"></div>
+        </div>
+    </div>
 
 
     <script>

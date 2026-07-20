@@ -322,17 +322,21 @@
 
 .pdossier-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.82);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    z-index: 5000;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 1rem;
 }
 
 .pdossier-overlay.active {
