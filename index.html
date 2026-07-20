@@ -1375,12 +1375,12 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </section>
 
     <!-- Dossier Modal Overlay -->
-    <div class="pdossier-overlay" id="dossierOverlay">
+    <div class="pdossier-overlay" id="dossierOverlay" onclick="if(event.target===this)closeDossier()">
         <div class="pdossier">
             <div class="pdossier-header">
                 <div class="pdossier-dots"><span></span><span></span><span></span></div>
                 <span class="pdossier-path" id="dossierPath">~/projects/</span>
-                <button class="pdossier-close" id="dossierClose" aria-label="Close">&times;</button>
+                <button class="pdossier-close" id="dossierClose" onclick="closeDossier()" aria-label="Close">&times;</button>
             </div>
             <div class="pdossier-body" id="dossierBody"></div>
         </div>

@@ -216,7 +216,7 @@ function closeDossier() {
 }
 
 // Close button
-document.addEventListener('DOMContentLoaded', () => {
+onDOMReady(() => {
     const closeBtn = document.getElementById('dossierClose');
     if (closeBtn) closeBtn.addEventListener('click', closeDossier);
 
@@ -293,7 +293,7 @@ const FALLBACK_GITHUB_CARDS = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+onDOMReady(() => {
     initGithubPulse();
     initActiveSectionTracking();
 });
