@@ -1,7 +1,17 @@
 
+// Safe DOM Ready Helper
+function onDOMReady(fn) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fn);
+    } else {
+        fn();
+    }
+}
+
 // Boot Screen Animation
-document.addEventListener('DOMContentLoaded', () => {
+onDOMReady(() => {
     const bootScreen = document.getElementById('bootScreen');
+    if (!bootScreen) return;
     
     // Hide boot screen after animation completes
     setTimeout(() => {
@@ -37,15 +47,17 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-in').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+onDOMReady(() => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
 });
 
 // Auto-staggering for grids and timelines
-document.addEventListener('DOMContentLoaded', () => {
+onDOMReady(() => {
     const staggerContainers = [
         '.certifications-grid',
         '.skills-grid',
@@ -78,8 +90,10 @@ const skillObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.skill-category').forEach(category => {
-    skillObserver.observe(category);
+onDOMReady(() => {
+    document.querySelectorAll('.skill-category').forEach(category => {
+        skillObserver.observe(category);
+    });
 });
 
 function toggleMenu() {
@@ -92,16 +106,16 @@ function closeMenu() {
     navLinks.classList.remove('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+onDOMReady(() => {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
+            if (href && href !== '#') {
                 const target = document.querySelector(href);
                 if (target) {
+                    e.preventDefault();
                     const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
