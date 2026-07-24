@@ -1273,6 +1273,21 @@ h2::after {
     color: #ffcc00;
 }
 
+.cert-mockup-card.brand-udemy {
+    border-color: rgba(164, 53, 240, 0.35);
+}
+.cert-mockup-card.brand-udemy::before {
+    border-color: rgba(164, 53, 240, 0.15);
+}
+.cert-mockup-card.brand-udemy .mock-badge {
+    color: #a435f0;
+    background: rgba(164, 53, 240, 0.06);
+    border-color: rgba(164, 53, 240, 0.2);
+}
+.cert-mockup-card.brand-udemy .mock-body-subtitle {
+    color: #a435f0;
+}
+
 .cert-mockup-card {
     width: 92%;
     height: 92%;

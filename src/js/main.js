@@ -1044,6 +1044,19 @@ const CREDENTIAL_DB = {
         icon: "far fa-image file-icon-jpg",
         category: "Awards_and_CTFs"
     },
+    "cert-udemy-airedteam": {
+        name: "Udemy_AI_RAG_Jailbreak_RedTeaming.png",
+        type: "PNG Image (image/png)",
+        size: "1.18 MB",
+        date: "Jul 2026",
+        issuer: "Udemy · Armaan Sidana",
+        title: "Full MasterClass AI, RAG, Jailbreak Red Teaming 2026",
+        description: "Advanced offensive AI security masterclass by Armaan Sidana (OSCP, Founder of Nexus Security). Completed 11 intensive modules and 28 practical labs executing full-spectrum AI red team operations: <strong>Prompt Injections &amp; Persona Jailbreaks</strong> (Many-Shot, token smuggling, vision injections), <strong>RAG Pipeline Exploitation</strong> (zero-click document poisoning, embedding corruption, Agentic SSRF Confused Deputy exfiltration), <strong>Adversarial ML Evasion</strong> (FGSM, PGD, Carlini &amp; Wagner attacks via IBM ART), <strong>Sleeper Agent Data Poisoning</strong>, and <strong>Model Theft &amp; Supply Chain Exploitation</strong> (Pickle RCE, membership inference). Applied the <strong>C2C (Concept &rarr; Chain &rarr; Compromise) Framework</strong> using NVIDIA Garak, Microsoft PyRIT, Promptfoo, Ollama, and TruffleHog, and engineered <strong>4-Gate Defense Architectures</strong> aligned with MITRE ATLAS &amp; NIST AI RMF.",
+        link: "https://ude.my/UC-44ce5321-76b5-44e7-92be-267c2084faf3",
+        previewLink: "https://drive.google.com/file/d/1dh7scOBra1Px_MEBpcoIQ3t1m5Fc3qvg/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Professional_Certs"
+    },
     "cert-cllmse": {
         name: "RedTeam_CLLMSE.pdf",
         type: "PDF Document (application/pdf)",
@@ -1299,6 +1312,9 @@ function generateCSSMockupHTML(isAward, fileData) {
     } else if (fileData.issuer.includes('Commonwealth')) {
         brandClass = 'brand-cba';
         brandHeader = 'COMMONWEALTH BANK JOB SIMULATION RECORD';
+    } else if (fileData.issuer.includes('Udemy')) {
+        brandClass = 'brand-udemy';
+        brandHeader = 'UDEMY MASTERCLASS ACCOMPLISHMENT';
     }
     
     return `
