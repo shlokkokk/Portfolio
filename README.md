@@ -3,7 +3,7 @@
 Everything here started as **"wait, can I do that?"**
 
 <p align="center">
-  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDgyam94Y2Z3djU5MWoxMDQ0cnFuc3lucHZ1dXMxMmUzc2R3cGZ0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dsKnRuALlWsZG/giphy.gif" alt="Michael Scott - World's Best Boss" width="560">
+  <img src="assets/michael_scott.gif" alt="I think that pretty much sums it up" width="560">
 </p>
 
 ---
