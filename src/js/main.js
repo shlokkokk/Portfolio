@@ -1976,6 +1976,62 @@ function initLenisSmoothScroll() {
     requestAnimationFrame(raf);
 }
 
+let activeClickedSkill = null;
+
+function inspectSkill(name, detail, badge) {
+    const textEl = document.getElementById('inspectorText');
+    const badgeEl = document.getElementById('inspectorBadge');
+    const evt = window.event;
+    const currentTarget = evt ? evt.currentTarget : null;
+
+    if (evt && evt.type === 'click' && currentTarget) {
+        // If clicking the currently active/selected chip, toggle deselect it!
+        if (activeClickedSkill && activeClickedSkill.el === currentTarget) {
+            activeClickedSkill = null;
+            document.querySelectorAll('.tech-chip').forEach(chip => chip.classList.remove('active-chip'));
+            if (textEl) {
+                textEl.innerHTML = `Hover or tap any skill pill above to inspect tech stack &amp; proof metadata...`;
+            }
+            if (badgeEl) {
+                badgeEl.textContent = `[READY]`;
+            }
+            return;
+        }
+
+        // Selecting a new chip
+        document.querySelectorAll('.tech-chip').forEach(chip => chip.classList.remove('active-chip'));
+        if (currentTarget.classList) {
+            currentTarget.classList.add('active-chip');
+            activeClickedSkill = { name, detail, badge, el: currentTarget };
+        }
+    }
+
+    if (textEl) {
+        textEl.innerHTML = `<strong style="color: #00FF8C;">${name}</strong> &mdash; ${detail}`;
+    }
+    if (badgeEl && badge) {
+        badgeEl.textContent = `[${badge}]`;
+    }
+}
+
+function resetSkillInspector() {
+    if (activeClickedSkill) {
+        inspectSkill(activeClickedSkill.name, activeClickedSkill.detail, activeClickedSkill.badge);
+        return;
+    }
+
+    const textEl = document.getElementById('inspectorText');
+    const badgeEl = document.getElementById('inspectorBadge');
+    
+    if (textEl) {
+        textEl.innerHTML = `Hover or tap any skill pill above to inspect tech stack &amp; proof metadata...`;
+    }
+    if (badgeEl) {
+        badgeEl.textContent = `[READY]`;
+    }
+    document.querySelectorAll('.tech-chip').forEach(chip => chip.classList.remove('active-chip'));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initLenisSmoothScroll();
 

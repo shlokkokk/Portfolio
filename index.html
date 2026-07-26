@@ -185,111 +185,216 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category fade-in">
-                <h3>Core Programming & Systems</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>C / C++ / WEB</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="90%"></div>
-                    </div>
+    <section id="skills" class="skills-section">
+        <div class="skills-header fade-in">
+            <h2>Skills &amp; Tech Stack</h2>
+            <p class="skills-lead">Tools, security frameworks, and core tech stacks I build, test, and hack with.</p>
+        </div>
+
+        <div class="tech-dock-container fade-in" onmouseleave="resetSkillInspector()">
+            
+            <!-- Domain 1: AI Security & LLM Red Teaming -->
+            <div class="tech-group" style="--group-accent: #a78bfa;">
+                <div class="tech-group-header">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Security, ML &amp; Red Teaming</span>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>C# / OOP</span>
-                        <span>80%</span>
+                <div class="tech-pills-row">
+                    <div class="tech-chip" onmouseenter="inspectSkill('LLM & RAG Security', 'OWASP LLM Top 10 · Persona & Vision Prompt Injections · RAG Poisoning · Agentic SSRF', 'VERIFIED: CLLMSE CERTIFIED')" onclick="inspectSkill('LLM & RAG Security', 'OWASP LLM Top 10 · Persona & Vision Prompt Injections · RAG Poisoning · Agentic SSRF', 'VERIFIED: CLLMSE CERTIFIED')">
+                        <i class="fas fa-user-shield"></i> LLM &amp; RAG Security (CLLMSE)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Adversarial ML Evasion', 'FGSM & PGD perturbations · Sleeper Agent Data Poisoning · Pickle RCE · IBM ART', 'LABS: Armaan Sidana MasterClass')" onclick="inspectSkill('Adversarial ML Evasion', 'FGSM & PGD perturbations · Sleeper Agent Data Poisoning · Pickle RCE · IBM ART', 'LABS: Armaan Sidana MasterClass')">
+                        <i class="fas fa-bug"></i> Adversarial ML (IBM ART)
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>70%</span>
+                    <div class="tech-chip" onmouseenter="inspectSkill('OWASP LLM Top 10', 'Systemic vulnerability assessments across LLM APIs, prompt sanitization & RAG pipelines', 'FRAMEWORK: OWASP AI')" onclick="inspectSkill('OWASP LLM Top 10', 'Systemic vulnerability assessments across LLM APIs, prompt sanitization & RAG pipelines', 'FRAMEWORK: OWASP AI')">
+                        <i class="fas fa-shield-alt"></i> OWASP LLM Top 10
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="70%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('AI Audit Toolchain', 'PyRIT · Garak · TruffleHog · Ollama · Microsoft Risk Management Framework', 'TOOLSET: AI Red Team')" onclick="inspectSkill('AI Audit Toolchain', 'PyRIT · Garak · TruffleHog · Ollama · Microsoft Risk Management Framework', 'TOOLSET: AI Red Team')">
+                        <i class="fas fa-tools"></i> PyRIT &amp; Garak
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Kali Linux</span>
-                        <span>65%</span>
+                    <div class="tech-chip" onmouseenter="inspectSkill('AI & Neural Networks', 'Heuristic search (A*, DFS, BFS) · Propositional logic · CNN / RNN Neural Nets · Expert Systems', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('AI & Neural Networks', 'Heuristic search (A*, DFS, BFS) · Propositional logic · CNN / RNN Neural Nets · Expert Systems', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-brain"></i> Artificial Intelligence (A* / CNN)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="65%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Prompt Injections & Jailbreaking', 'System prompt extraction · Persona takeover · Vision jailbreaks · Token smuggling', 'AWARD: OffSec Build With AI')" onclick="inspectSkill('Prompt Injections & Jailbreaking', 'System prompt extraction · Persona takeover · Vision jailbreaks · Token smuggling', 'AWARD: OffSec Build With AI')">
+                        <i class="fas fa-user-ninja"></i> Jailbreaking &amp; Injection
                     </div>
                 </div>
             </div>
 
-            <div class="skill-category fade-in">
-                <h3>Cybersecurity & Networking</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Networking Basics / Protocols</span>
-                        <span>69%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="69%"></div>
-                    </div>
+            <!-- Domain 2: Offensive Security, Cryptography & SecOps -->
+            <div class="tech-group" style="--group-accent: #ff5f56;">
+                <div class="tech-group-header">
+                    <i class="fas fa-user-ninja"></i>
+                    <span>Offensive Security, Cryptography &amp; SecOps</span>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                         <span>Wireshark / Packet Analysis</span>
-                        <span>65%</span>
+                <div class="tech-pills-row">
+                    <div class="tech-chip" onmouseenter="inspectSkill('API Hacking & Security', 'BOLA / IDOR · Auth Bypasses · Rate-Limit Evasion · Mass Assignment · OWASP API Top 10', 'VERIFIED: CAPIE CERTIFIED')" onclick="inspectSkill('API Hacking & Security', 'BOLA / IDOR · Auth Bypasses · Rate-Limit Evasion · Mass Assignment · OWASP API Top 10', 'VERIFIED: CAPIE CERTIFIED')">
+                        <i class="fas fa-code-branch"></i> API Hacking (CAPIE)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="65%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Red Team Operations', 'Reconnaissance · Service Enumeration · Privilege Escalation · CRTOM Engagement Management', 'VERIFIED: CRTOM CERTIFIED')" onclick="inspectSkill('Red Team Operations', 'Reconnaissance · Service Enumeration · Privilege Escalation · CRTOM Engagement Management', 'VERIFIED: CRTOM CERTIFIED')">
+                        <i class="fas fa-terminal"></i> Red Teaming (CRTOM)
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>OWASP ZAP / Web Scanning</span>
-                        <span>60%</span>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Attack Surface Mapping', 'Chained 37 tools (Subfinder, Amass, Nuclei, Naabu, Katana, ffuf, Nikto, sqlmap)', 'BUILT IN: Oculus v4.2.0')" onclick="inspectSkill('Attack Surface Mapping', 'Chained 37 tools (Subfinder, Amass, Nuclei, Naabu, Katana, ffuf, Nikto, sqlmap)', 'BUILT IN: Oculus v4.2.0')">
+                        <i class="fas fa-eye"></i> Surface Mapping (Oculus)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="60%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Kali Linux & Toolchain', 'Kali Linux OS · Metasploit · Nmap · Wireshark · OWASP ZAP · Custom Bash', 'CERTIFIED: Kali MasterClass')" onclick="inspectSkill('Kali Linux & Toolchain', 'Kali Linux OS · Metasploit · Nmap · Wireshark · OWASP ZAP · Custom Bash', 'CERTIFIED: Kali MasterClass')">
+                        <i class="fab fa-linux"></i> Kali Linux &amp; Metasploit
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Burp Suite Pro & ZAP', 'Web application penetration testing · Intercept proxy · Custom extension scripts · Fuzzing', 'TOOLSET: Burp Suite Pro')" onclick="inspectSkill('Burp Suite Pro & ZAP', 'Web application penetration testing · Intercept proxy · Custom extension scripts · Fuzzing', 'TOOLSET: Burp Suite Pro')">
+                        <i class="fas fa-crosshairs"></i> Burp Suite &amp; OWASP ZAP
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Public-Key Cryptography', 'Symmetric ciphers (AES/DES) · RSA · Diffie-Hellman Key Exchange · Elliptic Curve (ECC) · HMAC', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Public-Key Cryptography', 'Symmetric ciphers (AES/DES) · RSA · Diffie-Hellman Key Exchange · Elliptic Curve (ECC) · HMAC', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-key"></i> Cryptography (RSA / AES / ECC)
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Firewalls & System Defense', 'Intrusion Detection Systems (IDS) · Packet Analysis · Malware Defenses · Access Control', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Firewalls & System Defense', 'Intrusion Detection Systems (IDS) · Packet Analysis · Malware Defenses · Access Control', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-shield-virus"></i> Firewalls &amp; IDS Defenses
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('OSINT & Reconnaissance', 'Open Source Intelligence · Subdomain enumeration · ReconMaster · Threat Intel', 'BUILT IN: OSINT Directory')" onclick="inspectSkill('OSINT & Reconnaissance', 'Open Source Intelligence · Subdomain enumeration · ReconMaster · Threat Intel', 'BUILT IN: OSINT Directory')">
+                        <i class="fas fa-search"></i> OSINT &amp; ReconMaster
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Offensive Security Study Hub', '280+ security tools & 1,000+ CLI commands organized across 20 CEH v13 modules', 'BUILT IN: ShellStack')" onclick="inspectSkill('Offensive Security Study Hub', '280+ security tools & 1,000+ CLI commands organized across 20 CEH v13 modules', 'BUILT IN: ShellStack')">
+                        <i class="fas fa-layer-group"></i> 280+ Sec Tools (ShellStack)
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('SIEM Forensics & YARA', 'YARA rules · Splunk SIEM dashboards · Packet analysis · VirusTotal API · AbuseIPDB', 'BUILT IN: ZeroRisk Sentinel')" onclick="inspectSkill('SIEM Forensics & YARA', 'YARA rules · Splunk SIEM dashboards · Packet analysis · VirusTotal API · AbuseIPDB', 'BUILT IN: ZeroRisk Sentinel')">
+                        <i class="fas fa-search-dollar"></i> YARA &amp; Splunk SIEM
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Wireshark & Packet Analysis', 'Network traffic analysis · Packet capture inspection · PCAP forensics · Protocol decoding', 'TOOLSET: Wireshark')" onclick="inspectSkill('Wireshark & Packet Analysis', 'Network traffic analysis · Packet capture inspection · PCAP forensics · Protocol decoding', 'TOOLSET: Wireshark')">
+                        <i class="fas fa-network-wired"></i> Wireshark &amp; Packets
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Android APK Forensics', 'Decompilation · Package metadata extraction · Permission risk scoring · Intent hijacking', 'CERTIFIED: Android Hacking')" onclick="inspectSkill('Android APK Forensics', 'Decompilation · Package metadata extraction · Permission risk scoring · Intent hijacking', 'CERTIFIED: Android Hacking')">
+                        <i class="fab fa-android"></i> Android APK Forensics
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Ethical Hacking Labs', 'TryHackMe Advent of Cyber 2025 · Cisco Ethical Hacker · CTF Challenge Execution', 'PLATFORM: TryHackMe')" onclick="inspectSkill('Ethical Hacking Labs', 'TryHackMe Advent of Cyber 2025 · Cisco Ethical Hacker · CTF Challenge Execution', 'PLATFORM: TryHackMe')">
+                        <i class="fas fa-flag"></i> TryHackMe &amp; Cisco Sec
                     </div>
                 </div>
             </div>
 
-            <div class="skill-category fade-in">
-                <h3>Tools & Environment</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python Scripting / Automation</span>
-                        <span>83%</span>
-
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="83%"></div>
-                    </div>
+            <!-- Domain 3: AI Systems & Multi-Agent Engineering -->
+            <div class="tech-group" style="--group-accent: #00D9FF;">
+                <div class="tech-group-header">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Systems &amp; Multi-Agent Engineering</span>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Git/GitHub (Version Control)</span>
-                        <span>85%</span>
+                <div class="tech-pills-row">
+                    <div class="tech-chip" onmouseenter="inspectSkill('Multi-Agent AI Councils', '3-agent deliberation protocols (Conservator, Grower, Behaviorist) with Groq LLaMA 3.3', 'BUILT IN: PRAXIS Council')" onclick="inspectSkill('Multi-Agent AI Councils', '3-agent deliberation protocols (Conservator, Grower, Behaviorist) with Groq LLaMA 3.3', 'BUILT IN: PRAXIS Council')">
+                        <i class="fas fa-project-diagram"></i> Multi-Agent AI (Groq)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Dual-AI Acceleration', 'Hybrid NVIDIA NIM + Groq LLM layer for sub-second plain-English threat explanations', 'FINALIST: BIOTHON 2026')" onclick="inspectSkill('Dual-AI Acceleration', 'Hybrid NVIDIA NIM + Groq LLM layer for sub-second plain-English threat explanations', 'FINALIST: BIOTHON 2026')">
+                        <i class="fas fa-microchip"></i> Dual-AI (NVIDIA NIM)
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                         <span>Virtualization (VMware / VirtualBox)</span>
-                         <span>90%</span>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Operational AI Memory', 'Dual-layer Mem0 memory + vector embeddings for incident deduplication & auto-triage', 'BUILT IN: Chronicle Platform')" onclick="inspectSkill('Operational AI Memory', 'Dual-layer Mem0 memory + vector embeddings for incident deduplication & auto-triage', 'BUILT IN: Chronicle Platform')">
+                        <i class="fas fa-memory"></i> AI Memory (Mem0)
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Spectral Audio Forensics', 'librosa feature extraction (MFCC anomaly, spectral flux) · Neural Synapse Canvas UI', 'BUILT IN: KAVACH Voice Shield')" onclick="inspectSkill('Spectral Audio Forensics', 'librosa feature extraction (MFCC anomaly, spectral flux) · Neural Synapse Canvas UI', 'BUILT IN: KAVACH Voice Shield')">
+                        <i class="fas fa-wave-square"></i> librosa Audio Analytics
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Scientific Data Analytics', 'NumPy array manipulation · SciPy scientific computing · Pandas dataframes · Matplotlib visualization', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Scientific Data Analytics', 'NumPy array manipulation · SciPy scientific computing · Pandas dataframes · Matplotlib visualization', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-chart-line"></i> NumPy, SciPy &amp; Pandas
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Generative AI Models', 'Gemini API, OpenAI API, Microsoft Generative AI, Custom Prompts & Fallback Models', 'CERTIFIED: Microsoft GenAI')" onclick="inspectSkill('Generative AI Models', 'Gemini API, OpenAI API, Microsoft Generative AI, Custom Prompts & Fallback Models', 'CERTIFIED: Microsoft GenAI')">
+                        <i class="fas fa-robot"></i> Gemini &amp; OpenAI API
                     </div>
                 </div>
             </div>
+
+            <!-- Domain 4: Modern Full-Stack & Web Engineering -->
+            <div class="tech-group" style="--group-accent: #38bdf8;">
+                <div class="tech-group-header">
+                    <i class="fab fa-react"></i>
+                    <span>Modern Full-Stack &amp; Web Engineering</span>
+                </div>
+                <div class="tech-pills-row">
+                    <div class="tech-chip" onmouseenter="inspectSkill('React 19 Engineering', 'Concurrent transitions · TanStack Query · Suspense · Monorepo Web Dashboards', 'VERIFIED: Educative React 19')" onclick="inspectSkill('React 19 Engineering', 'Concurrent transitions · TanStack Query · Suspense · Monorepo Web Dashboards', 'VERIFIED: Educative React 19')">
+                        <i class="fab fa-react"></i> React 19
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('TypeScript & JavaScript', 'Strict typing · ES6+ async/await · Event loop optimization · Custom Web APIs', 'LANGUAGE: TypeScript / JS')" onclick="inspectSkill('TypeScript & JavaScript', 'Strict typing · ES6+ async/await · Event loop optimization · Custom Web APIs', 'LANGUAGE: TypeScript / JS')">
+                        <i class="fab fa-js"></i> TypeScript &amp; JavaScript
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Three.js 3D Physics', 'WebGL canvas graphics · 2D/3D Transformations · Cohen-Sutherland Clipping · Volatility planet rendering', 'BUILT IN: PRAXIS Galaxy')" onclick="inspectSkill('Three.js 3D Physics', 'WebGL canvas graphics · 2D/3D Transformations · Cohen-Sutherland Clipping · Volatility planet rendering', 'BUILT IN: PRAXIS Galaxy')">
+                        <i class="fas fa-cube"></i> Three.js &amp; 3D Graphics
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Next.js & Monorepos', 'Next.js App Router · Monorepo structure separating Web, API, Agent & Chaos sandbox', 'BUILT IN: Chronicle Monorepo')" onclick="inspectSkill('Next.js & Monorepos', 'Next.js App Router · Monorepo structure separating Web, API, Agent & Chaos sandbox', 'BUILT IN: Chronicle Monorepo')">
+                        <i class="fas fa-layer-group"></i> Next.js Monorepos
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Python FastAPI & Flask', 'Async microservices · High-concurrency REST endpoints · Network socket data pipelines', 'BACKEND: FastAPI & Flask')" onclick="inspectSkill('Python FastAPI & Flask', 'Async microservices · High-concurrency REST endpoints · Network socket data pipelines', 'BACKEND: FastAPI & Flask')">
+                        <i class="fas fa-bolt"></i> FastAPI &amp; Flask
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Node.js & Express', 'Serverless APIs, frameworkless HTTP routers, async event queues & middleware pipelines', 'BACKEND: Node.js & Express')" onclick="inspectSkill('Node.js & Express', 'Serverless APIs, frameworkless HTTP routers, async event queues & middleware pipelines', 'BACKEND: Node.js & Express')">
+                        <i class="fab fa-node-js"></i> Node.js &amp; Express
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('AJAX & DOM Integration', 'XMLHttpRequest, HTTP methods (GET/POST/PUT/DELETE), DOM manipulation, JSON parsing', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('AJAX & DOM Integration', 'XMLHttpRequest, HTTP methods (GET/POST/PUT/DELETE), DOM manipulation, JSON parsing', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-code"></i> AJAX, DOM &amp; JSON
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Electron Desktop Apps', 'Electron + React 19 + Better-SQLite3 · Smart Sharp preview generation · OS Trash IPC', 'BUILT IN: SwipeClean')" onclick="inspectSkill('Electron Desktop Apps', 'Electron + React 19 + Better-SQLite3 · Smart Sharp preview generation · OS Trash IPC', 'BUILT IN: SwipeClean')">
+                        <i class="fas fa-desktop"></i> Electron &amp; Sharp
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Tailwind CSS & Responsive UX', 'Utility-first styling · Responsive box model · CSS Grid & Flexbox · User experience design', 'STYLING: Tailwind & CSS3')" onclick="inspectSkill('Tailwind CSS & Responsive UX', 'Utility-first styling · Responsive box model · CSS Grid & Flexbox · User experience design', 'STYLING: Tailwind & CSS3')">
+                        <i class="fab fa-css3-alt"></i> Tailwind CSS &amp; UX
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('DBMS & SQL Architecture', 'Relational database design · Codd\'s rules · Oracle SQL & SQL*Plus · Joins, Aggregations, Views & Transactions', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('DBMS & SQL Architecture', 'Relational database design · Codd\'s rules · Oracle SQL & SQL*Plus · Joins, Aggregations, Views & Transactions', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-database"></i> DBMS &amp; Relational SQL
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain 5: Core Engineering, Mobile & Infrastructure -->
+            <div class="tech-group" style="--group-accent: #00FF8C;">
+                <div class="tech-group-header">
+                    <i class="fas fa-terminal"></i>
+                    <span>Core Engineering, Mobile &amp; Infrastructure</span>
+                </div>
+                <div class="tech-pills-row">
+                    <div class="tech-chip" onmouseenter="inspectSkill('C / C++ & DSA', 'Low-level memory management · Pointer arithmetic · Custom DSA data structures', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('C / C++ & DSA', 'Low-level memory management · Pointer arithmetic · Custom DSA data structures', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-code"></i> C / C++ (DSA)
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Data Structures & Algorithms', 'Stacks, Queues, Linked Lists, Binary Search Trees, Sorting (Quick, Merge, Heap), Hashing', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Data Structures & Algorithms', 'Stacks, Queues, Linked Lists, Binary Search Trees, Sorting (Quick, Merge, Heap), Hashing', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-project-diagram"></i> Data Structures &amp; Algorithms
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Computer Architecture', 'Von Neumann & Harvard architectures · CPU Cache & Virtual Memory · Assembly Language · RISC vs CISC', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Computer Architecture', 'Von Neumann & Harvard architectures · CPU Cache & Virtual Memory · Assembly Language · RISC vs CISC', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-microchip"></i> Computer Architecture
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Operating Systems & UNIX', 'Process Scheduling (PCB/Context Switching) · Virtual Memory & Paging · Deadlock (Banker\'s Algo) · UNIX Shell', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Operating Systems & UNIX', 'Process Scheduling (PCB/Context Switching) · Virtual Memory & Paging · Deadlock (Banker\'s Algo) · UNIX Shell', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-server"></i> Operating Systems &amp; UNIX
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Software Engineering & SDLC', 'Agile & Waterfall models · SRS Specifications · Software Quality Assurance (SQA) · Testing Strategies', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Software Engineering & SDLC', 'Agile & Waterfall models · SRS Specifications · Software Quality Assurance (SQA) · Testing Strategies', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-cogs"></i> Software Engineering &amp; SDLC
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Python 3 & Scripting', 'AsyncIO · Socket programming · NumPy & SciPy data analysis · PyInstaller packaging', 'LANGUAGE: Python 3')" onclick="inspectSkill('Python 3 & Scripting', 'AsyncIO · Socket programming · NumPy & SciPy data analysis · PyInstaller packaging', 'LANGUAGE: Python 3')">
+                        <i class="fab fa-python"></i> Python 3
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Java & Multithreading', 'JVM Bytecode · Multithreaded Programming · Thread Synchronization · Deadlock · OOP', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Java & Multithreading', 'JVM Bytecode · Multithreaded Programming · Thread Synchronization · Deadlock · OOP', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fab fa-java"></i> Java &amp; Multithreading
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('C# & .NET Framework', 'CLR, JIT Compilation, Object-Oriented Programming, LINQ, ADO.NET & ASP.NET Web Forms', 'VERIFIED: Educative C# Guide')" onclick="inspectSkill('C# & .NET Framework', 'CLR, JIT Compilation, Object-Oriented Programming, LINQ, ADO.NET & ASP.NET Web Forms', 'VERIFIED: Educative C# Guide')">
+                        <i class="fas fa-cube"></i> C# &amp; .NET Framework
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Android Development', 'Android Architecture (Linux Kernel / HAL) · Activity Lifecycles · Intents · Broadcast Receivers · SQLite', 'CERTIFIED: Educative Android')" onclick="inspectSkill('Android Development', 'Android Architecture (Linux Kernel / HAL) · Activity Lifecycles · Intents · Broadcast Receivers · SQLite', 'CERTIFIED: Educative Android')">
+                        <i class="fab fa-android"></i> Android Development
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Computer Networks & TCP/IP', 'OSI 7-Layer & TCP/IP Models · Routing Algorithms · IPv4/v6 Addressing · DNS, HTTP, FTP, SNMP', 'ACADEMIC: MSU Baroda IT')" onclick="inspectSkill('Computer Networks & TCP/IP', 'OSI 7-Layer & TCP/IP Models · Routing Algorithms · IPv4/v6 Addressing · DNS, HTTP, FTP, SNMP', 'ACADEMIC: MSU Baroda IT')">
+                        <i class="fas fa-network-wired"></i> Computer Networks &amp; TCP/IP
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Bash & Shell Scripting', 'Custom Linux scripts · Terminal automation · Task scheduling · Process automation', 'SHELL: Bash & PowerShell')" onclick="inspectSkill('Bash & Shell Scripting', 'Custom Linux scripts · Terminal automation · Task scheduling · Process automation', 'SHELL: Bash & PowerShell')">
+                        <i class="fas fa-terminal"></i> Bash &amp; Shell Scripting
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Git & GitHub Workflows', 'Branching · PR workflows · CI/CD repository management · Version control', 'VERIFIED: WsCube Tech Git')" onclick="inspectSkill('Git & GitHub Workflows', 'Branching · PR workflows · CI/CD repository management · Version control', 'VERIFIED: WsCube Tech Git')">
+                        <i class="fab fa-github"></i> Git &amp; GitHub
+                    </div>
+                    <div class="tech-chip" onmouseenter="inspectSkill('Docker, Cloud & Virtualization', 'Docker containers · Hypervisors (VMware/VirtualBox) · AWS EC2/S3 Overview · Big Data MapReduce', 'INFRASTRUCTURE: Cloud & VMs')" onclick="inspectSkill('Docker, Cloud & Virtualization', 'Docker containers · Hypervisors (VMware/VirtualBox) · AWS EC2/S3 Overview · Big Data MapReduce', 'INFRASTRUCTURE: Cloud & VMs')">
+                        <i class="fab fa-docker"></i> Docker, Cloud &amp; Virtualization
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Terminal Inspector Bar (Single Line Interactive Output) -->
+        <div class="tech-inspector-bar fade-in" id="techInspectorBar">
+            <span class="inspector-prompt">$</span>
+            <span class="inspector-label">INSPECT:</span>
+            <span class="inspector-text" id="inspectorText">Hover or tap any skill pill above to inspect tech stack &amp; proof metadata...</span>
+            <span class="inspector-badge" id="inspectorBadge">[READY]</span>
         </div>
     </section>
 

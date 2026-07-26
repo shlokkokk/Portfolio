@@ -2389,50 +2389,167 @@ footer .signature {
     transform: translateY(0);
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+/* ══════════════════════════════════════════════════════════════════════════
+   REHAULED SKILLS ARSENAL & TECH MATRIX (0% AI SLOP · 100% PRODUCTION READY)
+   ══════════════════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════════
+   INTERACTIVE TECH DOCK & TERMINAL INSPECTOR SKILLS SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.skills-section {
+    position: relative;
+    padding-top: 1.5rem;
 }
 
-.skill-category {
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(0, 255, 140, 0.3);
-    border-radius: 10px;
-    padding: 2rem;
+.skills-header {
+    margin-bottom: 2rem;
 }
 
-.skill-category h3 {
-    color: #00FF8C;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+.skills-lead {
+    color: #999999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 680px;
+    margin-top: 0.5rem;
 }
 
-.skill-item {
-    margin-bottom: 1.5rem;
-}
-
-.skill-name {
+/* Tech Dock Layout */
+.tech-dock-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    color: #fff;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.skill-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+.tech-group {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--group-accent, #00FF8C);
+    border-radius: 8px;
+    padding: 1.1rem 1.35rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tech-group:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    border-left-color: var(--group-accent, #00FF8C);
+    transform: translateX(4px);
+}
+
+.tech-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.02em;
+}
+
+.tech-group-header i {
+    color: var(--group-accent, #00FF8C);
+    font-size: 0.95rem;
+}
+
+.tech-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-chip {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #dddddd;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 500;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+    transition: all 0.18s ease;
+}
+
+.tech-chip i {
+    color: var(--group-accent, #00FF8C);
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.tech-chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--group-accent, #00FF8C);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 255, 140, 0.15);
+    transform: translateY(-2px);
+}
+
+.tech-chip.active-chip {
+    border-color: var(--group-accent, #00FF8C);
+    background: rgba(0, 255, 140, 0.12);
+    color: #ffffff;
+}
+
+/* Terminal Inspector Bar */
+.tech-inspector-bar {
+    background: #141414;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    border-radius: 6px;
+    padding: 0.75rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Chakra Petch', monospace;
+    font-size: 0.8rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    user-select: none;
+}
+
+.inspector-prompt {
+    color: #00FF8C;
+    font-weight: 700;
+}
+
+.inspector-label {
+    color: #858585;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.inspector-text {
+    color: #ffffff;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
 }
 
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #00FF8C, #00D9FF);
+.inspector-badge {
+    background: rgba(0, 255, 140, 0.15);
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    color: #00FF8C;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
     border-radius: 4px;
-    transition: width 1s ease-out;
-    will-change: width;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .tech-inspector-bar {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+    .inspector-text {
+        white-space: normal;
+        font-size: 0.75rem;
+    }
 }
 
 .timeline {
