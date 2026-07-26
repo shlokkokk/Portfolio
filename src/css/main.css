@@ -749,7 +749,7 @@ h2::after {
     background: #131313;
     display: flex;
     border-bottom: 1px solid #252525;
-    padding-top: 0.15rem;
+    padding-top: 0;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -857,28 +857,40 @@ h2::after {
     color: #ff5f56;
 }
 
-/* Clear All Tabs Action Button */
+/* Sticky Pinned Clear All Tabs Action Button */
 .editor-tab-actions {
+    position: sticky;
+    right: 0;
+    z-index: 100;
     margin-left: auto;
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 1px solid #252525;
-    color: #858585;
-    font-size: 0.72rem;
+    background: #181818;
+    border-left: 1px solid #2e2e2e;
+    color: #ff6b6b;
+    font-size: 0.75rem;
+    font-weight: 600;
     font-family: 'Chakra Petch', sans-serif;
-    padding: 0.45rem 0.75rem;
+    padding: 0.45rem 0.85rem;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
     transition: all 0.15s ease;
     flex-shrink: 0;
+    box-shadow: -8px 0 16px rgba(0, 0, 0, 0.85);
+}
+
+.editor-tab-actions i {
+    font-size: 0.8rem;
+    color: #ff5f56;
 }
 
 .editor-tab-actions:hover {
-    background: rgba(255, 95, 86, 0.15);
-    color: #ff5f56;
+    background: #2a1416; /* 100% Solid Opaque Dark Crimson */
+    color: #ffffff;
+    border-left-color: #ff5f56;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.9);
 }
 
 /* Context Menu for IDE Tabs */

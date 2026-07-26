@@ -36,6 +36,10 @@
     
     <!-- GSAP Animation Engine for Smooth Scrolling & UI Physics -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <!-- Lenis Full-Page Smooth Scroll Engine -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body>
     <!-- Terminal Boot Screen - signed: serozr -->
@@ -375,7 +379,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
             
             <div class="ide-body">
                 <!-- IDE Sidebar -->
-                <div class="ide-sidebar">
+                <div class="ide-sidebar" data-lenis-prevent>
                     <div class="sidebar-title">EXPLORER</div>
                     
                     <div class="file-tree">
@@ -509,7 +513,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                 <!-- IDE Editor Area -->
                 <div class="ide-editor">
                     <!-- Editor Tabs Row -->
-                    <div class="editor-tabs" id="ideTabRow">
+                    <div class="editor-tabs" id="ideTabRow" data-lenis-prevent>
                         <div class="editor-tab active" id="ideActiveTab">
                             <i class="far fa-image file-icon-jpg" id="tabIcon"></i>
                             <span id="tabTitle">BIOTHON_2026.dossier</span>
@@ -520,14 +524,14 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                     <!-- Editor Body / Viewer Area -->
                     <div class="editor-body-area">
                         <!-- Left Panel: Graphic Document/Image Viewer Panel -->
-                        <div class="editor-render-pane">
+                        <div class="editor-render-pane" data-lenis-prevent>
                             <div class="render-viewport" id="renderViewport">
                                 <!-- Styled certificate cards are rendered here dynamically by JS -->
                             </div>
                         </div>
                         
                         <!-- Right Panel: Exif File Details Panel -->
-                        <div class="editor-meta-pane">
+                        <div class="editor-meta-pane" data-lenis-prevent>
                             <!-- 1. Major Description Section (Top Priority) -->
                             <div class="meta-desc-section">
                                 <div class="meta-badge-row" id="metaBadgeRow">
@@ -584,7 +588,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                             <div class="term-tab">Debug Console</div>
                             <div class="term-tab active">Terminal</div>
                         </div>
-                        <div class="terminal-output" id="ideTerminalConsole">
+                        <div class="terminal-output" id="ideTerminalConsole" data-lenis-prevent>
                             <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ cat ./awards/Cyberthon_First_Prize.jpg</p>
                             <p class="term-log term-log-cyan">[~] Mounting digital credential volume...</p>
                             <p class="term-log term-log-green">[+] Integrity check: 256-bit signature verified.</p>
@@ -1641,14 +1645,14 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
     </footer>
 
     <!-- Dossier Modal Overlay -->
-    <div class="pdossier-overlay" id="dossierOverlay" onclick="if(event.target===this)closeDossier()">
-        <div class="pdossier">
+    <div class="pdossier-overlay" id="dossierOverlay" data-lenis-prevent onclick="if(event.target===this)closeDossier()">
+        <div class="pdossier" data-lenis-prevent>
             <div class="pdossier-header">
                 <div class="pdossier-dots"><span></span><span></span><span></span></div>
                 <span class="pdossier-path" id="dossierPath">~/projects/</span>
                 <button class="pdossier-close" id="dossierClose" onclick="closeDossier()" aria-label="Close">&times;</button>
             </div>
-            <div class="pdossier-body" id="dossierBody"></div>
+            <div class="pdossier-body" id="dossierBody" data-lenis-prevent></div>
         </div>
     </div>
 

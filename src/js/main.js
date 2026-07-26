@@ -202,6 +202,7 @@ function openDossier(card) {
 
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (window.lenis) window.lenis.stop();
 
     // Focus the close button
     setTimeout(() => {
@@ -211,8 +212,9 @@ function openDossier(card) {
 
 function closeDossier() {
     const overlay = document.getElementById('dossierOverlay');
-    overlay.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
+    if (window.lenis) window.lenis.start();
 }
 
 // Close button
@@ -1582,7 +1584,7 @@ function renderIdeTabs() {
 
         const activeClass = isActive ? ' active' : '';
         return `
-            <div class="editor-tab${activeClass}" id="tab-${id}" onclick="switchIdeTab('${id}')" oncontextmenu="openTabContextMenu(event, '${id}')" title="${file.title}">
+            <div class="editor-tab${activeClass}" id="tab-${id}" onclick="switchIdeTab('${id}')" onauxclick="if(event.button===1){event.preventDefault();closeIdeTab(event, '${id}');}" oncontextmenu="openTabContextMenu(event, '${id}')" title="${file.title}">
                 ${iconHtml}
                 <span>${file.name}</span>
                 <span class="tab-close-btn" onclick="closeIdeTab(event, '${id}')">&times;</span>
@@ -1946,7 +1948,37 @@ function closeIdeFile(event) {
     closeIdeTab(event, currentActiveFileId);
 }
 
+let lenis = null;
+
+function initLenisSmoothScroll() {
+    if (typeof Lenis === 'undefined') return;
+
+    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    lenis = new Lenis({
+        duration: isMobile ? 0.8 : 1.25,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.5,
+        smoothTouch: false,
+        infinite: false
+    });
+
+    window.lenis = lenis;
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initLenisSmoothScroll();
+
     const defaultFile = document.querySelector('.tree-file.active') || document.querySelector('.tree-file');
     if (defaultFile) {
         selectIdeFile(defaultFile);
@@ -1957,28 +1989,58 @@ document.addEventListener('DOMContentLoaded', () => {
         let tabScrollPos = tabRow.scrollLeft;
 
         tabRow.addEventListener('wheel', (evt) => {
-            if (evt.deltaY !== 0) {
+            const delta = evt.deltaX !== 0 ? evt.deltaX : evt.deltaY;
+            if (delta !== 0) {
                 evt.preventDefault();
-                tabScrollPos += evt.deltaY * 1.35;
+                tabScrollPos += delta * 1.35;
                 const maxScroll = tabRow.scrollWidth - tabRow.clientWidth;
                 tabScrollPos = Math.max(0, Math.min(tabScrollPos, maxScroll));
 
                 if (window.gsap) {
                     gsap.to(tabRow, {
                         scrollLeft: tabScrollPos,
-                        duration: 0.45,
+                        duration: 0.4,
                         ease: "power2.out",
                         overwrite: "auto"
                     });
                 } else {
                     tabRow.scrollBy({
-                        left: evt.deltaY * 1.5,
+                        left: delta * 1.5,
                         behavior: 'smooth'
                     });
                 }
             }
         }, { passive: false });
     }
+
+    // EDGE CASE SHIELD 1: Escape key closes modals and context menus
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            hideTabContextMenu();
+            closeDossier();
+        }
+    });
+
+    // EDGE CASE SHIELD 2: Window resize auto-hides context menu and recalculates Lenis bounds
+    window.addEventListener('resize', () => {
+        hideTabContextMenu();
+        if (window.lenis) window.lenis.resize();
+    });
+
+    // EDGE CASE SHIELD 3: Smooth section navigation for navbar links via Lenis
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const href = anchor.getAttribute('href');
+            if (href && href.length > 1) {
+                const targetEl = document.querySelector(href);
+                if (targetEl && window.lenis) {
+                    e.preventDefault();
+                    window.lenis.scrollTo(targetEl, { offset: -30, duration: 1.2 });
+                }
+            }
+        }
+    });
 });
 
 
