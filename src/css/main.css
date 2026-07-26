@@ -588,9 +588,7 @@ h2::after {
     color: #00FF8C;
 }
 
-/* ══════════════════════════════════════════════
-   Certifications & Awards — IDE Redesign
-   ══════════════════════════════════════════════ */
+/* Certifications & Awards — IDE */
 .ide-container {
     background: #161616;
     border: 1px solid rgba(0, 255, 140, 0.25);
@@ -791,9 +789,7 @@ h2::after {
     font-weight: 500;
 }
 
-/* ═══════════════════════════════════════════════════
-   ULTRA-SLEEK CUSTOM SCROLLBARS (VS CODE STYLE)
-   ═══════════════════════════════════════════════════ */
+/* Custom Scrollbars */
 .ide-sidebar::-webkit-scrollbar,
 .editor-render-pane::-webkit-scrollbar,
 .editor-meta-pane::-webkit-scrollbar,
@@ -1160,9 +1156,7 @@ h2::after {
     border-color: #555555 !important;
 }
 
-/* ═══════════════════════════════════════════════════
-   BIOTHON 2026 CINEMATIC DOSSIER VIEWER
-   ═══════════════════════════════════════════════════ */
+/* BIOTHON 2026 Dossier Viewer */
 
 .biothon-dossier {
     width: 100%;
@@ -1717,9 +1711,7 @@ h2::after {
 .term-log-green { color: #00FF8C; }
 .term-log-cyan { color: #00D9FF; }
 
-/* ══════════════════════════════════════════════
-   HIGH FIDELITY CSS CERTIFICATE ACCREDITATION CARDS
-   ══════════════════════════════════════════════ */
+/* Certificate Cards */
 /* Real Image Viewer Styles */
 .viewer-img-container {
     width: 100%;
@@ -2054,9 +2046,7 @@ h2::after {
     text-transform: uppercase;
 }
 
-/* ══════════════════════════════════════════════
-   MEDIA QUERIES FOR IDE CONTAINER
-   ══════════════════════════════════════════════ */
+/* Media Queries for IDE Container */
 @media (max-width: 991px) {
     .ide-body {
         grid-template-columns: 1fr;
@@ -2389,12 +2379,7 @@ footer .signature {
     transform: translateY(0);
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   REHAULED SKILLS ARSENAL & TECH MATRIX (0% AI SLOP · 100% PRODUCTION READY)
-   ══════════════════════════════════════════════════════════════════════════ */
-/* ══════════════════════════════════════════════════════════════════════════
-   INTERACTIVE TECH DOCK & TERMINAL INSPECTOR SKILLS SECTION
-   ══════════════════════════════════════════════════════════════════════════ */
+/* Skills Section & Tech Dock */
 .skills-section {
     position: relative;
     padding-top: 1.5rem;

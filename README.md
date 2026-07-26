@@ -1,11 +1,14 @@
-Just me - exploring the cyber side of things; Typing, testing, breaking, fixing.
+# Shlok Shah — Portfolio
 
-## 🌐 Live Portfolio  
-Check it out here:
-*   [GitHub Pages](https://shlokkokk.github.io/Portfolio)
-*   [Vercel Mirror](https://shlok-shah-portfolio.vercel.app/)
+Everything here started as **"wait, can I do that?"**
 
-### 🛠 Development Branch
-The `ui-overhaul` branch contains experimental UI updates, terminal-inspired animations, and aesthetic refinements. Switch to that branch to preview the new look.
+<p align="center">
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDgyam94Y2Z3djU5MWoxMDQ0cnFuc3lucHZ1dXMxMmUzc2R3cGZ0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dsKnRuALlWsZG/giphy.gif" alt="Michael Scott - World's Best Boss" width="560">
+</p>
 
-> Works well on all devices — it just looks best on desktop.
+---
+
+### Live Portfolio
+
+- **Vercel (Primary)**: [shlok-shah-portfolio.vercel.app](https://shlok-shah-portfolio.vercel.app/)
+- **GitHub Pages**: [shlokkokk.github.io/Portfolio](https://shlokkokk.github.io/Portfolio)
