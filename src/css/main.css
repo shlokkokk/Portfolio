@@ -657,6 +657,7 @@ h2::after {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: auto;
     padding: 0.85rem 0.5rem;
     user-select: none;
 }
@@ -683,6 +684,7 @@ h2::after {
     padding: 0.3rem 0.5rem;
     border-radius: 4px;
     cursor: pointer;
+    white-space: nowrap;
     transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -747,12 +749,21 @@ h2::after {
     background: #131313;
     display: flex;
     border-bottom: 1px solid #252525;
-    padding-top: 0.2rem;
+    padding-top: 0.15rem;
     overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.editor-tabs::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
 }
 
 .editor-tab {
-    background: #181818;
+    background: #151515;
     color: #858585;
     font-size: 0.78rem;
     padding: 0.45rem 1.1rem;
@@ -760,16 +771,72 @@ h2::after {
     align-items: center;
     gap: 0.5rem;
     border-right: 1px solid #252525;
-    cursor: default;
-    border-top: 1px solid transparent;
+    cursor: pointer;
+    border-top: 2px solid transparent;
     user-select: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.editor-tab:hover {
+    background: #1d1d1d;
+    color: #cccccc;
 }
 
 .editor-tab.active {
     background: #181818;
     color: #00FF8C;
-    border-top: 1px solid #00FF8C;
+    border-top: 2px solid #00FF8C;
     font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════
+   ULTRA-SLEEK CUSTOM SCROLLBARS (VS CODE STYLE)
+   ═══════════════════════════════════════════════════ */
+.ide-sidebar::-webkit-scrollbar,
+.editor-render-pane::-webkit-scrollbar,
+.editor-meta-pane::-webkit-scrollbar,
+#ideTerminalConsole::-webkit-scrollbar,
+.render-viewport::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.ide-sidebar::-webkit-scrollbar-track,
+.editor-render-pane::-webkit-scrollbar-track,
+.editor-meta-pane::-webkit-scrollbar-track,
+#ideTerminalConsole::-webkit-scrollbar-track,
+.render-viewport::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.ide-sidebar::-webkit-scrollbar-thumb,
+.editor-render-pane::-webkit-scrollbar-thumb,
+.editor-meta-pane::-webkit-scrollbar-thumb,
+#ideTerminalConsole::-webkit-scrollbar-thumb,
+.render-viewport::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 140, 0.25);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.ide-sidebar::-webkit-scrollbar-thumb:hover,
+.editor-render-pane::-webkit-scrollbar-thumb:hover,
+.editor-meta-pane::-webkit-scrollbar-thumb:hover,
+#ideTerminalConsole::-webkit-scrollbar-thumb:hover,
+.render-viewport::-webkit-scrollbar-thumb:hover {
+    background: #00FF8C;
+    box-shadow: 0 0 10px rgba(0, 255, 140, 0.6);
+}
+
+.ide-sidebar,
+.editor-render-pane,
+.editor-meta-pane,
+#ideTerminalConsole {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 140, 0.25) rgba(0, 0, 0, 0.15);
 }
 
 .tab-close-btn {
@@ -790,6 +857,79 @@ h2::after {
     color: #ff5f56;
 }
 
+/* Clear All Tabs Action Button */
+.editor-tab-actions {
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 1px solid #252525;
+    color: #858585;
+    font-size: 0.72rem;
+    font-family: 'Chakra Petch', sans-serif;
+    padding: 0.45rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.editor-tab-actions:hover {
+    background: rgba(255, 95, 86, 0.15);
+    color: #ff5f56;
+}
+
+/* Context Menu for IDE Tabs */
+.tab-context-menu {
+    position: fixed;
+    z-index: 10000;
+    background: #1c1c1c;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 140, 0.15);
+    padding: 0.35rem 0;
+    min-width: 155px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    color: #cccccc;
+    user-select: none;
+    animation: ctxFadeIn 0.15s ease-out;
+}
+
+@keyframes ctxFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ctx-item {
+    padding: 0.4rem 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ctx-item:hover {
+    background: rgba(0, 255, 140, 0.15);
+    color: #00FF8C;
+}
+
+.ctx-item i {
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.ctx-divider {
+    height: 1px;
+    background: #2e2e2e;
+    margin: 0.25rem 0;
+}
+
 /* Editor Body Grid */
 .editor-body-area {
     display: grid;
@@ -808,6 +948,13 @@ h2::after {
     align-items: center;
     justify-content: center;
     border-right: 1px solid #252525;
+}
+
+.editor-render-pane.dossier-mode {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.9rem;
+    align-items: flex-start;
 }
 
 .render-viewport {
@@ -831,6 +978,16 @@ h2::after {
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+.render-viewport.dossier-mode {
+    max-width: 100%;
+    min-height: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 0.8rem;
+    align-items: flex-start;
+    overflow: visible;
 }
 
 /* Exif Properties Pane (Right) */
@@ -990,6 +1147,423 @@ h2::after {
 .verify-action-btn.disabled::before, .verify-action-btn.disabled::after {
     border-color: #555555 !important;
 }
+
+/* ═══════════════════════════════════════════════════
+   BIOTHON 2026 CINEMATIC DOSSIER VIEWER
+   ═══════════════════════════════════════════════════ */
+
+.biothon-dossier {
+    width: 100%;
+    background: linear-gradient(160deg, #0a0d15 0%, #080b12 50%, #060810 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    box-shadow:
+        0 0 0 1px rgba(167, 139, 250, 0.08),
+        0 8px 40px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: visible;
+}
+
+/* Animated scanlines overlay */
+.dossier-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 2px,
+        rgba(255, 255, 255, 0.012) 2px,
+        rgba(255, 255, 255, 0.012) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+    animation: dossier-scan-drift 12s linear infinite;
+}
+
+@keyframes dossier-scan-drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 40px; }
+}
+
+/* ── Header ── */
+.dossier-header {
+    padding: 0.75rem 1.1rem 0.55rem;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+    background: linear-gradient(180deg, rgba(167, 139, 250, 0.06) 0%, transparent 100%);
+}
+
+.dossier-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Chakra Petch', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #a78bfa;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.dossier-pulse {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #a78bfa;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #a78bfa;
+    animation: dossier-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dossier-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.4); }
+}
+
+.dossier-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.dossier-icon-trophy {
+    font-size: 1.4rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.6));
+}
+
+.dossier-headline {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 20px rgba(167, 139, 250, 0.35);
+    line-height: 1;
+}
+
+.dossier-year {
+    color: #a78bfa;
+    text-shadow: 0 0 18px rgba(167, 139, 250, 0.6);
+}
+
+.dossier-sub {
+    font-size: 0.76rem;
+    color: #8a94a8;
+    letter-spacing: 0.03em;
+    margin-top: 0.1rem;
+}
+
+/* ── Prestige Endorsement Strip ── */
+.dossier-endorsement-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0.45rem 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.2);
+}
+
+.dossier-endorse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9aabbd;
+    transition: all 0.2s ease;
+}
+
+.dossier-endorse-badge.highlight {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: rgba(167, 139, 250, 0.35);
+    color: #c4b5fd;
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.15);
+}
+
+.dossier-endorse-badge i {
+    font-size: 0.6rem;
+    opacity: 0.7;
+}
+
+/* ── Certificate Carousel ── */
+.dossier-carousel {
+    position: relative;
+    z-index: 1;
+    padding: 0.65rem 0.9rem 0.4rem;
+}
+
+.dossier-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    animation: dossier-slide-in 0.3s ease;
+}
+
+.dossier-slide.slide-enter {
+    animation: dossier-slide-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dossier-slide.slide-exit {
+    animation: dossier-slide-out 0.28s ease forwards;
+}
+
+@keyframes dossier-slide-in {
+    from { opacity: 0; transform: translateX(18px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dossier-slide-out {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(-18px); }
+}
+
+/* Certificate frame */
+.dossier-cert-frame {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111419;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dossier-cert-frame:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 6px 32px rgba(167, 139, 250, 0.15), 0 0 0 1px rgba(167, 139, 250, 0.15);
+}
+
+.dossier-cert-label {
+    position: absolute;
+    top: 0.55rem;
+    left: 0.65rem;
+    z-index: 2;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    backdrop-filter: blur(8px);
+}
+
+.dossier-cert-label.individual {
+    background: rgba(0, 255, 140, 0.18);
+    border: 1px solid rgba(0, 255, 140, 0.4);
+    color: #00ff8c;
+    text-shadow: 0 0 8px rgba(0, 255, 140, 0.5);
+}
+
+.dossier-cert-label.team {
+    background: rgba(167, 139, 250, 0.18);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    color: #c4b5fd;
+    text-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
+}
+
+.dossier-cert-img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.dossier-cert-frame:hover .dossier-cert-img {
+    transform: scale(1.015);
+    filter: brightness(1.05);
+}
+
+.dossier-cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.dossier-cert-frame:hover .dossier-cert-overlay {
+    opacity: 1;
+}
+
+.dossier-cert-overlay i {
+    font-size: 1.3rem;
+    color: #a78bfa;
+    text-shadow: 0 0 14px rgba(167, 139, 250, 0.7);
+}
+
+.dossier-cert-caption {
+    font-size: 0.75rem;
+    color: #8a98ab;
+    line-height: 1.5;
+}
+
+.dossier-cert-caption strong {
+    color: #c8d4e0;
+}
+
+/* ── Navigation ── */
+.dossier-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 0.4rem 1.1rem 0.55rem;
+    position: relative;
+    z-index: 1;
+}
+
+.dossier-nav-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #8a98ab;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.22s ease;
+    flex-shrink: 0;
+}
+
+.dossier-nav-btn:hover {
+    background: rgba(167, 139, 250, 0.18);
+    border-color: rgba(167, 139, 250, 0.45);
+    color: #c4b5fd;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.2);
+}
+
+.dossier-nav-dots {
+    display: flex;
+    gap: 0.65rem;
+}
+
+.dossier-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: all 0.22s ease;
+}
+
+.dossier-dot::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.22s ease;
+    display: block;
+}
+
+.dossier-dot.active::before {
+    background: #a78bfa;
+    border-color: #a78bfa;
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.7);
+}
+
+.dot-label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    transition: color 0.22s ease;
+}
+
+.dossier-dot.active .dot-label {
+    color: #c4b5fd;
+}
+
+/* ── Footer Seal ── */
+.dossier-footer-seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(167, 139, 250, 0.45);
+    position: relative;
+    z-index: 1;
+}
+
+.dossier-footer-seal i {
+    color: rgba(167, 139, 250, 0.5);
+}
+
+/* ── Credibility Strip in Right Meta Pane ── */
+.meta-credibility-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+}
+
+.cred-badge {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.12), rgba(0, 229, 255, 0.08));
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #c4b5fd;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 
 /* 2. Pane Divider */
 .meta-pane-divider {

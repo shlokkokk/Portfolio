@@ -948,6 +948,97 @@ function formatActivityError(error) {
 
 
 const CREDENTIAL_DB = {
+    "award-biothon": {
+        name: "BIOTHON_2026.dossier",
+        type: "Classified Mission Dossier",
+        size: "2.80 MB (Twin Accreditation)",
+        date: "Jul 2026",
+        issuer: "Marwadi University (NAAC A+) · DST Govt of Gujarat · IEEE EMBS",
+        title: "National Finalist — BIOTHON 2026",
+        description: "Qualified as a <strong>National Finalist</strong> at <strong>BIOTHON 2026</strong> — a prestigious Bio-Hackathon by the Department of Bioinformatics, <strong>Marwadi University</strong> (NAAC A+), Rajkot. Co-hosted by <strong>DST Govt of Gujarat</strong>, <strong>IEEE EMBS</strong>, <strong>GSBTM</strong>, and <strong>Royal Society of Biology</strong>. Grand Finale held <strong>July 22, 2026</strong> — both Individual & Team Meridian accreditations awarded.",
+        link: "https://drive.google.com/file/d/1BISeaAhiouegwPqUx4nR8Ni4rgR5PA_H/view?usp=sharing",
+        icon: "fas fa-folder-open",
+        category: "Awards_and_CTFs",
+        credibilityBadges: ["NATIONAL FINALIST", "DST GOVT OF GUJARAT", "IEEE EMBS", "ROYAL SOC BIOLOGY", "NAAC A+"],
+
+        // ── Generic Multi-Certificate Dossier Schema ──
+        // Set isDossier: true on any entry to render a tabbed dossier viewer
+        // instead of a single certificate.  All fields below are data-driven —
+        // the renderer reads them directly; nothing is hardcoded in functions.
+        isDossier:       true,
+        childFileIds:    ["award-biothon-shlok", "award-biothon-team"],
+        dossierTag:      "CLASSIFIED \u00b7 BIOTHON 2026 \u00b7 NATIONAL FINALIST",
+        dossierIcon:     "\ud83e\uddec",
+        dossierHeadline: "BIOTHON",
+        dossierYear:     "2026",
+        dossierSubtitle: "National Level Bio-Hackathon \u00b7 Grand Finale \u00b7 July 22, 2026",
+
+        // Endorsement strip pills: { icon, label, highlight? }
+        endorsements: [
+            { icon: "fas fa-landmark",   label: "DST \u00b7 Govt of Gujarat" },
+            { icon: "fas fa-microchip",  label: "IEEE EMBS",              highlight: true },
+            { icon: "fas fa-leaf",       label: "Royal Society of Biology" },
+            { icon: "fas fa-university", label: "Marwadi Univ \u00b7 NAAC A+" },
+            { icon: "fas fa-flask",      label: "GSBTM" },
+        ],
+
+        // Certificate slides: { driveId, link, labelClass, labelIcon, labelText, caption, dotLabel, targetFileId }
+        slides: [
+            {
+                driveId:      "1BISeaAhiouegwPqUx4nR8Ni4rgR5PA_H",
+                link:         "https://drive.google.com/file/d/1BISeaAhiouegwPqUx4nR8Ni4rgR5PA_H/view?usp=sharing",
+                labelClass:   "individual",
+                labelIcon:    "fas fa-user-shield",
+                labelText:    "Individual Accreditation \u00b7 Shlok Shah",
+                caption:      "<strong>Certificate of Round 2 Qualification</strong> \u2014 Shlok Shah selected as a Finalist to compete in the Grand Finale, evaluated on innovation, technical depth, and solution communication.",
+                dotLabel:     "Shlok Shah",
+                targetFileId: "award-biothon-shlok"
+            },
+            {
+                driveId:      "1Rp7Q6cG-puZmGQcoqhAs0-QuBP3klwRy",
+                link:         "https://drive.google.com/file/d/1Rp7Q6cG-puZmGQcoqhAs0-QuBP3klwRy/view?usp=sharing",
+                labelClass:   "team",
+                labelIcon:    "fas fa-users",
+                labelText:    "Team Accreditation \u00b7 Team Meridian",
+                caption:      "<strong>Certificate of Appreciation</strong> \u2014 Team Meridian awarded for qualifying as Grand Finale Finalists and presenting their solution with dedication, innovation, and enthusiastic participation.",
+                dotLabel:     "Team Meridian",
+                targetFileId: "award-biothon-team"
+            },
+        ],
+    },
+
+    "award-biothon-shlok": {
+        name: "Biothon2026_Finalist_Shlok.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "1.42 MB",
+        date: "Jul 2026",
+        issuer: "Marwadi University · DST Govt of Gujarat · IEEE EMBS",
+        title: "National Finalist — BIOTHON 2026 (Shlok Shah)",
+        description: "Qualified <strong>Round 2 & Selected as a National Finalist</strong> at <strong>BIOTHON 2026</strong>, a prestigious National Level Bio-Hackathon organized by the Department of Bioinformatics, Faculty of Engineering & Technology, <strong>Marwadi University</strong> (NAAC A+), Rajkot. Supported & sponsored by the <strong>Department of Science & Technology (DST), Govt. of Gujarat</strong>, <strong>GSBTM</strong>, <strong>IEEE EMBS</strong>, and the <strong>Royal Society of Biology</strong>. Evaluated on technical innovation and solution execution at the Grand Finale on July 22, 2026.",
+        link: "https://drive.google.com/file/d/1BISeaAhiouegwPqUx4nR8Ni4rgR5PA_H/view?usp=sharing",
+        previewLink: "https://drive.google.com/file/d/1BISeaAhiouegwPqUx4nR8Ni4rgR5PA_H/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs",
+        parentDossierId: "award-biothon",
+        credibilityBadges: ["INDIVIDUAL FINALIST", "DST GOVT OF GUJARAT", "IEEE EMBS", "ROYAL SOC BIOLOGY"]
+    },
+
+    "award-biothon-team": {
+        name: "Biothon2026_Finalist_Team_Meridian.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "1.38 MB",
+        date: "Jul 2026",
+        issuer: "Marwadi University · DST Govt of Gujarat · IEEE EMBS",
+        title: "Grand Finale Team Finalist — BIOTHON 2026 (Team Meridian)",
+        description: "Certificate of Appreciation presented to <strong>Team Meridian</strong> for qualifying as a <strong>Grand Finale Finalist</strong> and presenting their solution at <strong>BIOTHON 2026</strong>, a National Level Bio-Hackathon hosted by <strong>Marwadi University</strong> (NAAC A+), Rajkot. Sponsored and endorsed by <strong>DST Govt of Gujarat</strong>, <strong>GSBTM</strong>, <strong>IEEE EMBS</strong>, and <strong>Royal Society of Biology</strong>.",
+        link: "https://drive.google.com/file/d/1Rp7Q6cG-puZmGQcoqhAs0-QuBP3klwRy/view?usp=sharing",
+        previewLink: "https://drive.google.com/file/d/1Rp7Q6cG-puZmGQcoqhAs0-QuBP3klwRy/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs",
+        parentDossierId: "award-biothon",
+        credibilityBadges: ["TEAM MERIDIAN", "NATIONAL FINALIST", "DST GOVT OF GUJARAT", "IEEE EMBS"]
+    },
+
     "award-cyberthon": {
         name: "Cyberthon_First_Prize.jpg",
         type: "JPEG Image (image/jpeg)",
@@ -1258,16 +1349,109 @@ function toggleIdeFolder(folderId) {
 
 function generateCertMockup(fileId, fileData) {
     const isAward = fileData.category === 'Awards_and_CTFs';
-    
-    // Check if we have a previewLink (Drive link) or if the main link itself is a Drive link
+
+    // ══════════════════════════════════════════════════════════════════════════
+    // GENERIC CINEMATIC DOSSIER VIEWER
+    // Renders automatically for any entry with isDossier: true.
+    // All content is read from the data object — nothing is hardcoded here.
+    // ══════════════════════════════════════════════════════════════════════════
+    if (fileData.isDossier && fileData.slides && fileData.slides.length > 0) {
+        const slides      = fileData.slides;
+        const endorses    = fileData.endorsements || [];
+        const tag         = fileData.dossierTag      || fileData.title.toUpperCase();
+        const icon        = fileData.dossierIcon     || '🏆';
+        const headline    = fileData.dossierHeadline || fileData.title;
+        const year        = fileData.dossierYear     || fileData.date;
+        const subtitle    = fileData.dossierSubtitle || fileData.issuer;
+
+        // Build endorsement strip HTML
+        const endorseHTML = endorses.map(e => `
+            <span class="dossier-endorse-badge${e.highlight ? ' highlight' : ''}">
+                <i class="${e.icon}"></i> ${e.label}
+            </span>`).join('');
+
+        // Build slides HTML
+        const slidesHTML = slides.map((s, i) => `
+            <div class="dossier-slide" id="dossierSlide${i}"${i > 0 ? ' style="display:none;"' : ''}>
+                <div class="dossier-cert-frame" onclick="${s.targetFileId ? `switchIdeTab('${s.targetFileId}')` : `window.open('${s.link}','_blank')`}" title="Click to view tab detail">
+                    <div class="dossier-cert-label ${s.labelClass || ''}">
+                        <i class="${s.labelIcon || 'fas fa-certificate'}"></i> ${s.labelText}
+                    </div>
+                    <img
+                        src="https://lh3.googleusercontent.com/d/${s.driveId}=w1200"
+                        referrerpolicy="no-referrer"
+                        class="dossier-cert-img"
+                        alt="${s.labelText}"
+                        onerror="this.style.opacity='0.15'"
+                    />
+                    <div class="dossier-cert-overlay">
+                        <i class="fas ${s.targetFileId ? 'fa-folder-open' : 'fa-external-link-alt'}"></i>
+                        <span>${s.targetFileId ? 'Open Tab View' : 'Open Certificate'}</span>
+                    </div>
+                </div>
+                <div class="dossier-cert-caption">${s.caption || ''}</div>
+            </div>`).join('');
+
+        // Build nav dots HTML
+        const dotsHTML = slides.map((s, i) => `
+            <button class="dossier-dot${i === 0 ? ' active' : ''}" id="dossierDot${i}"
+                onclick="dossierGoTo(${i})" aria-label="${s.dotLabel || s.labelText}">
+                <span class="dot-label">${s.dotLabel || `Slide ${i + 1}`}</span>
+            </button>`).join('');
+
+        // Update the live slide count so the carousel wraps correctly
+        _dossierTotal = slides.length;
+
+        return `
+            <div class="biothon-dossier" id="certDossier">
+                <div class="dossier-scanlines" aria-hidden="true"></div>
+
+                <div class="dossier-header">
+                    <div class="dossier-tag">
+                        <span class="dossier-pulse"></span>
+                        ${tag}
+                    </div>
+                    <div class="dossier-title-row">
+                        <span class="dossier-icon-trophy">${icon}</span>
+                        <h2 class="dossier-headline">${headline} <span class="dossier-year">${year}</span></h2>
+                    </div>
+                    <p class="dossier-sub">${subtitle}</p>
+                </div>
+
+                ${endorseHTML ? `<div class="dossier-endorsement-strip">${endorseHTML}</div>` : ''}
+
+                <div class="dossier-carousel" id="dossierCarousel">
+                    ${slidesHTML}
+                </div>
+
+                <div class="dossier-nav">
+                    <button class="dossier-nav-btn prev" id="dossierPrev" onclick="dossierNavigate(-1)" aria-label="Previous certificate">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dossier-nav-dots">
+                        ${dotsHTML}
+                    </div>
+                    <button class="dossier-nav-btn next" id="dossierNext" onclick="dossierNavigate(1)" aria-label="Next certificate">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="dossier-footer-seal">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>INTEGRITY VERIFIED · SHA256 SIGNED · NATIONAL LEVEL ACCREDITATION</span>
+                </div>
+            </div>
+        `;
+    }
+
+    // ── Standard single certificate viewer ──
     const driveUrl = fileData.previewLink || fileData.link;
     const driveId = getDriveId(driveUrl);
-    
+
     if (driveId) {
         const redirectUrl = fileData.link || driveUrl;
-        const isOfficialRedirect = fileData.previewLink ? true : false;
+        const isOfficialRedirect = !!fileData.previewLink;
         const overlayText = isOfficialRedirect ? 'Verify Credential Official Link' : 'Open Original in Google Drive';
-        
         return `
             <div class="viewer-img-container" onclick="window.open('${redirectUrl}', '_blank')" title="Click to verify credential">
                 <img src="https://lh3.googleusercontent.com/d/${driveId}=w1000" referrerpolicy="no-referrer" class="cert-real-img" alt="${fileData.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1281,9 +1465,30 @@ function generateCertMockup(fileId, fileData) {
             </div>
         `;
     }
-    
-    // Fallback: Custom branded mockup UI for external/no-link platforms
     return generateCSSMockupHTML(isAward, fileData);
+}
+
+// Dossier carousel state — _dossierTotal is updated dynamically from slides.length
+let _dossierIndex = 0;
+let _dossierTotal = 2;
+
+
+function dossierGoTo(index) {
+    const prev = document.getElementById(`dossierSlide${_dossierIndex}`);
+    const prevDot = document.getElementById(`dossierDot${_dossierIndex}`);
+    if (prev) { prev.classList.add('slide-exit'); setTimeout(() => { prev.style.display = 'none'; prev.classList.remove('slide-exit'); }, 280); }
+    if (prevDot) prevDot.classList.remove('active');
+
+    _dossierIndex = ((index % _dossierTotal) + _dossierTotal) % _dossierTotal;
+
+    const next = document.getElementById(`dossierSlide${_dossierIndex}`);
+    const nextDot = document.getElementById(`dossierDot${_dossierIndex}`);
+    if (next) { next.style.display = 'flex'; next.classList.add('slide-enter'); setTimeout(() => next.classList.remove('slide-enter'), 320); }
+    if (nextDot) nextDot.classList.add('active');
+}
+
+function dossierNavigate(dir) {
+    dossierGoTo(_dossierIndex + dir);
 }
 
 function getDriveId(url) {
@@ -1291,6 +1496,7 @@ function getDriveId(url) {
     const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
     return match ? match[1] : null;
 }
+
 
 function generateCSSMockupHTML(isAward, fileData) {
     const awardClass = isAward ? 'award-variant' : '';
@@ -1343,53 +1549,290 @@ function generateCSSMockupHTML(isAward, fileData) {
     `;
 }
 
-function selectIdeFile(element) {
-    const fileId = element.getAttribute('data-id');
-    const fileData = CREDENTIAL_DB[fileId];
-    if (!fileData) return;
+// ══════════════════════════════════════════════════════════════════════════
+// DYNAMIC MULTI-TAB & FILE VIEWER ENGINE
+// ══════════════════════════════════════════════════════════════════════════
+let openTabs = [];
+let currentActiveFileId = 'award-biothon';
+
+let ctxTargetFileId = null;
+
+function renderIdeTabs() {
+    const tabRow = document.getElementById('ideTabRow');
+    if (!tabRow) return;
+
+    if (openTabs.length === 0) {
+        tabRow.innerHTML = '';
+        return;
+    }
+
+    const tabsHtml = openTabs.map(id => {
+        const file = CREDENTIAL_DB[id];
+        if (!file) return '';
+        const isActive = id === currentActiveFileId;
+        
+        let iconHtml = '';
+        if (file.isDossier) {
+            iconHtml = '<i class="fas fa-folder-open" style="color:#a78bfa;"></i>';
+        } else if (file.name.endsWith('.jpg') || file.name.endsWith('.png')) {
+            iconHtml = '<i class="far fa-image file-icon-jpg"></i>';
+        } else {
+            iconHtml = '<i class="far fa-file-pdf file-icon-pdf"></i>';
+        }
+
+        const activeClass = isActive ? ' active' : '';
+        return `
+            <div class="editor-tab${activeClass}" id="tab-${id}" onclick="switchIdeTab('${id}')" oncontextmenu="openTabContextMenu(event, '${id}')" title="${file.title}">
+                ${iconHtml}
+                <span>${file.name}</span>
+                <span class="tab-close-btn" onclick="closeIdeTab(event, '${id}')">&times;</span>
+            </div>
+        `;
+    }).join('');
+
+    const clearAllBtn = openTabs.length > 1 ? `
+        <div class="editor-tab-actions" onclick="closeAllTabs()" title="Close All Open Tabs">
+            <i class="fas fa-times-circle"></i>
+            <span>Clear All</span>
+        </div>
+    ` : '';
+
+    tabRow.innerHTML = tabsHtml + clearAllBtn;
+
+    setTimeout(() => {
+        const activeTabEl = document.getElementById(`tab-${currentActiveFileId}`);
+        if (activeTabEl && tabRow) {
+            const targetLeft = activeTabEl.offsetLeft - tabRow.offsetLeft - 24;
+            if (window.gsap) {
+                gsap.to(tabRow, {
+                    scrollLeft: Math.max(0, targetLeft),
+                    duration: 0.35,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
+            } else {
+                activeTabEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+            }
+        }
+    }, 40);
+}
+
+function openTabContextMenu(event, fileId) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    ctxTargetFileId = fileId;
     
-    // Ensure active tab is visible
-    const activeTab = document.getElementById('ideActiveTab');
-    if (activeTab) activeTab.style.display = 'inline-flex';
+    let ctxMenu = document.getElementById('tabContextMenu');
+    if (!ctxMenu) {
+        ctxMenu = document.createElement('div');
+        ctxMenu.id = 'tabContextMenu';
+        ctxMenu.className = 'tab-context-menu';
+        document.body.appendChild(ctxMenu);
+    }
     
-    // 1. Remove active state from other files in sidebar explorer
+    const file = CREDENTIAL_DB[fileId];
+    const fileLabel = file ? file.name : 'Tab';
+
+    ctxMenu.innerHTML = `
+        <div class="ctx-item" data-action="close">
+            <i class="fas fa-times"></i> Close Tab
+        </div>
+        <div class="ctx-item" data-action="closeOthers">
+            <i class="fas fa-minus-circle"></i> Close Others
+        </div>
+        <div class="ctx-divider"></div>
+        <div class="ctx-item" data-action="closeAll">
+            <i class="fas fa-trash-alt"></i> Close All Tabs
+        </div>
+    `;
+
+    const menuWidth = 180;
+    const menuHeight = 120;
+    const posX = Math.min(event.clientX, window.innerWidth - menuWidth - 10);
+    const posY = Math.min(event.clientY, window.innerHeight - menuHeight - 10);
+
+    ctxMenu.style.left = `${posX}px`;
+    ctxMenu.style.top = `${posY}px`;
+    ctxMenu.style.display = 'block';
+
+    ctxMenu.onclick = (e) => {
+        e.stopPropagation();
+        const item = e.target.closest('.ctx-item');
+        if (!item) return;
+        const action = item.getAttribute('data-action');
+        executeCtxAction(action, ctxTargetFileId);
+    };
+}
+
+function executeCtxAction(action, targetId) {
+    hideTabContextMenu();
+    if (action === 'close') {
+        if (targetId) closeIdeTab(null, targetId);
+    } else if (action === 'closeOthers') {
+        if (targetId) closeOtherTabs(targetId);
+    } else if (action === 'closeAll') {
+        closeAllTabs();
+    }
+}
+
+function hideTabContextMenu() {
+    const ctxMenu = document.getElementById('tabContextMenu');
+    if (ctxMenu) ctxMenu.style.display = 'none';
+}
+
+document.addEventListener('click', (e) => {
+    const ctxMenu = document.getElementById('tabContextMenu');
+    if (ctxMenu && ctxMenu.style.display === 'block') {
+        if (!ctxMenu.contains(e.target)) {
+            hideTabContextMenu();
+        }
+    }
+});
+
+document.addEventListener('scroll', hideTabContextMenu, true);
+
+function closeOtherTabs(fileId) {
+    if (!fileId) return;
+    openTabs = [fileId];
+    openFileInIde(fileId);
+}
+
+function closeAllTabs() {
+    resetIdeEmptyState();
+}
+
+function resetIdeEmptyState() {
+    openTabs = [];
+    currentActiveFileId = null;
+    renderIdeTabs();
+
     document.querySelectorAll('.tree-file').forEach(el => el.classList.remove('active'));
-    element.classList.add('active');
-    
-    // 2. Update editor tab
-    const tabTitle = document.getElementById('tabTitle');
-    const tabIcon = document.getElementById('tabIcon');
-    if (tabTitle) tabTitle.textContent = fileData.name;
-    if (tabIcon) {
-        tabIcon.className = (fileData.name.endsWith('.jpg') || fileData.name.endsWith('.png')) ? 'far fa-image file-icon-jpg' : 'far fa-file-pdf file-icon-pdf';
-    }
-    
-    // 3. Render graphical mockup inside viewport
+
     const viewport = document.getElementById('renderViewport');
+    const renderPane = document.querySelector('.editor-render-pane');
+    if (viewport) viewport.classList.remove('dossier-mode');
+    if (renderPane) renderPane.classList.remove('dossier-mode');
     if (viewport) {
-        viewport.innerHTML = generateCertMockup(fileId, fileData);
+        viewport.innerHTML = `
+            <div class="empty-viewport-state" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1.5rem; box-sizing: border-box;">
+                <i class="far fa-folder-open empty-icon" style="font-size: 2.5rem; color: #858585; margin-bottom: 0.75rem;"></i>
+                <h3 style="color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem;">No File Open</h3>
+                <p style="color: #858585; font-size: 0.8rem; line-height: 1.5; text-align: center; max-width: 280px; margin: 0 auto;">Select a certificate or award file from the explorer sidebar to view its contents.</p>
+            </div>
+        `;
     }
-    
-    // 4. Update file metadata panel properties
+
     const propName = document.getElementById('propFileName');
     const propType = document.getElementById('propFileType');
     const propSize = document.getElementById('propFileSize');
     const metaDate = document.getElementById('metaDateBadge');
     const metaIssuer = document.getElementById('metaCertIssuer');
-    const propIntegrity = document.getElementById('propIntegrity');
     const metaTitle = document.getElementById('metaCertTitle');
     const metaDesc = document.getElementById('metaCertDesc');
     const verifyBtn = document.getElementById('verifyBtn');
-    
+
+    if (propName) propName.textContent = '--';
+    if (propType) propType.textContent = '--';
+    if (propSize) propSize.textContent = '--';
+    if (metaDate) metaDate.textContent = 'NONE';
+    if (metaIssuer) metaIssuer.textContent = 'No active document';
+    if (metaTitle) metaTitle.textContent = 'No Active File';
+    if (metaDesc) metaDesc.textContent = 'Select a certificate or award file from the explorer tree in the sidebar to inspect its file integrity, metadata details, and accreditation information.';
+
+    if (verifyBtn) {
+        verifyBtn.removeAttribute('href');
+        verifyBtn.classList.add('disabled');
+        verifyBtn.innerHTML = '<i class="fas fa-lock"></i> SELECT FILE';
+    }
+
+    const credBadgesContainer = document.getElementById('metaCredBadges');
+    if (credBadgesContainer) credBadgesContainer.style.display = 'none';
+
+    const terminal = document.getElementById('ideTerminalConsole');
+    if (terminal) {
+        terminal.innerHTML = `
+            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ close_session</p>
+            <p class="term-log term-log-cyan">[~] Unmounting session volume. Connection closed.</p>
+            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span></p>
+        `;
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+}
+
+function openFileInIde(fileId) {
+    const fileData = CREDENTIAL_DB[fileId];
+    if (!fileData) return;
+
+    _dossierIndex = 0;
+    currentActiveFileId = fileId;
+
+    // 1. Ensure fileId is present in openTabs
+    if (!openTabs.includes(fileId)) {
+        if (fileData.parentDossierId && openTabs.includes(fileData.parentDossierId)) {
+            const pIdx = openTabs.indexOf(fileData.parentDossierId);
+            openTabs.splice(pIdx + 1, 0, fileId);
+        } else {
+            openTabs.push(fileId);
+        }
+    }
+
+    // 2. If opening a dossier, automatically open its child files as sibling tabs right next to it!
+    if (fileData.isDossier && fileData.childFileIds) {
+        const dossierIdx = openTabs.indexOf(fileId);
+        fileData.childFileIds.forEach((childId, idx) => {
+            if (!openTabs.includes(childId)) {
+                openTabs.splice(dossierIdx + 1 + idx, 0, childId);
+            }
+        });
+    }
+
+    // 3. Highlight sidebar file item
+    document.querySelectorAll('.tree-file').forEach(el => {
+        const id = el.getAttribute('data-id');
+        if (id === fileId || (fileData.parentDossierId && id === fileData.parentDossierId)) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+
+    // 4. Re-render top tabs bar
+    renderIdeTabs();
+
+    // 5. Render graphical mockup inside viewport
+    const viewport = document.getElementById('renderViewport');
+    const renderPane = document.querySelector('.editor-render-pane');
+    if (fileData.isDossier) {
+        if (viewport) viewport.classList.add('dossier-mode');
+        if (renderPane) renderPane.classList.add('dossier-mode');
+    } else {
+        if (viewport) viewport.classList.remove('dossier-mode');
+        if (renderPane) renderPane.classList.remove('dossier-mode');
+    }
+    if (viewport) {
+        viewport.innerHTML = generateCertMockup(fileId, fileData);
+    }
+
+    // 6. Update file metadata panel properties
+    const propName = document.getElementById('propFileName');
+    const propType = document.getElementById('propFileType');
+    const propSize = document.getElementById('propFileSize');
+    const metaDate = document.getElementById('metaDateBadge');
+    const metaIssuer = document.getElementById('metaCertIssuer');
+    const metaTitle = document.getElementById('metaCertTitle');
+    const metaDesc = document.getElementById('metaCertDesc');
+    const verifyBtn = document.getElementById('verifyBtn');
+
     if (propName) propName.textContent = fileData.name;
     if (propType) propType.textContent = fileData.type;
     if (propSize) propSize.textContent = fileData.size;
     if (metaDate) metaDate.textContent = fileData.date;
     if (metaIssuer) metaIssuer.textContent = fileData.issuer;
-    
     if (metaTitle) metaTitle.textContent = fileData.title;
     if (metaDesc) metaDesc.innerHTML = fileData.description;
-    
+
     if (verifyBtn) {
         if (fileData.link) {
             verifyBtn.href = fileData.link;
@@ -1401,49 +1844,67 @@ function selectIdeFile(element) {
             verifyBtn.innerHTML = '<i class="fas fa-lock"></i> VERIFICATION SECURE';
         }
     }
-    
-    // 4.5. Reset panel scroll positions back to the top
-    const renderPane = document.querySelector('.editor-render-pane');
-    const metaPane = document.querySelector('.editor-meta-pane');
+
+    // 7. Render credibility badges if available
+    let credBadgesContainer = document.getElementById('metaCredBadges');
+    if (!credBadgesContainer) {
+        const badgeRow = document.getElementById('metaBadgeRow');
+        if (badgeRow) {
+            credBadgesContainer = document.createElement('div');
+            credBadgesContainer.id = 'metaCredBadges';
+            credBadgesContainer.className = 'meta-credibility-strip';
+            badgeRow.parentNode.insertBefore(credBadgesContainer, badgeRow.nextSibling);
+        }
+    }
+    if (credBadgesContainer) {
+        if (fileData.credibilityBadges && fileData.credibilityBadges.length > 0) {
+            credBadgesContainer.style.display = 'flex';
+            credBadgesContainer.innerHTML = fileData.credibilityBadges.map(b => `<span class="cred-badge"><i class="fas fa-shield-alt"></i> ${b}</span>`).join('');
+        } else {
+            credBadgesContainer.style.display = 'none';
+        }
+    }
+
+    // 8. Reset panel scroll positions back to top
     if (renderPane) renderPane.scrollTop = 0;
+    const metaPane = document.querySelector('.editor-meta-pane');
     if (metaPane) metaPane.scrollTop = 0;
-    
-    // 5. Update terminal console command output
+
+    // 9. Update terminal console command output
     const terminal = document.getElementById('ideTerminalConsole');
     if (terminal) {
-        const filePath = fileData.category === 'Awards_and_CTFs' ? 'awards' : 'certifications';
-        const fileTool = fileData.name.endsWith('.jpg') ? 'exiftool' : 'pdfinfo';
-        
-        // Generate pseudo unique md5 or check sum
-        let hash = 0;
-        for (let i = 0; i < fileData.title.length; i++) {
-            hash = fileData.title.charCodeAt(i) + ((hash << 5) - hash);
-        }
-        const hex = Math.abs(hash).toString(16).toUpperCase().padStart(8, '0');
-        
-        let detailsLog = '';
-        if (fileData.name.endsWith('.jpg')) {
-            detailsLog = `File size: ${fileData.size} | Format: JFIF JPEG | Quality: 98%
-EXIF Signature Hash: SHA256::${hex}2aef9
-EXIF Organization Stamp: ${fileData.issuer}`;
+        if (fileData.isDossier && fileData.slides) {
+            const slideLines = fileData.slides.map(s =>
+                `  ${s === fileData.slides[fileData.slides.length - 1] ? '└' : '├'}── ${s.labelText.split(' · ').pop()}.jpg    [${s.labelText}]`
+            ).join('\n');
+            terminal.innerHTML = `
+                <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/awards</span>$ ls -la ${fileData.name}/</p>
+                <p class="term-log term-log-cyan">[~] Extracting classified mission dossier (${fileData.slides.length} accreditations)...</p>
+                <p class="term-log">${slideLines}</p>
+                <p class="term-log">Issuer: ${fileData.issuer}</p>
+                <p class="term-log term-log-green">[+] Dossier integrity check: PASSED — All ${fileData.slides.length} accreditations VERIFIED.</p>
+                <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/awards</span>$ <span class="term-cursor-blink"></span></p>
+            `;
         } else {
-            detailsLog = `File size: ${fileData.size} | Format: PDF-1.5 | Pages: 1
-PDF Signature Hash: SHA256::${hex}7f82b
-PDF Producer: Adobe Acrobat Reader 64-bit`;
+            const fileTool = fileData.name.endsWith('.jpg') || fileData.name.endsWith('.png') ? 'exiftool' : 'pdfinfo';
+            const filePath = fileData.category === 'Awards_and_CTFs' ? 'awards' : 'certifications';
+            let hash = 0;
+            for (let i = 0; i < fileData.title.length; i++) { hash = fileData.title.charCodeAt(i) + ((hash << 5) - hash); }
+            const hex = Math.abs(hash).toString(16).toUpperCase().padStart(8, '0');
+            let detailsLog = (fileData.name.endsWith('.jpg') || fileData.name.endsWith('.png'))
+                ? `File size: ${fileData.size} | Format: High-Res Image | Quality: 98%\nEXIF Signature Hash: SHA256::${hex}2aef9\nEXIF Organization Stamp: ${fileData.issuer}`
+                : `File size: ${fileData.size} | Format: PDF-1.5 | Pages: 1\nPDF Signature Hash: SHA256::${hex}7f82b\nPDF Producer: Adobe Acrobat Reader 64-bit`;
+            terminal.innerHTML = `
+                <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ ${fileTool} ./${filePath}/${fileData.name}</p>
+                <p class="term-log term-log-cyan">[~] Inspecting header metadata...</p>
+                <p class="term-log">${detailsLog}</p>
+                <p class="term-log">Acquisition Date: ${fileData.date}</p>
+                <p class="term-log term-log-green">[+] Validation: Security clearance status [VERIFIED].</p>
+                <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span></p>
+            `;
         }
-        
-        terminal.innerHTML = `
-            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ ${fileTool} ./${filePath}/${fileData.name}</p>
-            <p class="term-log term-log-cyan">[~] Inspecting header metadata...</p>
-            <p class="term-log">${detailsLog}</p>
-            <p class="term-log">Acquisition Date: ${fileData.date}</p>
-            <p class="term-log term-log-green">[+] Validation: Security clearance status [VERIFIED].</p>
-            <p class="term-prompt-line"><span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span></p>
-        `;
-        terminal.scrollTop = terminal.scrollHeight;
     }
-    
-    // 6. Responsive support: smooth-scroll to editor panel on mobile screens
+
     if (window.innerWidth < 992) {
         const editor = document.querySelector('.ide-editor');
         if (editor) {
@@ -1452,81 +1913,72 @@ PDF Producer: Adobe Acrobat Reader 64-bit`;
     }
 }
 
+function selectIdeFile(element) {
+    const fileId = element.getAttribute('data-id');
+    openFileInIde(fileId);
+}
+
+function switchIdeTab(fileId) {
+    openFileInIde(fileId);
+}
+
+function closeIdeTab(event, fileId) {
+    if (event) event.stopPropagation();
+    const idx = openTabs.indexOf(fileId);
+    if (idx !== -1) {
+        openTabs.splice(idx, 1);
+    }
+    
+    if (openTabs.length === 0) {
+        resetIdeEmptyState();
+    } else {
+        if (fileId === currentActiveFileId) {
+            const nextActive = openTabs[Math.min(idx, openTabs.length - 1)];
+            openFileInIde(nextActive);
+        } else {
+            renderIdeTabs();
+        }
+    }
+}
+
+function closeIdeFile(event) {
+    if (event) event.stopPropagation();
+    closeIdeTab(event, currentActiveFileId);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the default first item (preferring active class)
     const defaultFile = document.querySelector('.tree-file.active') || document.querySelector('.tree-file');
     if (defaultFile) {
         selectIdeFile(defaultFile);
     }
-});
 
-function closeIdeFile(event) {
-    if (event) event.stopPropagation(); // prevent triggering parent clicks
-    
-    // 1. Hide active tab
-    const activeTab = document.getElementById('ideActiveTab');
-    if (activeTab) activeTab.style.display = 'none';
-    
-    // 2. Remove active state from sidebar file list
-    document.querySelectorAll('.tree-file').forEach(el => el.classList.remove('active'));
-    
-    // 3. Render empty viewport state with checkerboard backdrop
-    const viewport = document.getElementById('renderViewport');
-    if (viewport) {
-        viewport.innerHTML = `
-            <div class="empty-viewport-state" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1.5rem; box-sizing: border-box;">
-                <i class="far fa-folder-open empty-icon" style="font-size: 2.5rem; color: #858585; margin-bottom: 0.75rem;"></i>
-                <h3 style="color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem;">No File Open</h3>
-                <p style="color: #858585; font-size: 0.8rem; line-height: 1.5; text-align: center; max-width: 280px; margin: 0 auto;">Select a certificate or award file from the explorer sidebar to view its contents.</p>
-            </div>
-        `;
+    const tabRow = document.getElementById('ideTabRow');
+    if (tabRow) {
+        let tabScrollPos = tabRow.scrollLeft;
+
+        tabRow.addEventListener('wheel', (evt) => {
+            if (evt.deltaY !== 0) {
+                evt.preventDefault();
+                tabScrollPos += evt.deltaY * 1.35;
+                const maxScroll = tabRow.scrollWidth - tabRow.clientWidth;
+                tabScrollPos = Math.max(0, Math.min(tabScrollPos, maxScroll));
+
+                if (window.gsap) {
+                    gsap.to(tabRow, {
+                        scrollLeft: tabScrollPos,
+                        duration: 0.45,
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                } else {
+                    tabRow.scrollBy({
+                        left: evt.deltaY * 1.5,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }, { passive: false });
     }
-    
-    // 4. Reset metadata sidepane to placeholder state
-    const propName = document.getElementById('propFileName');
-    const propType = document.getElementById('propFileType');
-    const propSize = document.getElementById('propFileSize');
-    const metaDate = document.getElementById('metaDateBadge');
-    const metaIssuer = document.getElementById('metaCertIssuer');
-    const metaTitle = document.getElementById('metaCertTitle');
-    const metaDesc = document.getElementById('metaCertDesc');
-    const verifyBtn = document.getElementById('verifyBtn');
-    
-    if (propName) propName.textContent = '--';
-    if (propType) propType.textContent = '--';
-    if (propSize) propSize.textContent = '--';
-    if (metaDate) metaDate.textContent = 'NONE';
-    if (metaIssuer) metaIssuer.textContent = 'No active document';
-    
-    if (metaTitle) metaTitle.textContent = 'No Active File';
-    if (metaDesc) metaDesc.textContent = 'Select a certificate or award file from the explorer tree in the sidebar to inspect its file integrity, metadata details, and accreditation information.';
-    
-    if (verifyBtn) {
-        verifyBtn.removeAttribute('href');
-        verifyBtn.classList.add('disabled');
-        verifyBtn.innerHTML = '<i class="fas fa-lock"></i> SELECT FILE';
-    }
-    
-    // 5. Output session close message to terminal
-    const terminal = document.getElementById('ideTerminalConsole');
-    if (terminal) {
-        const newPrompt = document.createElement('p');
-        newPrompt.className = 'term-prompt-line';
-        newPrompt.innerHTML = `<span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ close_session`;
-        terminal.appendChild(newPrompt);
-        
-        const newLog = document.createElement('p');
-        newLog.className = 'term-log term-log-cyan';
-        newLog.textContent = `[~] Unmounting session volume. Connection closed.`;
-        terminal.appendChild(newLog);
-        
-        const nextPrompt = document.createElement('p');
-        nextPrompt.className = 'term-prompt-line';
-        nextPrompt.innerHTML = `<span class="term-user">shlok@sec-node</span>:<span class="term-path">~/portfolio/credentials</span>$ <span class="term-cursor-blink"></span>`;
-        terminal.appendChild(nextPrompt);
-        
-        terminal.scrollTop = terminal.scrollHeight;
-    }
-}
+});
 
 

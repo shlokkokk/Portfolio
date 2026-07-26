@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="src/css/projects.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     
+    <!-- GSAP Animation Engine for Smooth Scrolling & UI Physics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
     <!-- Terminal Boot Screen - signed: serozr -->
@@ -393,7 +395,11 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                             </div>
                             
                             <div class="tree-folder-contents" id="folder-contents-awards">
-                                <div class="tree-item tree-file active" data-id="award-cyberthon" onclick="selectIdeFile(this)">
+                                <div class="tree-item tree-file active" data-id="award-biothon" onclick="selectIdeFile(this)">
+                                    <i class="fas fa-folder-open" style="color:#a78bfa;"></i>
+                                    <span>BIOTHON_2026.dossier</span>
+                                </div>
+                                <div class="tree-item tree-file" data-id="award-cyberthon" onclick="selectIdeFile(this)">
                                     <i class="far fa-image file-icon-jpg"></i>
                                     <span>Cyberthon_First_Prize.jpg</span>
                                 </div>
@@ -506,7 +512,7 @@ ethical hacking, Linux, and exploring how systems can be secured and improved.
                     <div class="editor-tabs" id="ideTabRow">
                         <div class="editor-tab active" id="ideActiveTab">
                             <i class="far fa-image file-icon-jpg" id="tabIcon"></i>
-                            <span id="tabTitle">Cyberthon_First_Prize.jpg</span>
+                            <span id="tabTitle">BIOTHON_2026.dossier</span>
                             <span class="tab-close-btn" onclick="closeIdeFile(event)">&times;</span>
                         </div>
                     </div>
