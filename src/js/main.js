@@ -1042,16 +1042,88 @@ const CREDENTIAL_DB = {
     },
 
     "award-cyberthon": {
-        name: "Cyberthon_First_Prize.jpg",
+        name: "CYBERTHON_2026.dossier",
+        type: "Classified Mission Dossier",
+        size: "2.48 MB (Twin Accreditation)",
+        date: "Feb 2026",
+        issuer: "MSU Baroda",
+        title: "First Prize — Cyberthon 2026",
+        description: "Awarded <strong>First Prize</strong> at <strong>Cyberthon 2026</strong> — a timed cybersecurity hackathon hosted by <a href=\"https://www.msubaroda.ac.in/\" target=\"_blank\" rel=\"noopener\" style=\"color:#FFD700; text-decoration:underline; font-weight:700;\">MSU Baroda</a>. Built and presented <strong>ZeroRisk Sentinel</strong>, evaluated on real-world threat detection accuracy, technical architecture, and live security execution. Both Individual Accreditation for Shlok Shah and First Prize Winner Certification awarded.",
+        link: "https://drive.google.com/file/d/1JXoumV2e95vafrksZzJ4cTj4j5LYnH6x/view?usp=sharing",
+        icon: "fas fa-folder-open",
+        category: "Awards_and_CTFs",
+        credibilityBadges: ["FIRST PRIZE WINNER", "MSU BARODA", "ZERORISK SENTINEL", "CYBERSECURITY"],
+
+        isDossier:       true,
+        childFileIds:    ["award-cyberthon-shlok", "award-cyberthon-team"],
+        dossierTag:      "CLASSIFIED · CYBERTHON 2026 · 1ST PRIZE WINNER",
+        dossierIcon:     "🛡️",
+        dossierHeadline: "CYBERTHON",
+        dossierYear:     "2026",
+        dossierSubtitle: "MSU Baroda Cybersecurity Hackathon · 1st Place Champion · Feb 2026",
+        dossierColor:    "#00f0ff",
+
+        endorsements: [
+            { icon: "fas fa-trophy",       label: "1st Place Champion", highlight: true },
+            { icon: "fas fa-university",   label: "MSU Baroda" },
+            { icon: "fas fa-shield-alt",   label: "Cybersecurity Hackathon" },
+            { icon: "fas fa-code",         label: "ZeroRisk Sentinel" },
+        ],
+
+        slides: [
+            {
+                driveId:      "1JXoumV2e95vafrksZzJ4cTj4j5LYnH6x",
+                link:         "https://drive.google.com/file/d/1JXoumV2e95vafrksZzJ4cTj4j5LYnH6x/view?usp=sharing",
+                labelClass:   "individual",
+                labelIcon:    "fas fa-user-shield",
+                labelText:    "Individual Accreditation · Shlok Shah",
+                caption:      "<strong>Official First Prize Certificate</strong> — Awarded to Shlok Shah for securing 1st Place at Cyberthon 2026, hosted by MSU Baroda, for ZeroRisk Sentinel.",
+                dotLabel:     "Shlok Shah",
+                targetFileId: "award-cyberthon-shlok"
+            },
+            {
+                driveId:      "190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr",
+                link:         "https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing",
+                labelClass:   "team",
+                labelIcon:    "fas fa-award",
+                labelText:    "First Prize Winner Certificate",
+                caption:      "<strong>Cyberthon 2026 Winner Certificate</strong> — Commemorating First Prize victory for outstanding cybersecurity architecture and live threat analysis.",
+                dotLabel:     "First Prize",
+                targetFileId: "award-cyberthon-team"
+            },
+        ],
+    },
+
+    "award-cyberthon-shlok": {
+        name: "Cyberthon2026_FirstPrize_Shlok.jpg",
         type: "JPEG Image (image/jpeg)",
         size: "1.24 MB",
         date: "Feb 2026",
         issuer: "MSU Baroda",
-        title: "First Prize — Cyberthon 2026",
-        description: "Awarded First Prize at Cyberthon 2026, a timed cybersecurity hackathon hosted by <a href=\"https://www.msubaroda.ac.in/\" target=\"_blank\" rel=\"noopener\" style=\"color:#FFD700; text-decoration:underline; font-weight:700;\">MSU Baroda</a>, for developing ZeroRisk Sentinel — evaluated on architecture, accuracy, innovation, and real-world security relevance.",
-        link: "https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing",
+        title: "First Prize Certificate — Cyberthon 2026 (Shlok Shah)",
+        description: "Official <strong>First Prize Certificate</strong> presented to <strong>Shlok Shah</strong> for securing 1st Place at <strong>Cyberthon 2026</strong>, a cybersecurity hackathon organized by <a href=\"https://www.msubaroda.ac.in/\" target=\"_blank\" rel=\"noopener\" style=\"color:#FFD700; text-decoration:underline; font-weight:700;\">MSU Baroda</a>. Recognized for engineering <strong>ZeroRisk Sentinel</strong> with real-world security relevance.",
+        link: "https://drive.google.com/file/d/1JXoumV2e95vafrksZzJ4cTj4j5LYnH6x/view?usp=sharing",
+        previewLink: "https://drive.google.com/file/d/1JXoumV2e95vafrksZzJ4cTj4j5LYnH6x/view?usp=sharing",
         icon: "far fa-image file-icon-jpg",
-        category: "Awards_and_CTFs"
+        category: "Awards_and_CTFs",
+        parentDossierId: "award-cyberthon",
+        credibilityBadges: ["INDIVIDUAL WINNER", "SHLOK SHAH", "1ST PLACE", "MSU BARODA"]
+    },
+
+    "award-cyberthon-team": {
+        name: "Cyberthon2026_FirstPrize_Award.jpg",
+        type: "JPEG Image (image/jpeg)",
+        size: "1.24 MB",
+        date: "Feb 2026",
+        issuer: "MSU Baroda",
+        title: "First Prize Winner — Cyberthon 2026",
+        description: "Awarded <strong>First Prize</strong> at <strong>Cyberthon 2026</strong>, a timed cybersecurity hackathon hosted by <a href=\"https://www.msubaroda.ac.in/\" target=\"_blank\" rel=\"noopener\" style=\"color:#FFD700; text-decoration:underline; font-weight:700;\">MSU Baroda</a>, for developing ZeroRisk Sentinel — evaluated on architecture, accuracy, innovation, and real-world security relevance.",
+        link: "https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing",
+        previewLink: "https://drive.google.com/file/d/190yb8qAw68UhKCgwUrOyhkWLQRnMNdMr/view?usp=sharing",
+        icon: "far fa-image file-icon-jpg",
+        category: "Awards_and_CTFs",
+        parentDossierId: "award-cyberthon",
+        credibilityBadges: ["FIRST PRIZE", "MSU BARODA", "ZERORISK SENTINEL"]
     },
     "award-offsec": {
         name: "OffSec_Build_With_AI.pdf",
@@ -1575,7 +1647,8 @@ function renderIdeTabs() {
         
         let iconHtml = '';
         if (file.isDossier) {
-            iconHtml = '<i class="fas fa-folder-open" style="color:#a78bfa;"></i>';
+            const folderColor = file.dossierColor || '#a78bfa';
+            iconHtml = `<i class="fas fa-folder-open" style="color:${folderColor};"></i>`;
         } else if (file.name.endsWith('.jpg') || file.name.endsWith('.png')) {
             iconHtml = '<i class="far fa-image file-icon-jpg"></i>';
         } else {
